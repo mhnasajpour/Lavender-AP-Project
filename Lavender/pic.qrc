@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/LoginSignup">
+        <file>Signup</file>
+        <file>Login</file>
+    </qresource>
+    <qresource prefix="/tools">
+        <file>cup</file>
+    </qresource>
+</RCC>
