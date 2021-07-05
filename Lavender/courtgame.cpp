@@ -1,5 +1,6 @@
 #include "courtgame.h"
 #include "ui_courtgame.h"
+#include "login.h"
 
 CourtGame::CourtGame(QWidget *parent) :
     QMainWindow(parent),
@@ -13,3 +14,4 @@ CourtGame::~CourtGame()
 {
     delete ui;
 }
+

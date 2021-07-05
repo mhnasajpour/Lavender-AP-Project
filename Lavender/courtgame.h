@@ -15,6 +15,7 @@ public:
     explicit CourtGame(QWidget *parent = nullptr);
     ~CourtGame();
 
+
 private:
     Ui::CourtGame *ui;
 };
