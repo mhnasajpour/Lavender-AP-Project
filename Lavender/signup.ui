@@ -770,7 +770,7 @@ border-radius: 9px
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="pic.qrc">:/LoginSignup/Signup</pixmap>
+    <pixmap resource="pic.qrc">:/LoginSignup/otherPic/Signup.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

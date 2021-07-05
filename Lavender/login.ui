@@ -1108,7 +1108,7 @@ border-radius: 9px
     <enum>Qt::AutoText</enum>
    </property>
    <property name="pixmap">
-    <pixmap resource="pic.qrc">:/LoginSignup/Login</pixmap>
+    <pixmap resource="pic.qrc">:/LoginSignup/otherPic/Login.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

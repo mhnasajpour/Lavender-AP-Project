@@ -1,9 +1,25 @@
 <RCC>
     <qresource prefix="/LoginSignup">
-        <file>Signup</file>
-        <file>Login</file>
+        <file>otherPic/Login.png</file>
+        <file>otherPic/Signup.png</file>
     </qresource>
     <qresource prefix="/tools">
-        <file>cup</file>
+        <file>otherPic/cup.png</file>
+    </qresource>
+    <qresource prefix="/buildings">
+        <file>lands/storage.png</file>
+        <file>lands/silo.png</file>
+        <file>lands/shop.png</file>
+    </qresource>
+    <qresource prefix="/animals">
+        <file>lands/sheep.png</file>
+        <file>lands/cow.png</file>
+        <file>lands/poultry.png</file>
+    </qresource>
+    <qresource prefix="/wheatLand">
+        <file>lands/1.png</file>
+        <file>lands/4.png</file>
+        <file>lands/2.png</file>
+        <file>lands/3.png</file>
     </qresource>
 </RCC>
