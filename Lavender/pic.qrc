@@ -5,6 +5,7 @@
     </qresource>
     <qresource prefix="/tools">
         <file>otherPic/cup.png</file>
+        <file>otherPic/level.png</file>
     </qresource>
     <qresource prefix="/buildings">
         <file>lands/storage.png</file>

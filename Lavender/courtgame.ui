@@ -32,8 +32,8 @@
    <widget class="QPushButton" name="dairyFarm">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>130</y>
+      <x>490</x>
+      <y>460</y>
       <width>231</width>
       <height>151</height>
      </rect>
@@ -58,8 +58,8 @@
    <widget class="QPushButton" name="shop">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>250</y>
+      <x>820</x>
+      <y>10</y>
       <width>161</width>
       <height>151</height>
      </rect>
@@ -84,8 +84,8 @@
    <widget class="QPushButton" name="silo">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>290</y>
+      <x>640</x>
+      <y>70</y>
       <width>151</width>
       <height>145</height>
      </rect>
@@ -110,8 +110,8 @@
    <widget class="QPushButton" name="storage">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>290</y>
+      <x>800</x>
+      <y>160</y>
       <width>151</width>
       <height>136</height>
      </rect>
@@ -139,8 +139,8 @@
    <widget class="QPushButton" name="wheatLand">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>370</y>
+      <x>210</x>
+      <y>450</y>
       <width>221</width>
       <height>148</height>
      </rect>
@@ -165,8 +165,8 @@
    <widget class="QPushButton" name="hayFarm">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>450</y>
+      <x>40</x>
+      <y>330</y>
       <width>231</width>
       <height>144</height>
      </rect>
@@ -191,8 +191,8 @@
    <widget class="QPushButton" name="poultryFarm">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>80</y>
+      <x>40</x>
+      <y>160</y>
       <width>221</width>
       <height>131</height>
      </rect>
@@ -217,8 +217,8 @@
    <widget class="QPushButton" name="sheepFold">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>200</y>
+      <x>770</x>
+      <y>490</y>
       <width>201</width>
       <height>121</height>
      </rect>
@@ -265,8 +265,8 @@
      <string/>
     </property>
     <property name="icon">
-     <iconset>
-      <normaloff>G:/New folder/—Pngtree—watercolor red iris flower wedding_6495276.png</normaloff>G:/New folder/—Pngtree—watercolor red iris flower wedding_6495276.png</iconset>
+     <iconset resource="pic.qrc">
+      <normaloff>:/tools/otherPic/level.png</normaloff>:/tools/otherPic/level.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -628,18 +628,38 @@ QProgressBar::chunk {
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-90</y>
+      <width>1000</width>
+      <height>630</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/—Pngtree—woods river clip art_5903210.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label</zorder>
    <zorder>exp</zorder>
-   <zorder>dairyFarm</zorder>
-   <zorder>silo</zorder>
-   <zorder>storage</zorder>
-   <zorder>shop</zorder>
-   <zorder>wheatLand</zorder>
-   <zorder>hayFarm</zorder>
-   <zorder>poultryFarm</zorder>
-   <zorder>sheepFold</zorder>
    <zorder>levelPic</zorder>
    <zorder>level</zorder>
    <zorder>villageName</zorder>
+   <zorder>hayFarm</zorder>
+   <zorder>shop</zorder>
+   <zorder>wheatLand</zorder>
+   <zorder>silo</zorder>
+   <zorder>storage</zorder>
+   <zorder>poultryFarm</zorder>
+   <zorder>dairyFarm</zorder>
+   <zorder>sheepFold</zorder>
   </widget>
   <action name="Ranking">
    <property name="icon">

@@ -88,7 +88,8 @@ int Signup::check(QString _username, QString _email)
     QJsonArray user = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
     file.close();
 
-    for(int i = 0; i < user.size(); i++){
+    for(int i = 0; i < user.size(); i++)
+    {
         if((user[i].toObject())["email"].toString() == _email)
             return 2;
         if((user[i].toObject())["username"].toString() == _username)
@@ -129,45 +130,55 @@ void Signup::on_nextKey_clicked()
 void Signup::on_acceptKey_clicked()
 {
     bool isGood = true;
-    if(ui->inputName->text() == ""){
-        ui->inputName->setPlaceholderText("Is empty");
+    if(ui->inputName->text() == "")
+    {
+        ui->inputName->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputUsername->text() == ""){
+    if(ui->inputUsername->text() == "")
+    {
         ui->inputUsername->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputPassword->text() == ""){
+    if(ui->inputPassword->text() == "")
+    {
         ui->inputPassword->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputRepeat->text() == ""){
+    if(ui->inputRepeat->text() == "")
+    {
         ui->inputRepeat->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputEmail->text() == ""){
+    if(ui->inputEmail->text() == "")
+    {
         ui->inputEmail->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputPassword->text() != ui->inputRepeat->text()){
-        ui->inputPassword->setPlaceholderText("are not the same");
+    if(ui->inputPassword->text() != ui->inputRepeat->text())
+    {
+        ui->inputPassword->setPlaceholderText("not same");
         ui->inputPassword->setText("");
-        ui->inputRepeat->setPlaceholderText("are not the same");
+        ui->inputRepeat->setPlaceholderText("not same");
         ui->inputRepeat->setText("");
         isGood = false;
     }
-    if(check(ui->inputUsername->text(), ui->inputEmail->text()) != 3){
-        if(check(ui->inputUsername->text(), ui->inputEmail->text()) == 1){
+    if(check(ui->inputUsername->text(), ui->inputEmail->text()) != 3)
+    {
+        if(check(ui->inputUsername->text(), ui->inputEmail->text()) == 1)
+        {
             ui->inputUsername->setPlaceholderText("was taken");
             ui->inputUsername->setText("");
         }
-        else{
+        else
+        {
             ui->inputEmail->setPlaceholderText("was taken");
             ui->inputEmail->setText("");
         }
         isGood = false;
     }
-    if(isGood){
+    if(isGood)
+    {
         std::hash<QString> hashedPassword;
         unsigned long i = hashedPassword(ui->inputPassword->text());
         addUser(ui->inputName->text(), ui->inputEmail->text(), ui->inputUsername->text(), i);

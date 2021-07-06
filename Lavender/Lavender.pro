@@ -12,12 +12,14 @@ SOURCES += \
     courtgame.cpp \
     main.cpp \
     login.cpp \
-    signup.cpp
+    signup.cpp \
+    user.cpp
 
 HEADERS += \
     courtgame.h \
     login.h \
-    signup.h
+    signup.h \
+    user.h
 
 FORMS += \
     courtgame.ui \
