@@ -7,7 +7,6 @@ CourtGame::CourtGame(QWidget *parent) :
     ui(new Ui::CourtGame)
 {
     ui->setupUi(this);
-    ui->progressBar->setStyleSheet("background-color: rgb(255, 0, 0)");
 }
 
 CourtGame::~CourtGame()

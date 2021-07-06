@@ -28,18 +28,8 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
-  <property name="styleSheet">
-   <string notr="true">QProgressBar {
-    border:2px solid #ffff00;
-	border-radius: 5px;
-	background-color: rgb(77, 77, 77);
-}
-QProgressBar::chunk {
-    background-color: rgb(1, 81, 134);
-}</string>
-  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="dairyFarm">
     <property name="geometry">
      <rect>
       <x>720</x>
@@ -65,7 +55,7 @@ QProgressBar::chunk {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="shop">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -91,10 +81,10 @@ QProgressBar::chunk {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="silo">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>170</x>
       <y>290</y>
       <width>151</width>
       <height>145</height>
@@ -117,7 +107,7 @@ QProgressBar::chunk {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="storage">
     <property name="geometry">
      <rect>
       <x>760</x>
@@ -146,11 +136,11 @@ QProgressBar::chunk {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="wheatLand">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>440</y>
+      <x>290</x>
+      <y>370</y>
       <width>221</width>
       <height>148</height>
      </rect>
@@ -172,13 +162,91 @@ QProgressBar::chunk {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_21">
+   <widget class="QPushButton" name="hayFarm">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>450</y>
+      <width>231</width>
+      <height>144</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/hayLand/lands/hay8.png</normaloff>:/hayLand/lands/hay8.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>300</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="poultryFarm">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>80</y>
+      <width>221</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/animals/lands/poultry.png</normaloff>:/animals/lands/poultry.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>220</width>
+      <height>220</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sheepFold">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>200</y>
+      <width>201</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/animals/lands/sheep.png</normaloff>:/animals/lands/sheep.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>240</width>
+      <height>240</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="levelPic">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>30</y>
-      <width>70</width>
-      <height>70</height>
+      <y>20</y>
+      <width>86</width>
+      <height>86</height>
      </rect>
     </property>
     <property name="font">
@@ -193,23 +261,30 @@ QProgressBar::chunk {
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(255, 255, 0);
-background-color: rgb(1, 81, 134);
-border:3px solid #ffff00;</string>
-    </property>
     <property name="text">
-     <string>38</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>G:/New folder/—Pngtree—watercolor red iris flower wedding_6495276.png</normaloff>G:/New folder/—Pngtree—watercolor red iris flower wedding_6495276.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
+   <widget class="QProgressBar" name="exp">
     <property name="geometry">
      <rect>
-      <x>95</x>
-      <y>50</y>
-      <width>220</width>
-      <height>34</height>
+      <x>100</x>
+      <y>47</y>
+      <width>200</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="palette">
@@ -266,6 +341,15 @@ border:3px solid #ffff00;</string>
           <red>77</red>
           <green>77</green>
           <blue>77</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Highlight">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>0</blue>
          </color>
         </brush>
        </colorrole>
@@ -334,6 +418,15 @@ border:3px solid #ffff00;</string>
          </color>
         </brush>
        </colorrole>
+       <colorrole role="Highlight">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
@@ -399,6 +492,15 @@ border:3px solid #ffff00;</string>
          </color>
         </brush>
        </colorrole>
+       <colorrole role="Highlight">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
@@ -414,7 +516,7 @@ border:3px solid #ffff00;</string>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>10</pointsize>
+      <pointsize>8</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -426,13 +528,21 @@ border:3px solid #ffff00;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 0);</string>
+     <string notr="true">QProgressBar {
+	selection-background-color: rgb(255, 255, 0);
+    border:1px solid #84132F;
+	border-radius: 10px;
+	background-color: rgb(77, 77, 77);
+}
+QProgressBar::chunk {
+    background-color: #84132F;
+}</string>
     </property>
     <property name="maximum">
      <number>60</number>
     </property>
     <property name="value">
-     <number>20</number>
+     <number>23</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -453,94 +563,83 @@ border:3px solid #ffff00;</string>
      <string>%v/%m</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="level">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>450</y>
-      <width>231</width>
-      <height>144</height>
+      <x>30</x>
+      <y>20</y>
+      <width>86</width>
+      <height>86</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
+    <property name="font">
+     <font>
+      <family>Jokerman</family>
+      <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
     </property>
-    <property name="icon">
-     <iconset resource="pic.qrc">
-      <normaloff>:/hayLand/lands/hay8.png</normaloff>:/hayLand/lands/hay8.png</iconset>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 85, 0);</string>
+    </property>
+    <property name="text">
+     <string>12</string>
     </property>
     <property name="iconSize">
      <size>
-      <width>300</width>
-      <height>300</height>
+      <width>130</width>
+      <height>130</height>
      </size>
     </property>
     <property name="flat">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QLabel" name="villageName">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>80</y>
-      <width>221</width>
-      <height>131</height>
+      <x>115</x>
+      <y>62</y>
+      <width>161</width>
+      <height>32</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
+    <property name="font">
+     <font>
+      <family>Caveat</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
     </property>
-    <property name="icon">
-     <iconset resource="pic.qrc">
-      <normaloff>:/animals/lands/poultry.png</normaloff>:/animals/lands/poultry.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>220</width>
-      <height>220</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_8">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>140</y>
-      <width>201</width>
-      <height>121</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 0);</string>
     </property>
     <property name="text">
-     <string/>
+     <string>Village</string>
     </property>
-    <property name="icon">
-     <iconset resource="pic.qrc">
-      <normaloff>:/animals/lands/sheep.png</normaloff>:/animals/lands/sheep.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>240</width>
-      <height>240</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton_9</zorder>
-   <zorder>progressBar</zorder>
-   <zorder>pushButton_21</zorder>
-   <zorder>pushButton_10</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>pushButton_8</zorder>
+   <zorder>exp</zorder>
+   <zorder>dairyFarm</zorder>
+   <zorder>silo</zorder>
+   <zorder>storage</zorder>
+   <zorder>shop</zorder>
+   <zorder>wheatLand</zorder>
+   <zorder>hayFarm</zorder>
+   <zorder>poultryFarm</zorder>
+   <zorder>sheepFold</zorder>
+   <zorder>levelPic</zorder>
+   <zorder>level</zorder>
+   <zorder>villageName</zorder>
   </widget>
   <action name="Ranking">
    <property name="icon">
