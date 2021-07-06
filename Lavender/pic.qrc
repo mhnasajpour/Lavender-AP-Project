@@ -22,4 +22,14 @@
         <file>lands/2.png</file>
         <file>lands/3.png</file>
     </qresource>
+    <qresource prefix="/hayLand">
+        <file>lands/hay1.png</file>
+        <file>lands/hay2.png</file>
+        <file>lands/hay3.png</file>
+        <file>lands/hay4.png</file>
+        <file>lands/hay5.png</file>
+        <file>lands/hay6.png</file>
+        <file>lands/hay7.png</file>
+        <file>lands/hay8.png</file>
+    </qresource>
 </RCC>

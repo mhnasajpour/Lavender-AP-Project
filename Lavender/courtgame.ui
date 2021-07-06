@@ -177,8 +177,8 @@ QProgressBar::chunk {
      <rect>
       <x>30</x>
       <y>30</y>
-      <width>90</width>
-      <height>90</height>
+      <width>70</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="font">
@@ -206,8 +206,8 @@ border:3px solid #ffff00;</string>
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>118</x>
-      <y>60</y>
+      <x>95</x>
+      <y>50</y>
       <width>220</width>
       <height>34</height>
      </rect>
@@ -467,7 +467,7 @@ border:3px solid #ffff00;</string>
     </property>
     <property name="icon">
      <iconset resource="pic.qrc">
-      <normaloff>:/wheatLand/lands/1.png</normaloff>:/wheatLand/lands/1.png</iconset>
+      <normaloff>:/hayLand/lands/hay8.png</normaloff>:/hayLand/lands/hay8.png</iconset>
     </property>
     <property name="iconSize">
      <size>
