@@ -19,11 +19,12 @@ private slots:
     void on_ExitKey_clicked();
     void on_signupKey_clicked();
     void on_enterKey_clicked();
+    void on_eye_pressed();
+    void on_eye_released();
 
-    void on_eye_clicked();
+    void on_inputPassword_textEdited(const QString &arg1);
 
 private:
     Ui::Login *ui;
-    bool isShowPassword;
 };
 #endif // LOGIN_H

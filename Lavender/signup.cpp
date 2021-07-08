@@ -102,11 +102,11 @@ Signup::Signup(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Signup)
 {
-    isShowPassword1 = false;
-    isShowPassword2 = false;
     ui->setupUi(this);
     ui->nextKey->setHidden(true);
     ui->message->setHidden(true);
+    ui->eye1->setHidden(true);
+    ui->eye2->setHidden(true);
 }
 
 Signup::~Signup()
@@ -209,29 +209,39 @@ void Signup::on_acceptKey_clicked()
     }
 }
 
-
-void Signup::on_eye1_clicked()
+void Signup::on_eye1_pressed()
 {
-    if(isShowPassword1){
-        ui->inputPassword->setEchoMode(QLineEdit::Password);
-        isShowPassword1 = false;
-    }
-    else{
-        ui->inputPassword->setEchoMode(QLineEdit::Normal);
-        isShowPassword1 = true;
-    }
+    ui->inputPassword->setEchoMode(QLineEdit::Normal);
 }
 
-
-void Signup::on_eye2_clicked()
+void Signup::on_eye1_released()
 {
-    if(isShowPassword2){
-        ui->inputRepeat->setEchoMode(QLineEdit::Password);
-        isShowPassword2 = false;
-    }
-    else{
-        ui->inputRepeat->setEchoMode(QLineEdit::Normal);
-        isShowPassword2 = true;
-    }
+    ui->inputPassword->setEchoMode(QLineEdit::Password);
+}
+
+void Signup::on_eye2_pressed()
+{
+    ui->inputRepeat->setEchoMode(QLineEdit::Normal);
+}
+
+void Signup::on_eye2_released()
+{
+    ui->inputRepeat->setEchoMode(QLineEdit::Password);
+}
+
+void Signup::on_inputPassword_textEdited(const QString &arg1)
+{
+    if(arg1 == "")
+        ui->eye1->setHidden(true);
+    else
+        ui->eye1->setHidden(false);
+}
+
+void Signup::on_inputRepeat_textEdited(const QString &arg1)
+{
+    if(arg1 == "")
+        ui->eye2->setHidden(true);
+    else
+        ui->eye2->setHidden(false);
 }
 
