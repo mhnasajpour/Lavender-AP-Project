@@ -68,19 +68,24 @@ QString User::getEmail()
     return qjo["email"].toString();
 }
 
-void User::setLevel(int level) // + level
-{
-    qjo["level"] = QJsonValue(level);
-}
-
 int User::getLevel()
 {
     return qjo["level"].toInt();
 }
 
-void User::setExp(int exp)  // - + exp
+void User::setExp(int add)
 {
-    qjo["exp"] = QJsonValue(exp);
+    int upperBoundExp = (powl(2, getLevel()) - 1) * 10;
+    if(getExp() + add >= upperBoundExp)
+    {
+        qjo["level"] = getLevel() + 1;
+        qjo["exp"] = QJsonValue(getExp() + add - upperBoundExp);
+        //checkLevel
+    }
+    else
+    {
+        qjo["exp"] = QJsonValue(getExp() + add);
+    }
 }
 
 int User::getExp()
@@ -88,9 +93,9 @@ int User::getExp()
     return qjo["exp"].toInt();
 }
 
-void User::setCoin(int coin) // - + coin
+void User::changeCoin(int change)
 {
-    qjo["coin"] = QJsonValue(coin);
+    qjo["coin"] = QJsonValue(getCoin() + change);
 }
 
 int User::getCoin()
@@ -98,12 +103,12 @@ int User::getCoin()
     return qjo["coin"].toInt();
 }
 
-void User::setTime(int time)  // + time
+void User::nextDay()
 {
-    qjo["time"] = QJsonValue(time);
+    qjo["time"] = QJsonValue(getDay() + 1);
 }
 
-int User::getTime()
+int User::getDay()
 {
     return qjo["time"].toInt();
 }

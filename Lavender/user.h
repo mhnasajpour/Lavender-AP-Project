@@ -17,6 +17,7 @@ public:
     QJsonObject getQjo();
     int getIndex();
     //void checkDay();
+    //void checkLevel();
     bool setUsername(QString);
     QString getUsername();
     void setPassword(QString);
@@ -24,14 +25,13 @@ public:
     QString getName();
     bool setEmail(QString);
     QString getEmail();
-    void setLevel(int);
     int getLevel();
     void setExp(int);
     int getExp();
-    void setCoin(int);
+    void changeCoin(int);
     int getCoin();
-    void setTime(int);
-    int getTime();
+    void nextDay();
+    int getDay();
     /*Storage getStorage ();
     Silo getSilo ();
     PoultryFarm getPoultryFarm ();

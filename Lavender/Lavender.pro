@@ -14,6 +14,7 @@ SOURCES += \
     login.cpp \
     mainmenu.cpp \
     signup.cpp \
+    silo.cpp \
     user.cpp
 
 HEADERS += \
@@ -21,13 +22,15 @@ HEADERS += \
     login.h \
     mainmenu.h \
     signup.h \
+    silo.h \
     user.h
 
 FORMS += \
     courtgame.ui \
     login.ui \
     mainmenu.ui \
-    signup.ui
+    signup.ui \
+    silo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
