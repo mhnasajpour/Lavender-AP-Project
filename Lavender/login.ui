@@ -166,8 +166,8 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 border:3px;
-border-radius:5px
-</string>
+border-radius:5px;
+padding: 3px;</string>
    </property>
    <property name="maxLength">
     <number>20</number>
@@ -335,9 +335,8 @@ border-radius:5px
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 border:3px;
-border-radius:5px
-
-</string>
+border-radius:5px;
+padding: 3px;</string>
    </property>
    <property name="maxLength">
     <number>20</number>

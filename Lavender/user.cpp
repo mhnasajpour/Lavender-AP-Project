@@ -105,10 +105,30 @@ int User::getCoin()
 
 void User::nextDay()
 {
-    qjo["time"] = QJsonValue(getDay() + 1);
+    qjo["day"] = QJsonValue(getDay() + 1);
+    //checkDay
 }
 
 int User::getDay()
 {
-    return qjo["time"].toInt();
+    return qjo["day"].toInt();
+}
+
+void User::saveToFile()
+{
+    QFile file("Users.json");
+    file.open(QIODevice::ReadOnly);
+    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+    file.close();
+
+    QJsonArray arr = (doc.object())["users"].toArray();
+    arr[index] = QJsonObject(qjo);
+    QJsonObject main;
+    main.insert("users", arr);
+    doc.setObject(main);
+
+    QFile file1("Users.json");
+    file1.open(QIODevice::ReadWrite | QIODevice::Truncate);
+    file1.write(doc.toJson());
+    file1.close();
 }

@@ -332,10 +332,9 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 color: rgb(0, 0, 0);
-border:3px;
-border-radius:5px
-
-</string>
+border: 2px solid black;
+border-radius: 5px;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string>Email</string>
@@ -587,10 +586,9 @@ border-radius:5px
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 color: rgb(0, 0, 0);
-border:3px;
-border-radius:5px
-
-</string>
+border: 2px solid black;
+border-radius: 5px;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string>Village name</string>
@@ -875,10 +873,9 @@ border-radius:5px
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 color: rgb(0, 0, 0);
-border:3px;
-border-radius:5px
-
-</string>
+border: 2px solid black;
+border-radius: 5px;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string>Username</string>
@@ -1196,7 +1193,7 @@ border-radius:5px
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 color: rgb(0, 0, 0);
-border:3px;
+border:2px solid black;
 border-radius:5px
 
 </string>
@@ -1451,7 +1448,7 @@ border-radius:5px
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 color: rgb(0, 0, 0);
-border:3px;
+border:2px solid black;
 border-radius:5px
 
 </string>
@@ -1739,7 +1736,7 @@ border-radius:5px
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
 color: rgb(0, 0, 0);
-border:3px;
+border:2px solid black;
 border-radius:5px
 
 </string>
@@ -1973,6 +1970,9 @@ border-radius:5px
    </property>
    <property name="text">
     <string>خروج</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
    </property>
    <property name="flat">
     <bool>true</bool>

@@ -41,6 +41,9 @@
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
+    <property name="toolTip">
+     <string>Dairy Farm</string>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -73,6 +76,9 @@
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
+    <property name="toolTip">
+     <string>Shop</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -104,6 +110,9 @@
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
+    <property name="toolTip">
+     <string>Silo</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -133,6 +142,9 @@
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
+    <property name="toolTip">
+     <string>Storage</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -153,7 +165,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="wheatLand">
+   <widget class="QPushButton" name="wheatFarm">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -164,6 +176,9 @@
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Wheat Farm</string>
     </property>
     <property name="text">
      <string/>
@@ -194,6 +209,9 @@
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
+    <property name="toolTip">
+     <string>Hay Farm</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -223,6 +241,9 @@
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
+    <property name="toolTip">
+     <string>Poultry Farm</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -240,7 +261,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="sheepFold">
+   <widget class="QPushButton" name="sheepfold">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -251,6 +272,9 @@
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Sheepfold</string>
     </property>
     <property name="text">
      <string/>
@@ -701,12 +725,12 @@ QProgressBar::chunk {
    <zorder>villageName</zorder>
    <zorder>hayFarm</zorder>
    <zorder>shop</zorder>
-   <zorder>wheatLand</zorder>
+   <zorder>wheatFarm</zorder>
    <zorder>silo</zorder>
    <zorder>storage</zorder>
    <zorder>poultryFarm</zorder>
    <zorder>dairyFarm</zorder>
-   <zorder>sheepFold</zorder>
+   <zorder>sheepfold</zorder>
   </widget>
  </widget>
  <resources>

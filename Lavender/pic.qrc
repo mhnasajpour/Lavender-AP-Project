@@ -12,6 +12,8 @@
         <file>otherPic/levelLand.jpg</file>
         <file>otherPic/back.png</file>
         <file>otherPic/eye.png</file>
+        <file>otherPic/invalid.png</file>
+        <file>otherPic/valid.png</file>
     </qresource>
     <qresource prefix="/buildings">
         <file>lands/storage.png</file>

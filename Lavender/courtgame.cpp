@@ -13,6 +13,10 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     user(qjo, index)
 {
     ui->setupUi(this);
+    ui->villageName->setText(user.getName());
+    ui->level->setText(QString::number(user.getLevel()));
+    ui->exp->setMaximum((powl(2, user.getLevel()) - 1) * 10);
+    ui->exp->setValue(user.getExp());
 }
 
 CourtGame::~CourtGame()
@@ -20,28 +24,10 @@ CourtGame::~CourtGame()
     delete ui;
 }
 
-void CourtGame::saveToFile()
-{
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-    file.close();
-
-    QJsonArray arr = (doc.object())["users"].toArray();
-    arr[user.getIndex()] = QJsonObject(user.getQjo());
-    QJsonObject main;
-    main.insert("users", arr);
-    doc.setObject(main);
-
-    QFile file1("Users.json");
-    file1.open(QIODevice::ReadWrite | QIODevice::Truncate);
-    file1.write(doc.toJson());
-    file1.close();
-}
-
 void CourtGame::on_level_clicked()
 {
-    mainMenu *level = new mainMenu;
+    mainMenu *level = new mainMenu(user);
     level->show();
+    close();
 }
 

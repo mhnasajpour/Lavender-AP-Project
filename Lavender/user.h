@@ -42,6 +42,7 @@ public:
     void buy (QString str, int num);
     void sell (QString str, int num);
     ~User();*/
+    void saveToFile();
 };
 
 #endif // USER_H

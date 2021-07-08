@@ -8,7 +8,7 @@
 
 void Signup::addUser(QString _name, QString _email, QString _username, unsigned long _password)
 {
-    QJsonObject root, storage, silo, poultryFarm, dairyFarm, sheepFold, wheatFarm, hayFarm;
+    QJsonObject root, storage, silo, poultryFarm, dairyFarm, sheepfold, wheatFarm, hayFarm;
     root.insert("name", _name);
     root.insert("email", _email);
     root.insert("username", _username);
@@ -16,7 +16,7 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     root.insert("level", 1);
     root.insert("exp", 0);
     root.insert("coin", 20);
-    root.insert("time", 0);
+    root.insert("day", 0);
 
     storage.insert("level", 1);
     storage.insert("usedCapacity", 2);
@@ -41,10 +41,10 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     dairyFarm.insert("feedTime", 0);
     dairyFarm.insert("flag", 1);
 
-    sheepFold.insert("level", 0);
-    sheepFold.insert("sheep", 0);
-    sheepFold.insert("feedTime", 0);
-    sheepFold.insert("flag", 1);
+    sheepfold.insert("level", 0);
+    sheepfold.insert("sheep", 0);
+    sheepfold.insert("feedTime", 0);
+    sheepfold.insert("flag", 1);
 
     wheatFarm.insert("level", 1);
     wheatFarm.insert("plantingArea", 5);
@@ -60,7 +60,7 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     root.insert("silo", silo);
     root.insert("poultryFarm", poultryFarm);
     root.insert("dairyFarm", dairyFarm);
-    root.insert("sheepFold", sheepFold);
+    root.insert("sheepFold", sheepfold);
     root.insert("wheatFarm", wheatFarm);
     root.insert("hayFarm", hayFarm);
 

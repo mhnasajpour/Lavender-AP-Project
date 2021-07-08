@@ -23,7 +23,6 @@ private slots:
 private:
     Ui::CourtGame *ui;
     User user;
-    void saveToFile();
 };
 
 #endif // COURTGAME_H
