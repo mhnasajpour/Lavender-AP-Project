@@ -17,6 +17,9 @@ public:
     explicit CourtGame(QJsonObject qjo, int index, QWidget *parent = nullptr);
     ~CourtGame();
 
+private slots:
+    void on_level_clicked();
+
 private:
     Ui::CourtGame *ui;
     User user;

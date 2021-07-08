@@ -12,18 +12,21 @@ SOURCES += \
     courtgame.cpp \
     main.cpp \
     login.cpp \
+    mainmenu.cpp \
     signup.cpp \
     user.cpp
 
 HEADERS += \
     courtgame.h \
     login.h \
+    mainmenu.h \
     signup.h \
     user.h
 
 FORMS += \
     courtgame.ui \
     login.ui \
+    mainmenu.ui \
     signup.ui
 
 # Default rules for deployment.

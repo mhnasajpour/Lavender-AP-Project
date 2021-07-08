@@ -20,7 +20,10 @@ private slots:
     void on_signupKey_clicked();
     void on_enterKey_clicked();
 
+    void on_eye_clicked();
+
 private:
     Ui::Login *ui;
+    bool isShowPassword;
 };
 #endif // LOGIN_H

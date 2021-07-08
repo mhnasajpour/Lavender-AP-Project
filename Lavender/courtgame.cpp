@@ -5,6 +5,7 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QDebug>
+#include "mainmenu.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -37,3 +38,10 @@ void CourtGame::saveToFile()
     file1.write(doc.toJson());
     file1.close();
 }
+
+void CourtGame::on_level_clicked()
+{
+    mainMenu *level = new mainMenu;
+    level->show();
+}
+

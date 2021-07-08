@@ -102,6 +102,8 @@ Signup::Signup(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Signup)
 {
+    isShowPassword1 = false;
+    isShowPassword2 = false;
     ui->setupUi(this);
     ui->nextKey->setHidden(true);
     ui->message->setHidden(true);
@@ -204,6 +206,32 @@ void Signup::on_acceptKey_clicked()
         ui->inputUsername->clearFocus();
         ui->inputPassword->clearFocus();
         ui->inputRepeat->clearFocus();
+    }
+}
+
+
+void Signup::on_eye1_clicked()
+{
+    if(isShowPassword1){
+        ui->inputPassword->setEchoMode(QLineEdit::Password);
+        isShowPassword1 = false;
+    }
+    else{
+        ui->inputPassword->setEchoMode(QLineEdit::Normal);
+        isShowPassword1 = true;
+    }
+}
+
+
+void Signup::on_eye2_clicked()
+{
+    if(isShowPassword2){
+        ui->inputRepeat->setEchoMode(QLineEdit::Password);
+        isShowPassword2 = false;
+    }
+    else{
+        ui->inputRepeat->setEchoMode(QLineEdit::Normal);
+        isShowPassword2 = true;
     }
 }
 

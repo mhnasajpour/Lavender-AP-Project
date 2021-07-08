@@ -7,6 +7,11 @@
     <qresource prefix="/tools">
         <file>otherPic/cup.png</file>
         <file>otherPic/level.png</file>
+        <file>otherPic/edit.png</file>
+        <file>otherPic/tomorrow.png</file>
+        <file>otherPic/levelLand.jpg</file>
+        <file>otherPic/back.png</file>
+        <file>otherPic/eye.png</file>
     </qresource>
     <qresource prefix="/buildings">
         <file>lands/storage.png</file>

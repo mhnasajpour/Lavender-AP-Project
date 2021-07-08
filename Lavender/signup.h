@@ -23,9 +23,13 @@ private slots:
     void on_returnKey_clicked();
     void on_nextKey_clicked();
     void on_acceptKey_clicked();
+    void on_eye1_clicked();
+    void on_eye2_clicked();
 
 private:
     Ui::Signup *ui;
+    bool isShowPassword1;
+    bool isShowPassword2;
 };
 
 #endif // SIGNUP_H

@@ -11,6 +11,7 @@ Login::Login(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Login)
 {
+    isShowPassword = false;
     ui->setupUi(this);
 }
 
@@ -82,3 +83,15 @@ void Login::on_enterKey_clicked()
         ui->inputPassword->setPlaceholderText("invalid");
     }
 }
+void Login::on_eye_clicked()
+{
+    if(isShowPassword){
+        ui->inputPassword->setEchoMode(QLineEdit::Password);
+        isShowPassword = false;
+    }
+    else{
+        ui->inputPassword->setEchoMode(QLineEdit::Normal);
+        isShowPassword = true;
+    }
+}
+

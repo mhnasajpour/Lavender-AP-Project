@@ -688,7 +688,7 @@ border-radius:5px
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
    <property name="clearButtonEnabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="nextKey">
@@ -1101,7 +1101,7 @@ border-radius:5px
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
    <property name="clearButtonEnabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="password">
@@ -1337,6 +1337,62 @@ border-radius:5px
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="eye1">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>200</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(189, 189, 189);
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="pic.qrc">
+     <normaloff>:/tools/otherPic/eye.png</normaloff>
+     <selectedoff>:/tools/otherPic/eye.png</selectedoff>:/tools/otherPic/eye.png</iconset>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="eye2">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>250</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(189, 189, 189);
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="pic.qrc">
+     <normaloff>:/tools/otherPic/eye.png</normaloff>
+     <selectedoff>:/tools/otherPic/eye.png</selectedoff>:/tools/otherPic/eye.png</iconset>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>pic</zorder>
   <zorder>garbage</zorder>
   <zorder>inputName</zorder>
@@ -1353,6 +1409,8 @@ border-radius:5px
   <zorder>returnKey</zorder>
   <zorder>inputEmail</zorder>
   <zorder>email</zorder>
+  <zorder>eye1</zorder>
+  <zorder>eye2</zorder>
  </widget>
  <tabstops>
   <tabstop>inputName</tabstop>
