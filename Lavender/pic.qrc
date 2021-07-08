@@ -2,6 +2,7 @@
     <qresource prefix="/LoginSignup">
         <file>otherPic/Login.png</file>
         <file>otherPic/Signup.png</file>
+        <file>lands/river.png</file>
     </qresource>
     <qresource prefix="/tools">
         <file>otherPic/cup.png</file>

@@ -32,8 +32,8 @@
    <widget class="QPushButton" name="dairyFarm">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>460</y>
+      <x>750</x>
+      <y>230</y>
       <width>231</width>
       <height>151</height>
      </rect>
@@ -58,8 +58,8 @@
    <widget class="QPushButton" name="shop">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>10</y>
+      <x>150</x>
+      <y>90</y>
       <width>161</width>
       <height>151</height>
      </rect>
@@ -84,8 +84,8 @@
    <widget class="QPushButton" name="silo">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>70</y>
+      <x>40</x>
+      <y>480</y>
       <width>151</width>
       <height>145</height>
      </rect>
@@ -110,8 +110,8 @@
    <widget class="QPushButton" name="storage">
     <property name="geometry">
      <rect>
-      <x>800</x>
-      <y>160</y>
+      <x>20</x>
+      <y>180</y>
       <width>151</width>
       <height>136</height>
      </rect>
@@ -139,8 +139,8 @@
    <widget class="QPushButton" name="wheatLand">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>450</y>
+      <x>470</x>
+      <y>440</y>
       <width>221</width>
       <height>148</height>
      </rect>
@@ -165,8 +165,8 @@
    <widget class="QPushButton" name="hayFarm">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>330</y>
+      <x>710</x>
+      <y>400</y>
       <width>231</width>
       <height>144</height>
      </rect>
@@ -191,8 +191,8 @@
    <widget class="QPushButton" name="poultryFarm">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>160</y>
+      <x>760</x>
+      <y>90</y>
       <width>221</width>
       <height>131</height>
      </rect>
@@ -217,8 +217,8 @@
    <widget class="QPushButton" name="sheepFold">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>490</y>
+      <x>260</x>
+      <y>500</y>
       <width>201</width>
       <height>121</height>
      </rect>
@@ -243,8 +243,8 @@
    <widget class="QPushButton" name="levelPic">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>20</y>
+      <x>15</x>
+      <y>18</y>
       <width>86</width>
       <height>86</height>
      </rect>
@@ -281,8 +281,8 @@
    <widget class="QProgressBar" name="exp">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>47</y>
+      <x>85</x>
+      <y>45</y>
       <width>200</width>
       <height>32</height>
      </rect>
@@ -566,8 +566,8 @@ QProgressBar::chunk {
    <widget class="QPushButton" name="level">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>20</y>
+      <x>15</x>
+      <y>18</y>
       <width>86</width>
       <height>86</height>
      </rect>
@@ -603,8 +603,8 @@ QProgressBar::chunk {
    <widget class="QLabel" name="villageName">
     <property name="geometry">
      <rect>
-      <x>115</x>
-      <y>62</y>
+      <x>100</x>
+      <y>60</y>
       <width>161</width>
       <height>32</height>
      </rect>
@@ -631,9 +631,9 @@ QProgressBar::chunk {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>-90</y>
-      <width>1000</width>
+      <x>-30</x>
+      <y>0</y>
+      <width>1031</width>
       <height>630</height>
      </rect>
     </property>
@@ -641,7 +641,7 @@ QProgressBar::chunk {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../Downloads/—Pngtree—woods river clip art_5903210.png</pixmap>
+     <pixmap resource="pic.qrc">:/LoginSignup/lands/river.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
