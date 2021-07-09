@@ -16,6 +16,7 @@ private:
     int upperBoundExp;
 public:
     QJsonObject getQjo();
+    QJsonObject getQjoStorage();
     int getPlayerLevel();
     void setExp(int);
     int getExp();

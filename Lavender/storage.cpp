@@ -13,7 +13,7 @@ Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) :
 
     if(storage.getDaysToFinishUpgrading() != 0)
     {
-        ui->textEdit->setText(QString::number(storage.getDaysToFinishUpgrading()));
+        ui->textEdit->setText("انبار در حال ارتقا است\n\n" + QString::number(storage.getDaysToFinishUpgrading()) + " روز باقی مانده است");
     }
     else
     {
@@ -78,10 +78,12 @@ void Storage::on_request_accepted()
     ui->upPic1->setHidden(true);
     ui->upPic2->setHidden(true);
     ui->upPic3->setHidden(true);
-    ui->textEdit->setText(QString::number(storage.getDaysToFinishUpgrading()));
+    ui->textEdit->setHidden(false);
+    ui->textEdit->setText("انبار در حال ارتقا است\n\n" + QString::number(storage.getDaysToFinishUpgrading()) + " روز باقی مانده است");
 
     ui->shovelShow->setText(QString::number(storage.getShovel()));
     ui->nailShow->setText(QString::number(storage.getNail()));
+    ui->progressBar->setValue(storage.getUsedCapacity());
 }
 
 void Storage::on_request_rejected()
@@ -100,8 +102,6 @@ void Storage::on_request_rejected()
 
 void Storage::on_continueKey_clicked()
 {
-    qDebug() << storage.getQjo();
-
     CourtGame* cgp = new CourtGame(storage.getQjo(), index);
     cgp->show();
     close();

@@ -5,6 +5,11 @@ QJsonObject SiloBuilding::getQjo()
     return qjo;
 }
 
+QJsonObject SiloBuilding::getQjoSilo()
+{
+    return qjoSilo;
+}
+
 int SiloBuilding::getPlayerLevel()
 {
     return qjo["level"].toInt();

@@ -20,7 +20,6 @@ public:
 private slots:
     void on_level_clicked();
     void on_storage_clicked();
-
     void on_silo_clicked();
 
 private:

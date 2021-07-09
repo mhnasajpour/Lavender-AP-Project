@@ -3,7 +3,13 @@
 
 QJsonObject StorageBuilding::getQjo()
 {
+    qjo["storage"] = qjoStorage;
     return qjo;
+}
+
+QJsonObject StorageBuilding::getQjoStorage()
+{
+    return qjoStorage;
 }
 
 int StorageBuilding::getPlayerLevel()
@@ -58,7 +64,6 @@ StorageBuilding::StorageBuilding(QJsonObject _qjo)
 void StorageBuilding::passDayToFinishUpgrading()
 {
     qjoStorage["daysToFinishUpgrading"] = getDaysToFinishUpgrading() - 1;
-    qjo["storage"] = qjoStorage;
 }
 
 int StorageBuilding::getDaysToFinishUpgrading()
@@ -87,7 +92,6 @@ void StorageBuilding::startUpgrading()
     addNail(-1 * getLevel());
     addShovel(-1 * (getLevel() - 1));
     changeCoin(-10 * pow(getLevel(), 3));
-    qjo["storage"] = qjoStorage;
 }
 
 void StorageBuilding::finishUpgrading()
@@ -95,7 +99,6 @@ void StorageBuilding::finishUpgrading()
     qjoStorage["level"] = getLevel() + 1;
     maxCapacity = ceil(maxCapacity * 1.5);
     setExp(getLevel() * 3);
-    qjo["storage"] = qjoStorage;
 }
 
 int StorageBuilding::getLevel()
@@ -114,7 +117,6 @@ bool StorageBuilding::addShovel(int change)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["shovel"] = getShovel() + change;
-    qjo["storage"] = qjoStorage;
     return true;
 }
 
@@ -129,7 +131,6 @@ bool StorageBuilding::addNail(int change)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["nail"] = getNail() + change;
-    qjo["storage"] = qjoStorage;
     return true;
 }
 
@@ -144,7 +145,6 @@ bool StorageBuilding::addHay(int change)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["hay"] = getHay() + change;
-    qjo["storage"] = qjoStorage;
     return true;
 }
 
@@ -159,7 +159,6 @@ bool StorageBuilding::addEgg(int change)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["egg"] = getEgg() + change;
-    qjo["storage"] = qjoStorage;
     return true;
 }
 
@@ -174,7 +173,6 @@ bool StorageBuilding::addWool(int change)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["wool"] = getWool() + change;
-    qjo["storage"] = qjoStorage;
     return true;
 }
 
@@ -195,7 +193,6 @@ bool StorageBuilding::addMilk(int change)
         else
             milk.pop_front();
     qjoStorage["milk"] = milk;
-    qjo["storage"] = qjoStorage;
     return true;
 }
 

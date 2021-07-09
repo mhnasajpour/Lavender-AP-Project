@@ -11,6 +11,8 @@ User::User(QJsonObject _qjo, int _index):
 
 QJsonObject User::getQjo()
 {
+    qjo["storage"] = storage.getQjoStorage();
+    qjo["silo"] = silo.getQjoSilo();
     return qjo;
 }
 
@@ -165,7 +167,7 @@ void User::saveToFile()
     file.close();
 
     QJsonArray arr = (doc.object())["users"].toArray();
-    arr[index] = QJsonObject(qjo);
+    arr[index] = getQjo();
     QJsonObject main;
     main.insert("users", arr);
     doc.setObject(main);
