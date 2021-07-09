@@ -4,8 +4,9 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonArray>
-#include <QDebug>
 #include "mainmenu.h"
+#include "storage.h"
+#include "silo.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -28,6 +29,21 @@ void CourtGame::on_level_clicked()
 {
     mainMenu *level = new mainMenu(user);
     level->show();
+    close();
+}
+
+void CourtGame::on_storage_clicked()
+{
+    Storage *st = new Storage;
+    st->show();
+    close();
+}
+
+
+void CourtGame::on_silo_clicked()
+{
+    Silo *si = new Silo;
+    si->show();
     close();
 }
 

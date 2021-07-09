@@ -60,7 +60,7 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     root.insert("silo", silo);
     root.insert("poultryFarm", poultryFarm);
     root.insert("dairyFarm", dairyFarm);
-    root.insert("sheepFold", sheepfold);
+    root.insert("sheepfold", sheepfold);
     root.insert("wheatFarm", wheatFarm);
     root.insert("hayFarm", hayFarm);
 

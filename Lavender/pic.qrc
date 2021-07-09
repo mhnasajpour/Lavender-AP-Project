@@ -41,4 +41,21 @@
         <file>lands/hay7.png</file>
         <file>lands/hay8.png</file>
     </qresource>
+    <qresource prefix="/storage">
+        <file>otherPic/storage/background.png</file>
+        <file>otherPic/storage/hay.png</file>
+        <file>otherPic/storage/level.png</file>
+        <file>otherPic/storage/milk.png</file>
+        <file>otherPic/storage/nail.png</file>
+        <file>otherPic/storage/shovel.png</file>
+        <file>otherPic/storage/two-eggs.png</file>
+        <file>otherPic/storage/wool.png</file>
+        <file>otherPic/storage/coin.png</file>
+        <file>otherPic/storage/continue.png</file>
+        <file>otherPic/storage/upgrade.png</file>
+        <file>otherPic/storage/siloBack.jpg</file>
+        <file>otherPic/storage/man.png</file>
+        <file>otherPic/storage/siloPic.png</file>
+        <file>otherPic/storage/wheat.png</file>
+    </qresource>
 </RCC>

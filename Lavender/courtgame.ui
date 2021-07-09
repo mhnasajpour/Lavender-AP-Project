@@ -582,7 +582,6 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QProgressBar {
-	selection-background-color: rgb(255, 255, 0);
     border:1px solid #84132F;
 	border-radius: 10px;
 	background-color: rgb(77, 77, 77);

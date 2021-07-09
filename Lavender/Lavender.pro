@@ -15,6 +15,7 @@ SOURCES += \
     mainmenu.cpp \
     signup.cpp \
     silo.cpp \
+    storage.cpp \
     user.cpp
 
 HEADERS += \
@@ -23,6 +24,7 @@ HEADERS += \
     mainmenu.h \
     signup.h \
     silo.h \
+    storage.h \
     user.h
 
 FORMS += \
@@ -30,7 +32,8 @@ FORMS += \
     login.ui \
     mainmenu.ui \
     signup.ui \
-    silo.ui
+    silo.ui \
+    storage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
