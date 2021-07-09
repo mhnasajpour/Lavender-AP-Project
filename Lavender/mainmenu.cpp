@@ -2,6 +2,7 @@
 #include "ui_mainmenu.h"
 #include "login.h"
 #include "courtgame.h"
+#include "daynight.h"
 
 mainMenu::mainMenu(User _user, QWidget *parent) :
     QWidget(parent),
@@ -31,6 +32,7 @@ void mainMenu::on_nameEdit_clicked()
 {
     ui->inputName->setReadOnly(false);
     ui->inputName->selectAll();
+    ui->nameEdit->setHidden(true);
 }
 
 void mainMenu::on_emailEdit_clicked()
@@ -52,6 +54,7 @@ void mainMenu::on_inputName_editingFinished()
     ui->inputName->setReadOnly(true);
     if(ui->inputName->text() == "")
         ui->inputName->setText(user.getName());
+    ui->nameEdit->setHidden(false);
 }
 
 void mainMenu::on_inputEmail_editingFinished()
@@ -127,6 +130,8 @@ void mainMenu::on_inputUsername_textEdited(const QString &arg1)
 void mainMenu::on_nextDay_clicked()
 {
     user.nextDay();
+    DayNight dn;
+    dn.exec();
 }
 
 void mainMenu::on_exitKey_clicked()

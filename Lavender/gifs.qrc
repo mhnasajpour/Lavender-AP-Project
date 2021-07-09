@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/nextDay">
+        <file>otherPic/dayNight.gif</file>
+    </qresource>
+</RCC>

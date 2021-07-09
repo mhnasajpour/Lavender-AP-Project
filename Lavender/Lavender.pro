@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     courtgame.cpp \
+    daynight.cpp \
     main.cpp \
     login.cpp \
     mainmenu.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 
 HEADERS += \
     courtgame.h \
+    daynight.h \
     login.h \
     mainmenu.h \
     signup.h \
@@ -29,6 +31,7 @@ HEADERS += \
 
 FORMS += \
     courtgame.ui \
+    daynight.ui \
     login.ui \
     mainmenu.ui \
     signup.ui \
@@ -41,5 +44,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    gifs.qrc \
     pic.qrc
 
