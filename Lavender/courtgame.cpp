@@ -34,7 +34,7 @@ void CourtGame::on_level_clicked()
 
 void CourtGame::on_storage_clicked()
 {
-    Storage *st = new Storage;
+    Storage *st = new Storage(user.getQjo(), user.getIndex());
     st->show();
     close();
 }

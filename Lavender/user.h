@@ -6,17 +6,22 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+#include "storagebuilding.h"
+#include "silobuilding.h"
 
 class User
 {
 private:
     QJsonObject qjo;
     int index;
+    int upperBoundExp;
+    StorageBuilding storage;
+    SiloBuilding silo;
 public:
     User(QJsonObject _qjo, int _index);
     QJsonObject getQjo();
     int getIndex();
-    //void checkDay();
+    void checkDay();
     //void checkLevel();
     bool setUsername(QString);
     QString getUsername();
@@ -32,9 +37,9 @@ public:
     int getCoin();
     void nextDay();
     int getDay();
-    /*Storage getStorage ();
-    Silo getSilo ();
-    PoultryFarm getPoultryFarm ();
+    StorageBuilding getStorage();
+    SiloBuilding getSilo();
+    /*PoultryFarm getPoultryFarm ();
     DairyFarm getDairyFarm ();
     Sheepfold getSheepfold ();
     WheatFarm getWheatFarm ();

@@ -16,7 +16,9 @@ SOURCES += \
     mainmenu.cpp \
     signup.cpp \
     silo.cpp \
+    silobuilding.cpp \
     storage.cpp \
+    storagebuilding.cpp \
     user.cpp
 
 HEADERS += \
@@ -26,7 +28,9 @@ HEADERS += \
     mainmenu.h \
     signup.h \
     silo.h \
+    silobuilding.h \
     storage.h \
+    storagebuilding.h \
     user.h
 
 FORMS += \

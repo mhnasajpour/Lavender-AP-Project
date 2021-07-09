@@ -1,9 +1,12 @@
 #include "user.h"
 
-User::User(QJsonObject _qjo, int _index)
+User::User(QJsonObject _qjo, int _index):
+    storage(_qjo),
+    silo(_qjo)
 {
     qjo = _qjo;
     index = _index;
+    upperBoundExp = (pow(2, qjo["level"].toInt()) - 1) * 10;
 }
 
 QJsonObject User::getQjo()
@@ -16,6 +19,36 @@ int User::getIndex()
     return index;
 }
 
+void User::checkDay()
+{
+    //check finishing upgrade of storage
+    if(storage.getDaysToFinishUpgrading() != 0)
+    {
+        storage.passDayToFinishUpgrading();
+        if(storage.getDaysToFinishUpgrading() == 0)
+            storage.finishUpgrading();
+    }
+
+    //check spoiled milks
+    while(true)
+    {
+        if(storage.getMilk().size() == 0)
+            break;
+        if(storage.getMilk()[0].toInt() + 10 <= getDay())
+            storage.addMilk(-1);
+        else
+            break;
+    }
+
+    //check finishing upgrade of silo
+    if(silo.getDaysToFinishUpgrading() != 0)
+    {
+        silo.passDayToFinishUpgrading();
+        if(silo.getDaysToFinishUpgrading() == 0)
+            silo.finishUpgrading();
+    }
+}
+
 bool User::setUsername(QString username)
 {
     QFile file("Users.json");
@@ -25,7 +58,7 @@ bool User::setUsername(QString username)
     for(int i = 0; i < arrUser.size(); i++)
         if((arrUser[i].toObject())["username"].toString() == username)
             return false;
-    qjo["username"] = QJsonValue(username);
+    qjo["username"] = username;
     return true;
 }
 
@@ -42,7 +75,7 @@ void User::setPassword(QString password)
 
 void User::setName(QString name)
 {
-    qjo["name"] = QJsonValue(name);
+    qjo["name"] = name;
 }
 
 QString User::getName()
@@ -59,7 +92,7 @@ bool User::setEmail(QString email)
     for(int i = 0; i < arrUser.size(); i++)
         if((arrUser[i].toObject())["email"].toString() == email)
             return false;
-    qjo["email"] = QJsonValue(email);
+    qjo["email"] = email;
     return true;
 }
 
@@ -75,16 +108,15 @@ int User::getLevel()
 
 void User::setExp(int add)
 {
-    int upperBoundExp = (powl(2, getLevel()) - 1) * 10;
     if(getExp() + add >= upperBoundExp)
     {
         qjo["level"] = getLevel() + 1;
-        qjo["exp"] = QJsonValue(getExp() + add - upperBoundExp);
-        //checkLevel
+        qjo["exp"] = getExp() + add - upperBoundExp;
+        //checkLevel();
     }
     else
     {
-        qjo["exp"] = QJsonValue(getExp() + add);
+        qjo["exp"] = getExp() + add;
     }
 }
 
@@ -95,7 +127,7 @@ int User::getExp()
 
 void User::changeCoin(int change)
 {
-    qjo["coin"] = QJsonValue(getCoin() + change);
+    qjo["coin"] = getCoin() + change;
 }
 
 int User::getCoin()
@@ -105,13 +137,24 @@ int User::getCoin()
 
 void User::nextDay()
 {
-    qjo["day"] = QJsonValue(getDay() + 1);
-    //checkDay
+    qjo["day"] = getDay() + 1;
+    setExp(1);
+    checkDay();
 }
 
 int User::getDay()
 {
     return qjo["day"].toInt();
+}
+
+StorageBuilding User::getStorage()
+{
+    return storage;
+}
+
+SiloBuilding User::getSilo()
+{
+    return silo;
 }
 
 void User::saveToFile()

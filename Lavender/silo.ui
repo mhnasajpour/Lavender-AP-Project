@@ -368,10 +368,10 @@ padding:6px;
   <widget class="QLabel" name="wheatPic">
    <property name="geometry">
     <rect>
-     <x>712</x>
-     <y>460</y>
-     <width>28</width>
-     <height>28</height>
+     <x>715</x>
+     <y>461</y>
+     <width>26</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="text">
@@ -442,16 +442,19 @@ padding:6px;
      <x>700</x>
      <y>50</y>
      <width>231</width>
-     <height>161</height>
+     <height>141</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>B Kamran</family>
-     <pointsize>12</pointsize>
+     <family>B Homa</family>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>

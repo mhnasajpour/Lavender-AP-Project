@@ -19,6 +19,7 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     root.insert("day", 0);
 
     storage.insert("level", 1);
+    storage.insert("daysToFinishUpgrading", 0);
     storage.insert("usedCapacity", 2);
     storage.insert("shovel", 0);
     storage.insert("nail", 1);
@@ -29,6 +30,7 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     storage.insert("wool", 0);
 
     silo.insert("level", 1);
+    silo.insert("daysToFinishUpgrading", 0);
     silo.insert("wheat", 1);
 
     poultryFarm.insert("level", 0);

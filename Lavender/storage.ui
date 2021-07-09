@@ -631,6 +631,9 @@ padding:6px;
      <height>25</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
@@ -751,7 +754,7 @@ padding:6px;
   <widget class="QLabel" name="milkPic">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>405</x>
      <y>363</y>
      <width>25</width>
      <height>25</height>
@@ -2660,11 +2663,15 @@ padding:6px;
    </property>
    <property name="font">
     <font>
-     <family>B Kamran</family>
-     <pointsize>12</pointsize>
+     <family>B Homa</family>
+     <pointsize>10</pointsize>
      <weight>75</weight>
+     <italic>false</italic>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
