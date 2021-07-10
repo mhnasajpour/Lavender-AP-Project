@@ -55,9 +55,9 @@
         <file>otherPic/storage/continue.png</file>
         <file>otherPic/storage/upgrade.png</file>
         <file>otherPic/storage/siloBack.jpg</file>
-        <file>otherPic/storage/man.png</file>
         <file>otherPic/storage/siloPic.png</file>
         <file>otherPic/storage/wheat.png</file>
+        <file>otherPic/storage/upgrade2.png</file>
     </qresource>
     <qresource prefix="/product">
         <file>otherPic/product/wheatBackground.jpg</file>

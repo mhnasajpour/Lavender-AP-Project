@@ -38,6 +38,11 @@ Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) :
     ui->hayShow->setText(QString::number(storage.getHay()));
     ui->shovelShow->setText(QString::number(storage.getShovel()));
     ui->nailShow->setText(QString::number(storage.getNail()));
+    qDebug() << float(ui->progressBar->value() / ui->progressBar->maximum());
+    if(ui->progressBar->value() * 100 / ui->progressBar->maximum() > 50){
+        ui->progressBar->setAlignment(Qt::AlignRight);
+        ui->progressBar->setAlignment(Qt::AlignVCenter);
+    }
 }
 
 Storage::~Storage()

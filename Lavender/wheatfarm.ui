@@ -37,6 +37,9 @@
    <property name="scaledContents">
     <bool>true</bool>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="shovelReq">
    <property name="geometry">
@@ -320,7 +323,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>761</x>
+     <x>720</x>
      <y>490</y>
      <width>80</width>
      <height>25</height>
@@ -340,7 +343,7 @@ border:2px solid qlineargradient(spread:repeat, x1:0, y1:1, x2:1, y2:1, stop:0 r
 color: rgb(212, 212, 212);</string>
    </property>
    <property name="text">
-    <string>برداشت</string>
+    <string>کاشت</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
@@ -350,7 +353,7 @@ color: rgb(212, 212, 212);</string>
    <property name="geometry">
     <rect>
      <x>680</x>
-     <y>395</y>
+     <y>390</y>
      <width>241</width>
      <height>91</height>
     </rect>
@@ -366,9 +369,7 @@ color: rgb(212, 212, 212);</string>
    </property>
    <property name="text">
     <string>زمین آماده کشت گندم است...
-برای کشت از سیلو
-5  گندم
-برداشت میشود</string>
+مساحت زیر کشت را انتخاب کنید</string>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -429,7 +430,7 @@ color: rgb(212, 212, 212);</string>
   <widget class="QLabel" name="man_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>50</x>
      <y>70</y>
      <width>40</width>
      <height>40</height>
@@ -456,9 +457,9 @@ padding:6px;
   <widget class="QLineEdit" name="eggShow">
    <property name="geometry">
     <rect>
-     <x>35</x>
+     <x>40</x>
      <y>65</y>
-     <width>201</width>
+     <width>171</width>
      <height>50</height>
     </rect>
    </property>
@@ -694,7 +695,7 @@ padding:6px;
     <number>3</number>
    </property>
    <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
    <property name="dragEnabled">
     <bool>false</bool>
@@ -707,6 +708,64 @@ padding:6px;
    </property>
    <property name="clearButtonEnabled">
     <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>490</y>
+     <width>71</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Rounded MT Bold</family>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(132, 83, 46);
+color: rgb(0, 255, 255);
+selection-color: rgb(0, 255, 255);
+selection-background-color: rgb(132, 83, 46);
+</string>
+   </property>
+   <property name="wrapping">
+    <bool>true</bool>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::UpDownArrows</enum>
+   </property>
+   <property name="specialValueText">
+    <string/>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="suffix">
+    <string/>
+   </property>
+   <property name="prefix">
+    <string/>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="value">
+    <number>1000</number>
+   </property>
+   <property name="displayIntegerBase">
+    <number>10</number>
    </property>
   </widget>
   <zorder>label</zorder>
@@ -727,6 +786,7 @@ padding:6px;
   <zorder>continueKey</zorder>
   <zorder>eggShow</zorder>
   <zorder>man_3</zorder>
+  <zorder>spinBox</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>

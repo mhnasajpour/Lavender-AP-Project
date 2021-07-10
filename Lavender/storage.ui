@@ -1955,7 +1955,7 @@ padding:6px;
    <property name="font">
     <font>
      <family>Arial Black</family>
-     <pointsize>8</pointsize>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -2000,7 +2000,7 @@ QProgressBar::chunk {
     <enum>QProgressBar::TopToBottom</enum>
    </property>
    <property name="format">
-    <string>%v/%m  </string>
+    <string>   %v/%m   </string>
    </property>
   </widget>
   <widget class="QLabel" name="wool">

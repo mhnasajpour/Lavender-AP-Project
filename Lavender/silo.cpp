@@ -25,11 +25,14 @@ Silo::Silo(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->upPic2->setHidden(true);
     }
     ui->request->setHidden(true);
-
     ui->level->setText(QString::number(silo.getLevel()));
     ui->progressBar->setMaximum(silo.getMaxCapacity());
     ui->progressBar->setValue(silo.getWheat());
-    ui->wheatShow->setText(QString::number(silo.getWheat()));
+    ui->wheatPic->setGeometry(silo.getWheat() * 254 / silo.getMaxCapacity() + 485, 317, 26, 26);
+    if(ui->wheatPic->x() > 612){
+        ui->progressBar->setAlignment(Qt::AlignRight);
+        ui->progressBar->setAlignment(Qt::AlignVCenter);
+    }
 }
 
 Silo::~Silo()
