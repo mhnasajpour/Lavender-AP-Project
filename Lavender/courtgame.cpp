@@ -42,7 +42,7 @@ void CourtGame::on_storage_clicked()
 
 void CourtGame::on_silo_clicked()
 {
-    Silo *si = new Silo;
+    Silo *si = new Silo(user.getQjo(), user.getIndex());
     si->show();
     close();
 }

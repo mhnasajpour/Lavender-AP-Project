@@ -236,7 +236,7 @@
     </font>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
@@ -514,7 +514,7 @@ padding:6px;
     </font>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
@@ -1053,7 +1053,7 @@ padding:6px;
     </font>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
@@ -1393,7 +1393,7 @@ p, li { white-space: pre-wrap; }
     </font>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
@@ -2253,7 +2253,7 @@ QProgressBar::chunk {
     </font>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);
@@ -2561,7 +2561,7 @@ padding:6px;
     </font>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(189, 189, 189);

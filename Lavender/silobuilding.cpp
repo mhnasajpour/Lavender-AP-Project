@@ -1,8 +1,16 @@
 #include "silobuilding.h"
+#include <QDebug>
 
 QJsonObject SiloBuilding::getQjo()
 {
+    qjo["silo"] = qjoSilo;
+    qjo["storage"] = qjoStorage;
     return qjo;
+}
+
+QJsonObject SiloBuilding::getQjoStorage()
+{
+    return qjoStorage;
 }
 
 QJsonObject SiloBuilding::getQjoSilo()
@@ -56,11 +64,14 @@ int SiloBuilding::getUsedCapacity()
 
 bool SiloBuilding::addNail(int change)
 {
-    if(getUsedCapacity() + change > maxCapacity || getNail() + change < 0)
+    int storageMaxCapacity = 5;
+    for(int i = 2; i <= qjoStorage["level"].toInt(); i++)
+        storageMaxCapacity = ceil(storageMaxCapacity * 1.5);
+
+    if(getUsedCapacity() + change > storageMaxCapacity || getNail() + change < 0)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["nail"] = getNail() + change;
-    qjo["storage"] = qjoStorage;
     return true;
 }
 
@@ -81,7 +92,6 @@ SiloBuilding::SiloBuilding(QJsonObject _qjo)
 void SiloBuilding::passDayToFinishUpgrading()
 {
     qjoSilo["daysToFinishUpgrading"] = getDaysToFinishUpgrading() - 1;
-    qjo["silo"] = qjoSilo;
 }
 
 int SiloBuilding::getDaysToFinishUpgrading()
@@ -107,8 +117,6 @@ void SiloBuilding::startUpgrading()
     qjoSilo["daysToFinishUpgrading"] = 4;
     addNail(-2 * getLevel());
     changeCoin(-100 * pow(getLevel() * 2, 2));
-    qjo["storage"] = qjoStorage;
-    qjo["silo"] = qjoSilo;
 }
 
 void SiloBuilding::finishUpgrading()
@@ -116,7 +124,6 @@ void SiloBuilding::finishUpgrading()
     qjoSilo["level"] = getLevel() + 1;
     maxCapacity *= 2;
     setExp(getLevel() * 2);
-    qjo["silo"] = qjoSilo;
 }
 
 int SiloBuilding::getLevel()
@@ -129,7 +136,6 @@ bool SiloBuilding::addWheat(int change)
     if(getWheat() + change > maxCapacity || getWheat() + change < 0)
         return false;
     qjoSilo["wheat"] = getWheat() + change;
-    qjo["silo"] = qjoSilo;
     return true;
 }
 
