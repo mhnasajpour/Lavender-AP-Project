@@ -19,7 +19,8 @@ SOURCES += \
     silobuilding.cpp \
     storage.cpp \
     storagebuilding.cpp \
-    user.cpp
+    user.cpp \
+    wheatfarm.cpp
 
 HEADERS += \
     courtgame.h \
@@ -31,7 +32,8 @@ HEADERS += \
     silobuilding.h \
     storage.h \
     storagebuilding.h \
-    user.h
+    user.h \
+    wheatfarm.h
 
 FORMS += \
     courtgame.ui \
@@ -40,7 +42,8 @@ FORMS += \
     mainmenu.ui \
     signup.ui \
     silo.ui \
-    storage.ui
+    storage.ui \
+    wheatfarm.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

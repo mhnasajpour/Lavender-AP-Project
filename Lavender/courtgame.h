@@ -22,6 +22,8 @@ private slots:
     void on_storage_clicked();
     void on_silo_clicked();
 
+    void on_wheatFarm_clicked();
+
 private:
     Ui::CourtGame *ui;
     User user;

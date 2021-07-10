@@ -7,6 +7,7 @@
 #include "mainmenu.h"
 #include "storage.h"
 #include "silo.h"
+#include "wheatfarm.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -45,6 +46,14 @@ void CourtGame::on_silo_clicked()
 {
     Silo *si = new Silo(user.getQjo(), user.getIndex());
     si->show();
+    close();
+}
+
+
+void CourtGame::on_wheatFarm_clicked()
+{
+    WheatFarm *wheat = new WheatFarm;
+    wheat->show();
     close();
 }
 

@@ -59,4 +59,11 @@
         <file>otherPic/storage/siloPic.png</file>
         <file>otherPic/storage/wheat.png</file>
     </qresource>
+    <qresource prefix="/product">
+        <file>otherPic/product/wheatBackground.jpg</file>
+        <file>otherPic/product/sunny.png</file>
+        <file>otherPic/product/upgrade.png</file>
+        <file>otherPic/product/board.png</file>
+        <file>otherPic/product/area.png</file>
+    </qresource>
 </RCC>
