@@ -16,6 +16,7 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     ui->setupUi(this);
     ui->villageName->setText(user.getName());
     ui->level->setText(QString::number(user.getLevel()));
+    ui->coinShow->setText(QString::number(user.getCoin()));
     ui->exp->setMaximum((powl(2, user.getLevel()) - 1) * 10);
     ui->exp->setValue(user.getExp());
 }

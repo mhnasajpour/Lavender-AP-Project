@@ -13,6 +13,7 @@ Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) :
 
     if(storage.getDaysToFinishUpgrading() != 0)
     {
+        ui->pushButton->setHidden(true);
         ui->textEdit->setText("انبار در حال ارتقا است\n\n" + QString::number(storage.getDaysToFinishUpgrading()) + " روز باقی مانده است");
     }
     else
@@ -84,6 +85,7 @@ void Storage::on_request_accepted()
     ui->shovelShow->setText(QString::number(storage.getShovel()));
     ui->nailShow->setText(QString::number(storage.getNail()));
     ui->progressBar->setValue(storage.getUsedCapacity());
+    ui->pushButton->setHidden(true);
 }
 
 void Storage::on_request_rejected()

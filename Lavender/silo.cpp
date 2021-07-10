@@ -13,6 +13,7 @@ Silo::Silo(QJsonObject _qjo, int _index, QWidget *parent) :
     if(silo.getDaysToFinishUpgrading() != 0)
     {
         ui->textEdit->setText("سیلو در حال ارتقا است\n\n" + QString::number(silo.getDaysToFinishUpgrading()) + " روز باقی مانده است");
+        ui->pushButton->setHidden(true);
     }
     else
     {
@@ -66,6 +67,7 @@ void Silo::on_request_accepted()
     ui->upPic1->setHidden(true);
     ui->upPic2->setHidden(true);
     ui->textEdit->setHidden(false);
+    ui->pushButton->setHidden(true);
     ui->textEdit->setText("سیلو در حال ارتقا است\n\n" + QString::number(silo.getDaysToFinishUpgrading()) + " روز باقی مانده است");
 }
 
