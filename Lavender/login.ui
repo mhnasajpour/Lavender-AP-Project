@@ -25,6 +25,11 @@
   <property name="windowTitle">
    <string>Login</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed{
+background-color:transparent;
+}</string>
+  </property>
   <widget class="QLineEdit" name="inputUsername">
    <property name="geometry">
     <rect>

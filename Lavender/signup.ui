@@ -25,6 +25,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed{
+background-color:transparent;
+}</string>
+  </property>
   <widget class="QLabel" name="garbage">
    <property name="geometry">
     <rect>

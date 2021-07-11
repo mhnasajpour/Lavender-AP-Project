@@ -19,6 +19,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed{
+background-color:transparent;
+}</string>
+  </property>
   <widget class="QLineEdit" name="nailShow">
    <property name="geometry">
     <rect>
@@ -234,6 +239,9 @@
      <weight>50</weight>
      <bold>false</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
@@ -512,6 +520,9 @@ padding:6px;
      <weight>50</weight>
      <bold>false</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
@@ -1052,6 +1063,9 @@ padding:6px;
      <bold>false</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
    </property>
@@ -1391,6 +1405,9 @@ p, li { white-space: pre-wrap; }
      <weight>50</weight>
      <bold>false</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
@@ -2252,6 +2269,9 @@ QProgressBar::chunk {
      <bold>false</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
    </property>
@@ -2560,6 +2580,9 @@ padding:6px;
      <bold>false</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
    </property>
@@ -2723,8 +2746,8 @@ padding:6px;
   <zorder>woolPic</zorder>
   <zorder>textEdit</zorder>
   <zorder>eggPic</zorder>
-  <zorder>pushButton</zorder>
   <zorder>hayPic</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>

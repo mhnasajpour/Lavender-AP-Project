@@ -28,6 +28,11 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed{
+background-color:transparent;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="dairyFarm">
     <property name="geometry">
@@ -311,6 +316,9 @@
       <bold>false</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -574,6 +582,9 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
@@ -685,6 +696,9 @@ QProgressBar::chunk {
       <bold>true</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -706,6 +720,9 @@ QProgressBar::chunk {
       <width>1031</width>
       <height>630</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -734,6 +751,9 @@ QProgressBar::chunk {
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="autoFillBackground">
      <bool>false</bool>
@@ -1069,6 +1089,9 @@ QProgressBar::chunk {
       <weight>50</weight>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="focusPolicy">
      <enum>Qt::StrongFocus</enum>

@@ -25,6 +25,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed{
+background-color:transparent;
+}</string>
+  </property>
   <widget class="QLabel" name="pic">
    <property name="geometry">
     <rect>
@@ -1187,6 +1192,9 @@ padding: 3px;</string>
      <bold>false</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>
    </property>
@@ -1441,6 +1449,9 @@ border-radius:5px
      <weight>50</weight>
      <bold>false</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>
@@ -1729,6 +1740,9 @@ border-radius:5px
      <weight>50</weight>
      <bold>false</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>

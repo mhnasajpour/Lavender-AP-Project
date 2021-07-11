@@ -19,6 +19,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed{
+background-color:transparent;
+}</string>
+  </property>
   <widget class="QLabel" name="pic">
    <property name="geometry">
     <rect>
@@ -345,6 +350,9 @@ p, li { white-space: pre-wrap; }
      <width>167</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
@@ -851,7 +859,6 @@ QProgressBar::chunk {
   <zorder>man</zorder>
   <zorder>siloPic</zorder>
   <zorder>wheat</zorder>
-  <zorder>pushButton</zorder>
   <zorder>level</zorder>
   <zorder>continuePic</zorder>
   <zorder>continueKey</zorder>
@@ -863,6 +870,7 @@ QProgressBar::chunk {
   <zorder>coinReq</zorder>
   <zorder>textEdit</zorder>
   <zorder>wheatPic</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>
