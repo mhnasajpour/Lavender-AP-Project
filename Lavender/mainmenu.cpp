@@ -3,6 +3,7 @@
 #include "login.h"
 #include "courtgame.h"
 #include "daynight.h"
+#include <QColorDialog>
 
 mainMenu::mainMenu(User _user, QWidget *parent) :
     QWidget(parent),

@@ -12,6 +12,7 @@ SOURCES += \
     courtgame.cpp \
     daynight.cpp \
     hayfarm.cpp \
+    levelup.cpp \
     main.cpp \
     login.cpp \
     mainmenu.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     courtgame.h \
     daynight.h \
     hayfarm.h \
+    levelup.h \
     login.h \
     mainmenu.h \
     signup.h \
@@ -43,6 +45,7 @@ FORMS += \
     courtgame.ui \
     daynight.ui \
     hayfarm.ui \
+    levelup.ui \
     login.ui \
     mainmenu.ui \
     signup.ui \

@@ -66,5 +66,7 @@
         <file>otherPic/product/board.png</file>
         <file>otherPic/product/area.png</file>
         <file>otherPic/product/hayBackground.jpg</file>
+        <file>otherPic/product/angel.png</file>
+        <file>otherPic/product/level.png</file>
     </qresource>
 </RCC>
