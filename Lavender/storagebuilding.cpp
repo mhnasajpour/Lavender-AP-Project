@@ -9,6 +9,7 @@ QJsonObject StorageBuilding::getQjo()
 
 QJsonObject StorageBuilding::getQjoStorage()
 {
+    qjo["storage"] = qjoStorage;
     return qjoStorage;
 }
 
@@ -21,7 +22,7 @@ void StorageBuilding::setExp(int add)
 {
     if(getExp() + add >= upperBoundExp)
     {
-        qjo["level"] = getLevel() + 1;
+        qjo["level"] = getPlayerLevel() + 1;
         qjo["exp"] = getExp() + add - upperBoundExp;
         //checkLevel();
     }

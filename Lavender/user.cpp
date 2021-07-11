@@ -2,7 +2,8 @@
 
 User::User(QJsonObject _qjo, int _index):
     storage(_qjo),
-    silo(_qjo)
+    silo(_qjo),
+    wheatFarm(_qjo)
 {
     qjo = _qjo;
     index = _index;
@@ -48,6 +49,22 @@ void User::checkDay()
         silo.passDayToFinishUpgrading();
         if(silo.getDaysToFinishUpgrading() == 0)
             silo.finishUpgrading();
+    }
+
+    //check finishing upgrade of wheat farm
+    if(wheatFarm.getDaysToFinishUpgrading() != 0)
+    {
+        wheatFarm.passDayToFinishUpgrading();
+        if(wheatFarm.getDaysToFinishUpgrading() == 0)
+            wheatFarm.finishUpgrading();
+    }
+
+    //check planting situation of wheat farm
+    if(wheatFarm.getDaysToFinishPlanting() != 0)
+    {
+        wheatFarm.passDayToFinishPlanting();
+        if(wheatFarm.getDaysToFinishPlanting() == 0)
+            wheatFarm.finishPlanting();
     }
 }
 
@@ -157,6 +174,11 @@ StorageBuilding User::getStorage()
 SiloBuilding User::getSilo()
 {
     return silo;
+}
+
+WheatFarmBuilding User::getWheatFarm()
+{
+    return wheatFarm;
 }
 
 void User::saveToFile()

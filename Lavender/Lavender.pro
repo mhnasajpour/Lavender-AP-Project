@@ -20,7 +20,8 @@ SOURCES += \
     storage.cpp \
     storagebuilding.cpp \
     user.cpp \
-    wheatfarm.cpp
+    wheatfarm.cpp \
+    wheatfarmbuilding.cpp
 
 HEADERS += \
     courtgame.h \
@@ -33,7 +34,8 @@ HEADERS += \
     storage.h \
     storagebuilding.h \
     user.h \
-    wheatfarm.h
+    wheatfarm.h \
+    wheatfarmbuilding.h
 
 FORMS += \
     courtgame.ui \

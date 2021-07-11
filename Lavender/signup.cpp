@@ -49,8 +49,9 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     sheepfold.insert("flag", 1);
 
     wheatFarm.insert("level", 1);
+    wheatFarm.insert("daysToFinishUpgrading", 0);
     wheatFarm.insert("plantingArea", 5);
-    wheatFarm.insert("timeProcess", 0);
+    wheatFarm.insert("daysToFinishPlanting", 0);
     wheatFarm.insert("flag", 1);
 
     hayFarm.insert("level", 0);

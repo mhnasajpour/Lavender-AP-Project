@@ -8,6 +8,7 @@
 #include <QJsonObject>
 #include "storagebuilding.h"
 #include "silobuilding.h"
+#include "wheatfarmbuilding.h"
 
 class User
 {
@@ -17,6 +18,7 @@ private:
     int upperBoundExp;
     StorageBuilding storage;
     SiloBuilding silo;
+    WheatFarmBuilding wheatFarm;
 public:
     User(QJsonObject _qjo, int _index);
     QJsonObject getQjo();
@@ -39,10 +41,10 @@ public:
     int getDay();
     StorageBuilding getStorage();
     SiloBuilding getSilo();
+    WheatFarmBuilding getWheatFarm();
     /*PoultryFarm getPoultryFarm ();
     DairyFarm getDairyFarm ();
     Sheepfold getSheepfold ();
-    WheatFarm getWheatFarm ();
     HayFarm getHayFarm ();
     void buy (QString str, int num);
     void sell (QString str, int num);

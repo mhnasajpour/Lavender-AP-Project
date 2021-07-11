@@ -10,11 +10,15 @@ QJsonObject SiloBuilding::getQjo()
 
 QJsonObject SiloBuilding::getQjoStorage()
 {
+    qjo["silo"] = qjoSilo;
+    qjo["storage"] = qjoStorage;
     return qjoStorage;
 }
 
 QJsonObject SiloBuilding::getQjoSilo()
 {
+    qjo["silo"] = qjoSilo;
+    qjo["storage"] = qjoStorage;
     return qjoSilo;
 }
 
@@ -27,7 +31,7 @@ void SiloBuilding::setExp(int add)
 {
     if(getExp() + add >= upperBoundExp)
     {
-        qjo["level"] = getLevel() + 1;
+        qjo["level"] = getPlayerLevel() + 1;
         qjo["exp"] = getExp() + add - upperBoundExp;
         //checkLevel();
     }
