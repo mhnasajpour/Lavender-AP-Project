@@ -24,7 +24,7 @@
 background-color:transparent;
 }</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="pic">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -63,7 +63,7 @@ background-color:transparent;
     </font>
    </property>
    <property name="text">
-    <string>6</string>
+    <string>1</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -86,7 +86,7 @@ background-color:transparent;
     </font>
    </property>
    <property name="text">
-    <string>50</string>
+    <string>5</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -156,7 +156,7 @@ background-color:transparent;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="upPic2_2">
+  <widget class="QLabel" name="upPic1">
    <property name="geometry">
     <rect>
      <x>512</x>
@@ -222,7 +222,7 @@ p, li { white-space: pre-wrap; }
     <set>Qt::NoTextInteraction</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="sun">
    <property name="geometry">
     <rect>
      <x>780</x>
@@ -241,7 +241,7 @@ p, li { white-space: pre-wrap; }
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="level">
    <property name="geometry">
     <rect>
      <x>833</x>
@@ -269,7 +269,7 @@ p, li { white-space: pre-wrap; }
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="upgradeKey">
    <property name="geometry">
     <rect>
      <x>800</x>
@@ -309,7 +309,7 @@ p, li { white-space: pre-wrap; }
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="man_2">
+  <widget class="QLabel" name="board">
    <property name="geometry">
     <rect>
      <x>591</x>
@@ -325,7 +325,7 @@ p, li { white-space: pre-wrap; }
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="boardKey">
    <property name="geometry">
     <rect>
      <x>720</x>
@@ -354,7 +354,7 @@ color: rgb(212, 212, 212);</string>
     <string>کاشت</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="description">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -435,7 +435,7 @@ color: rgb(212, 212, 212);</string>
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="man_3">
+  <widget class="QLabel" name="areaIcon">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -462,7 +462,7 @@ padding:6px;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="eggShow">
+  <widget class="QLineEdit" name="area">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -782,24 +782,24 @@ selection-background-color: rgb(132, 83, 46);
     <number>10</number>
    </property>
   </widget>
-  <zorder>label</zorder>
+  <zorder>pic</zorder>
   <zorder>man</zorder>
   <zorder>shovelReq</zorder>
   <zorder>coinReq</zorder>
   <zorder>upPic2</zorder>
   <zorder>request</zorder>
-  <zorder>upPic2_2</zorder>
+  <zorder>upPic1</zorder>
   <zorder>textEdit</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>man_2</zorder>
-  <zorder>pushButton_2</zorder>
-  <zorder>pushButton_3</zorder>
+  <zorder>sun</zorder>
+  <zorder>level</zorder>
+  <zorder>upgradeKey</zorder>
+  <zorder>board</zorder>
+  <zorder>boardKey</zorder>
+  <zorder>description</zorder>
   <zorder>continuePic</zorder>
   <zorder>continueKey</zorder>
-  <zorder>eggShow</zorder>
-  <zorder>man_3</zorder>
+  <zorder>area</zorder>
+  <zorder>areaIcon</zorder>
   <zorder>spinBox</zorder>
  </widget>
  <resources>

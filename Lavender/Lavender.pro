@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     courtgame.cpp \
     daynight.cpp \
+    hayfarm.cpp \
     main.cpp \
     login.cpp \
     mainmenu.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     courtgame.h \
     daynight.h \
+    hayfarm.h \
     login.h \
     mainmenu.h \
     signup.h \
@@ -40,6 +42,7 @@ HEADERS += \
 FORMS += \
     courtgame.ui \
     daynight.ui \
+    hayfarm.ui \
     login.ui \
     mainmenu.ui \
     signup.ui \

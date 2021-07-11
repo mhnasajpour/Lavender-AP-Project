@@ -65,5 +65,6 @@
         <file>otherPic/product/upgrade.png</file>
         <file>otherPic/product/board.png</file>
         <file>otherPic/product/area.png</file>
+        <file>otherPic/product/hayBackground.jpg</file>
     </qresource>
 </RCC>
