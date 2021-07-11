@@ -1225,8 +1225,7 @@ border-radius: 9px
     <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(189, 189, 189);
-</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>

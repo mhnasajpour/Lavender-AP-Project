@@ -1,4 +1,5 @@
 #include "wheatfarmbuilding.h"
+#include <QDebug>
 
 QJsonObject WheatFarmBuilding::getQjo()
 {
@@ -58,7 +59,7 @@ int WheatFarmBuilding::getExp()
 
 void WheatFarmBuilding::changeCoin(int change)
 {
-    qjo["coin"] = getCoin() + change;
+    qjo["coin"] = getCoin() + change;    
 }
 
 int WheatFarmBuilding::getCoin()
@@ -143,7 +144,7 @@ void WheatFarmBuilding::startUpgrading()
 {
     if(!canUpgrade())
         return;
-    qjoWheatFarm["daysToFinishUpgrading"] = maxPlantingArea * 2;
+    qjoWheatFarm["daysToFinishUpgrading"] = 2;
     addShovel(maxPlantingArea);
     changeCoin(-5 * maxPlantingArea);
 }
@@ -172,12 +173,12 @@ int WheatFarmBuilding::getPlantingArea()
 
 void WheatFarmBuilding::setFlag(int flag)
 {
-    qjoWheatFarm["falg"] = flag;
+    qjoWheatFarm["flag"] = flag;
 }
 
 int WheatFarmBuilding::getFlag()
 {
-    return qjoWheatFarm["falg"].toInt();
+    return qjoWheatFarm["flag"].toInt();
 }
 
 void WheatFarmBuilding::passDayToFinishPlanting()

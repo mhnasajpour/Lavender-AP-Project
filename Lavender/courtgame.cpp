@@ -21,6 +21,15 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     ui->coinShow->setText(QString::number(user.getCoin()));
     ui->exp->setMaximum((powl(2, user.getLevel()) - 1) * 10);
     ui->exp->setValue(user.getExp());
+
+    if(user.getWheatFarm().getFlag() == 1)
+        ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/1.png"));
+    else if(user.getWheatFarm().getFlag() == 2 && user.getWheatFarm().getDaysToFinishPlanting() == 2)
+        ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/2.png"));
+    else if(user.getWheatFarm().getFlag() == 2 && user.getWheatFarm().getDaysToFinishPlanting() == 1)
+        ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/3.png"));
+    else if(user.getWheatFarm().getFlag() == 3)
+        ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/4.png"));
 }
 
 CourtGame::~CourtGame()
@@ -53,7 +62,7 @@ void CourtGame::on_silo_clicked()
 
 void CourtGame::on_wheatFarm_clicked()
 {
-    WheatFarm *wheat = new WheatFarm;
+    WheatFarm *wheat = new WheatFarm(user.getQjo(), user.getIndex());
     wheat->show();
     close();
 }

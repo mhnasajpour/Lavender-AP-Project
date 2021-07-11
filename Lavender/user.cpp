@@ -66,6 +66,7 @@ void User::checkDay()
         if(wheatFarm.getDaysToFinishPlanting() == 0)
             wheatFarm.finishPlanting();
     }
+    qjo["wheatFarm"] = wheatFarm.getQjoWheatFarm();
 }
 
 bool User::setUsername(QString username)

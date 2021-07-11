@@ -132,6 +132,9 @@ void mainMenu::on_nextDay_clicked()
     user.nextDay();
     DayNight dn;
     dn.exec();
+    ui->levelShow->setText(QString::number(user.getLevel()));
+    ui->expShow->setText(QString::number(user.getExp()));
+    ui->coinShow->setText(QString::number(user.getCoin()));
 }
 
 void mainMenu::on_exitKey_clicked()
