@@ -24,6 +24,10 @@ private slots:
     void on_wheatFarm_clicked();
     void on_hayFarm_clicked();
 
+    void on_poultryFarm_clicked();
+
+    void on_dairyFarm_clicked();
+
 private:
     Ui::CourtGame *ui;
     User user;

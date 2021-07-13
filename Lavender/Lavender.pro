@@ -10,12 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     courtgame.cpp \
+    dairyfarm.cpp \
     daynight.cpp \
     hayfarm.cpp \
     levelup.cpp \
     main.cpp \
     login.cpp \
     mainmenu.cpp \
+    poultryfarm.cpp \
     signup.cpp \
     silo.cpp \
     silobuilding.cpp \
@@ -27,11 +29,13 @@ SOURCES += \
 
 HEADERS += \
     courtgame.h \
+    dairyfarm.h \
     daynight.h \
     hayfarm.h \
     levelup.h \
     login.h \
     mainmenu.h \
+    poultryfarm.h \
     signup.h \
     silo.h \
     silobuilding.h \
@@ -43,11 +47,13 @@ HEADERS += \
 
 FORMS += \
     courtgame.ui \
+    dairyfarm.ui \
     daynight.ui \
     hayfarm.ui \
     levelup.ui \
     login.ui \
     mainmenu.ui \
+    poultryfarm.ui \
     signup.ui \
     silo.ui \
     storage.ui \

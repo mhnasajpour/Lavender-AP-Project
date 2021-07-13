@@ -9,6 +9,8 @@
 #include "silo.h"
 #include "wheatfarm.h"
 #include "hayfarm.h"
+#include "poultryfarm.h"
+#include "dairyfarm.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -72,6 +74,22 @@ void CourtGame::on_hayFarm_clicked()
 {
     hayFarm *hay = new hayFarm;
     hay->show();
+    close();
+}
+
+
+void CourtGame::on_poultryFarm_clicked()
+{
+    PoultryFarm *p = new PoultryFarm;
+    p->show();
+    close();
+}
+
+
+void CourtGame::on_dairyFarm_clicked()
+{
+    DairyFarm *df = new DairyFarm;
+    df->show();
     close();
 }
 

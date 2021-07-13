@@ -66,7 +66,22 @@
         <file>otherPic/product/board.png</file>
         <file>otherPic/product/area.png</file>
         <file>otherPic/product/hayBackground.jpg</file>
-        <file>otherPic/product/angel.png</file>
-        <file>otherPic/product/level.png</file>
+        <file>otherPic/product/sun.png</file>
+    </qresource>
+    <qresource prefix="/animal">
+        <file>otherPic/animals/upgrade.png</file>
+        <file>otherPic/animals/capacitySize.jpg</file>
+        <file>otherPic/animals/cow1.png</file>
+        <file>otherPic/animals/cow2.png</file>
+        <file>otherPic/animals/poultry1.png</file>
+        <file>otherPic/animals/poultry2.png</file>
+        <file>otherPic/animals/sheep1.png</file>
+        <file>otherPic/animals/sheep2.png</file>
+        <file>otherPic/animals/poultryBackground.png</file>
+        <file>otherPic/animals/cowBackground.png</file>
+        <file>otherPic/animals/capacitySize2.png</file>
+        <file>otherPic/animals/level.png</file>
+        <file>otherPic/animals/doorClose.png</file>
+        <file>otherPic/animals/doorOpen.png</file>
     </qresource>
 </RCC>

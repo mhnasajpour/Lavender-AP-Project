@@ -62,20 +62,20 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="angel">
+  <widget class="QLabel" name="sun">
    <property name="geometry">
     <rect>
-     <x>799</x>
-     <y>40</y>
-     <width>181</width>
-     <height>181</height>
+     <x>730</x>
+     <y>0</y>
+     <width>271</width>
+     <height>271</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="pic.qrc">:/product/otherPic/product/angel.png</pixmap>
+    <pixmap resource="pic.qrc">:/product/otherPic/product/sun.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -351,8 +351,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="level">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>70</y>
+     <x>820</x>
+     <y>80</y>
      <width>90</width>
      <height>100</height>
     </rect>
@@ -364,7 +364,7 @@ p, li { white-space: pre-wrap; }
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(1, 81, 134);</string>
+    <string notr="true">color: rgb(170, 0, 0);</string>
    </property>
    <property name="text">
     <string>27</string>
@@ -379,7 +379,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="upgradeKey">
    <property name="geometry">
     <rect>
-     <x>680</x>
+     <x>810</x>
      <y>50</y>
      <width>111</width>
      <height>141</height>
@@ -404,13 +404,13 @@ p, li { white-space: pre-wrap; }
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(1, 81, 134);</string>
+    <string notr="true">color: rgb(170, 0, 0);</string>
    </property>
    <property name="text">
     <string>
 
 
-ارتقای ساختمان</string>
+ارتقای مزرعه</string>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -438,16 +438,14 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="areaIcon">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>95</y>
+     <x>70</x>
+     <y>107</y>
      <width>40</width>
      <height>40</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 127);
-color: rgb(0, 0, 0);
-border-radius:5px;
+    <string notr="true">background-color: transparent;
 padding:6px;
 
 </string>
@@ -491,26 +489,7 @@ padding:6px;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>0</y>
-     <width>341</width>
-     <height>251</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="pic.qrc">:/product/otherPic/product/level.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="boardKey_2">
+  <widget class="QPushButton" name="boardKey">
    <property name="geometry">
     <rect>
      <x>720</x>
@@ -542,11 +521,11 @@ color: rgb(212, 212, 212);</string>
     <string>کاشت</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="area_2">
+  <widget class="QLineEdit" name="area">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>90</y>
+     <x>60</x>
+     <y>100</y>
      <width>171</width>
      <height>50</height>
     </rect>
@@ -569,8 +548,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -607,8 +586,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -627,8 +606,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -667,8 +646,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -705,8 +684,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -725,8 +704,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -765,8 +744,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -803,8 +782,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -823,8 +802,8 @@ color: rgb(212, 212, 212);</string>
          <gradientstop position="0.000000000000000">
           <color alpha="255">
            <red>255</red>
-           <green>255</green>
-           <blue>127</blue>
+           <green>170</green>
+           <blue>0</blue>
           </color>
          </gradientstop>
          <gradientstop position="1.000000000000000">
@@ -865,7 +844,7 @@ color: rgb(212, 212, 212);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(170, 0, 0);
-background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 255, 127, 255), stop:1 rgba(255, 255, 0, 255));
+background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 170, 0, 255), stop:1 rgba(255, 255, 0, 255));
 border:5px solid rgb(170, 0, 0);
 border-radius:13px;
 padding:6px;
@@ -900,9 +879,36 @@ padding:6px;
     <bool>false</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="level_2">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>400</y>
+     <width>90</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ravie</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>27</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <zorder>pic</zorder>
-  <zorder>area_2</zorder>
-  <zorder>label</zorder>
+  <zorder>area</zorder>
   <zorder>continuePic</zorder>
   <zorder>man</zorder>
   <zorder>board</zorder>
@@ -916,10 +922,11 @@ padding:6px;
   <zorder>continueKey</zorder>
   <zorder>areaIcon</zorder>
   <zorder>description</zorder>
-  <zorder>angel</zorder>
+  <zorder>sun</zorder>
   <zorder>upgradeKey</zorder>
   <zorder>level</zorder>
-  <zorder>boardKey_2</zorder>
+  <zorder>boardKey</zorder>
+  <zorder>level_2</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>
