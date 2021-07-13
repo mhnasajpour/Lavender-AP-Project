@@ -12,8 +12,8 @@ WheatFarm::WheatFarm(QJsonObject _qjo, int _index, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->level->setText(QString::number(wheatFarm.getLevel()));
-    ui->area->setText("مساحت زیر کشت  " + QString::number(wheatFarm.getMaxPlantingArea()));
+    ui->level->setText(QString::number(wheatFarm.getLevelFarm()));
+    ui->area->setText("مساحت مزرعه: " + QString::number(wheatFarm.getMaxArea()) + " هکتار");
 
     if(wheatFarm.getDaysToFinishUpgrading() != 0)
     {
@@ -22,8 +22,8 @@ WheatFarm::WheatFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->board->setHidden(true);
         ui->boardKey->setHidden(true);
         ui->spinBox->setHidden(true);
-        ui->textEdit->setText("مزرعه در حال ارتقا است\n\n" + QString::number(wheatFarm.getDaysToFinishUpgrading()) + " روز باقی مانده است");
         ui->request->setHidden(true);
+        ui->textEdit->setText("مزرعه در حال ارتقا است\n\n" + QString::number(wheatFarm.getDaysToFinishUpgrading()) + " روز باقی مانده است");
     }
     else
     {
@@ -38,7 +38,7 @@ WheatFarm::WheatFarm(QJsonObject _qjo, int _index, QWidget *parent) :
 
     if(wheatFarm.getFlag() == 1)
     {
-        ui->spinBox->setMaximum(std::min(wheatFarm.getMaxPlantingArea(), wheatFarm.getWheat()));
+        ui->spinBox->setMaximum(std::min(wheatFarm.getMaxArea(), wheatFarm.getWheat()));
         ui->spinBox->setValue(-1);
     }
     else if(wheatFarm.getFlag() == 2)
@@ -97,7 +97,7 @@ void WheatFarm::on_boardKey_clicked()
             ui->spinBox->setHidden(false);
             ui->boardKey->setText("کاشت");
             ui->boardKey->setGeometry(720, 490, 80, 25);
-            ui->spinBox->setMaximum(std::min(wheatFarm.getMaxPlantingArea(), wheatFarm.getWheat()));
+            ui->spinBox->setMaximum(std::min(wheatFarm.getMaxArea(), wheatFarm.getWheat()));
             ui->spinBox->setValue(-1);
             ui->description->setText("زمین آماده کشت گندم است...\nمساحت زیر کشت را انتخاب کنید");
             ui->upgradeKey->setHidden(false);
@@ -123,8 +123,8 @@ void WheatFarm::on_upgradeKey_clicked()
     ui->man->setHidden(false);
     if(wheatFarm.canUpgrade())
     {
-        ui->coinReq->setText(QString::number(wheatFarm.getMaxPlantingArea() * 5));
-        ui->shovelReq->setText(QString::number(wheatFarm.getMaxPlantingArea()));
+        ui->coinReq->setText(QString::number(wheatFarm.getMaxArea() * 5));
+        ui->shovelReq->setText(QString::number(wheatFarm.getMaxArea()));
 
         ui->coinReq->setHidden(false);
         ui->shovelReq->setHidden(false);

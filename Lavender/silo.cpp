@@ -25,10 +25,10 @@ Silo::Silo(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->upPic2->setHidden(true);
     }
     ui->request->setHidden(true);
-    ui->level->setText(QString::number(silo.getLevel()));
-    ui->progressBar->setMaximum(silo.getMaxCapacity());
+    ui->level->setText(QString::number(silo.getLevelSilo()));
+    ui->progressBar->setMaximum(silo.getMaxCapacitySilo());
     ui->progressBar->setValue(silo.getWheat());
-    ui->wheatPic->setGeometry(silo.getWheat() * 254 / silo.getMaxCapacity() + 485, 317, 26, 26);
+    ui->wheatPic->setGeometry(silo.getWheat() * 254 / silo.getMaxCapacitySilo() + 485, 317, 26, 26);
     if(ui->wheatPic->x() > 612){
         ui->progressBar->setAlignment(Qt::AlignRight);
         ui->progressBar->setAlignment(Qt::AlignVCenter);
@@ -45,8 +45,8 @@ void Silo::on_pushButton_clicked()
     ui->man->setHidden(false);
     if(silo.canUpgrade())
     {
-        ui->coinReq->setText(QString::number(100 * pow(silo.getLevel() * 2, 2)));
-        ui->nailReq->setText(QString::number(2 * silo.getLevel()));
+        ui->coinReq->setText(QString::number(100 * pow(silo.getLevelSilo() * 2, 2)));
+        ui->nailReq->setText(QString::number(2 * silo.getLevelSilo()));
 
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);

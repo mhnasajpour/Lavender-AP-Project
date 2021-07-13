@@ -1,24 +1,20 @@
 #ifndef USER_H
 #define USER_H
 
-#include <QFile>
-#include <QString>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
+#include "baseuser.h"
 #include "storagebuilding.h"
 #include "silobuilding.h"
 #include "wheatfarmbuilding.h"
+#include "hayfarmbuilding.h"
 
-class User
+class User: public BaseUser
 {
 private:
-    QJsonObject qjo;
     int index;
-    int upperBoundExp;
     StorageBuilding storage;
     SiloBuilding silo;
     WheatFarmBuilding wheatFarm;
+    HayFarmBuilding hayFarm;
 public:
     User(QJsonObject _qjo, int _index);
     QJsonObject getQjo();
@@ -32,20 +28,14 @@ public:
     QString getName();
     bool setEmail(QString);
     QString getEmail();
-    int getLevel();
-    void setExp(int);
-    int getExp();
-    void changeCoin(int);
-    int getCoin();
     void nextDay();
-    int getDay();
     StorageBuilding getStorage();
     SiloBuilding getSilo();
     WheatFarmBuilding getWheatFarm();
+    HayFarmBuilding getHayFarm();
     /*PoultryFarm getPoultryFarm ();
     DairyFarm getDairyFarm ();
     Sheepfold getSheepfold ();
-    HayFarm getHayFarm ();
     void buy (QString str, int num);
     void sell (QString str, int num);
     ~User();*/

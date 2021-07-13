@@ -3,7 +3,6 @@
 #include "login.h"
 #include "courtgame.h"
 #include "daynight.h"
-#include <QColorDialog>
 
 mainMenu::mainMenu(User _user, QWidget *parent) :
     QWidget(parent),
@@ -12,7 +11,7 @@ mainMenu::mainMenu(User _user, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->levelShow->setText(QString::number(user.getLevel()));
+    ui->levelShow->setText(QString::number(user.getLevelPlayer()));
     ui->expShow->setText(QString::number(user.getExp()));
     ui->coinShow->setText(QString::number(user.getCoin()));
 
@@ -133,7 +132,7 @@ void mainMenu::on_nextDay_clicked()
     user.nextDay();
     DayNight dn;
     dn.exec();
-    ui->levelShow->setText(QString::number(user.getLevel()));
+    ui->levelShow->setText(QString::number(user.getLevelPlayer()));
     ui->expShow->setText(QString::number(user.getExp()));
     ui->coinShow->setText(QString::number(user.getCoin()));
 }

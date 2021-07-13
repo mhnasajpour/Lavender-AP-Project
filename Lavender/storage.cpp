@@ -29,8 +29,8 @@ Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) :
     }
     ui->request->setHidden(true);
 
-    ui->level->setText(QString::number(storage.getLevel()));
-    ui->progressBar->setMaximum(storage.getMaxCapacity());
+    ui->level->setText(QString::number(storage.getLevelStorage()));
+    ui->progressBar->setMaximum(storage.getMaxCapacityStorage());
     ui->progressBar->setValue(storage.getUsedCapacity());
     ui->eggShow->setText(QString::number(storage.getEgg()));
     ui->milkShow->setText(QString::number(storage.getMilk().size()));
@@ -54,9 +54,9 @@ void Storage::on_pushButton_clicked()
     ui->man->setHidden(false);
     if(storage.canUpgrade())
     {
-        ui->coinReq->setText(QString::number(pow(storage.getLevel(), 3) * 10));
-        ui->nailReq->setText(QString::number(storage.getLevel()));
-        ui->shovelReq->setText(QString::number(storage.getLevel() - 1));
+        ui->coinReq->setText(QString::number(pow(storage.getLevelStorage(), 3) * 10));
+        ui->nailReq->setText(QString::number(storage.getLevelStorage()));
+        ui->shovelReq->setText(QString::number(storage.getLevelStorage() - 1));
 
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);

@@ -1,45 +1,21 @@
 #ifndef SILOBUILDING_H
 #define SILOBUILDING_H
 
-#include <QFile>
-#include <QString>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
+#include "basesilo.h"
+#include "baseupgrade.h"
 
-class SiloBuilding
+class SiloBuilding: public BaseSilo, public BaseUpgrade
 {
-private:
-    QJsonObject qjo;
-    QJsonObject qjoStorage;
-    QJsonObject qjoSilo;
-    int maxCapacity;
-    int upperBoundExp;
 public:
+    SiloBuilding(QJsonObject);
     QJsonObject getQjo();
     QJsonObject getQjoStorage();
     QJsonObject getQjoSilo();
-    int getPlayerLevel();
-    void setExp(int);
-    int getExp();
-    void changeCoin(int);
-    int getCoin();
-    int getDay();
-
-    int getUsedCapacity();
-    bool addNail(int);
-    int getNail();
-
-    SiloBuilding(QJsonObject);
     void passDayToFinishUpgrading();
     int getDaysToFinishUpgrading();
     bool canUpgrade();
     void startUpgrading();
     void finishUpgrading();
-    int getLevel();
-    bool addWheat(int);
-    int getWheat();
-    int getMaxCapacity();
 };
 
 #endif // SILOBUILDING_H

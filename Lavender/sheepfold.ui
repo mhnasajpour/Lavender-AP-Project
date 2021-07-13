@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed{
+	background-color: transparent;
+}
+</string>
+  </property>
   <widget class="QLabel" name="pic">
    <property name="geometry">
     <rect>
@@ -26,7 +32,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../Downloads/YOU HAVE PUT MORE JOY IN MY HEART than they have when their grain and wine abound, Psalm 4 7_.jpg</pixmap>
+    <pixmap resource="pic.qrc">:/animal/otherPic/animals/sheepBackground.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

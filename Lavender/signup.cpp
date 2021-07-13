@@ -50,14 +50,18 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
 
     wheatFarm.insert("level", 1);
     wheatFarm.insert("daysToFinishUpgrading", 0);
-    wheatFarm.insert("plantingArea", 5);
+    wheatFarm.insert("plantingArea", 0);
     wheatFarm.insert("daysToFinishPlanting", 0);
     wheatFarm.insert("flag", 1);
 
     hayFarm.insert("level", 0);
-    hayFarm.insert("plantingArea", 4);
-    hayFarm.insert("timeProcess", 0);
-    hayFarm.insert("flag", 1);
+    hayFarm.insert("daysToFinishUpgrading", 0);
+    hayFarm.insert("daysToFinishEstablishing", 0);
+    hayFarm.insert("plantingArea", 0);
+    hayFarm.insert("daysToFinishPlanting", 0);
+    hayFarm.insert("plowingArea", 0);
+    hayFarm.insert("daysToFinishPlowing", 0);
+    hayFarm.insert("flag", 4);
 
     root.insert("storage", storage);
     root.insert("silo", silo);
@@ -166,6 +170,8 @@ void Signup::on_acceptKey_clicked()
         ui->inputPassword->setText("");
         ui->inputRepeat->setPlaceholderText("not same");
         ui->inputRepeat->setText("");
+        ui->eye1->setHidden(true);
+        ui->eye2->setHidden(true);
         isGood = false;
     }
     if(check(ui->inputUsername->text(), ui->inputEmail->text()) != 3)

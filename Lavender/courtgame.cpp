@@ -20,9 +20,9 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
 {
     ui->setupUi(this);
     ui->villageName->setText(user.getName());
-    ui->level->setText(QString::number(user.getLevel()));
+    ui->level->setText(QString::number(user.getLevelPlayer()));
     ui->coinShow->setText(QString::number(user.getCoin()));
-    ui->exp->setMaximum((powl(2, user.getLevel()) - 1) * 10);
+    ui->exp->setMaximum((powl(2, user.getLevelPlayer()) - 1) * 10);
     ui->exp->setValue(user.getExp());
 
     if(user.getWheatFarm().getFlag() == 1)
@@ -33,6 +33,25 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
         ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/3.png"));
     else if(user.getWheatFarm().getFlag() == 3)
         ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/4.png"));
+
+    if(user.getHayFarm().getFlag() == 4)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay1.png"));
+    else if(user.getHayFarm().getFlag() == 5)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay1.png"));
+    else if(user.getHayFarm().getFlag() == 1)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay2.png"));
+    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 5)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay3.png"));
+    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 4)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay4.png"));
+    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 3)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay5.png"));
+    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 2)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay6.png"));
+    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 1)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay7.png"));
+    else if(user.getHayFarm().getFlag() == 3)
+        ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay8.png"));
 }
 
 CourtGame::~CourtGame()
@@ -54,14 +73,12 @@ void CourtGame::on_storage_clicked()
     close();
 }
 
-
 void CourtGame::on_silo_clicked()
 {
     Silo *si = new Silo(user.getQjo(), user.getIndex());
     si->show();
     close();
 }
-
 
 void CourtGame::on_wheatFarm_clicked()
 {
@@ -70,14 +87,12 @@ void CourtGame::on_wheatFarm_clicked()
     close();
 }
 
-
 void CourtGame::on_hayFarm_clicked()
 {
     hayFarm *hay = new hayFarm;
     hay->show();
     close();
 }
-
 
 void CourtGame::on_poultryFarm_clicked()
 {
@@ -86,7 +101,6 @@ void CourtGame::on_poultryFarm_clicked()
     close();
 }
 
-
 void CourtGame::on_dairyFarm_clicked()
 {
     DairyFarm *df = new DairyFarm;
@@ -94,11 +108,9 @@ void CourtGame::on_dairyFarm_clicked()
     close();
 }
 
-
 void CourtGame::on_sheepfold_clicked()
 {
     Sheepfold *shp = new Sheepfold;
     shp->show();
     close();
 }
-

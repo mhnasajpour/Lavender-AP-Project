@@ -1,19 +1,21 @@
 #include "user.h"
 
 User::User(QJsonObject _qjo, int _index):
+    BaseUser(_qjo),
     storage(_qjo),
     silo(_qjo),
-    wheatFarm(_qjo)
+    wheatFarm(_qjo),
+    hayFarm(_qjo)
 {
-    qjo = _qjo;
     index = _index;
-    upperBoundExp = (pow(2, qjo["level"].toInt()) - 1) * 10;
 }
 
 QJsonObject User::getQjo()
 {
     qjo["storage"] = storage.getQjoStorage();
     qjo["silo"] = silo.getQjoSilo();
+    qjo["wheatFarm"] = wheatFarm.getQjoFarm();
+    qjo["hayFarm"] = hayFarm.getQjoFarm();
     return qjo;
 }
 
@@ -66,7 +68,30 @@ void User::checkDay()
         if(wheatFarm.getDaysToFinishPlanting() == 0)
             wheatFarm.finishPlanting();
     }
-    qjo["wheatFarm"] = wheatFarm.getQjoWheatFarm();
+
+    //check finishing upgrade of hay farm
+    if(hayFarm.getDaysToFinishUpgrading() != 0)
+    {
+        hayFarm.passDayToFinishUpgrading();
+        if(hayFarm.getDaysToFinishUpgrading() == 0)
+            hayFarm.finishUpgrading();
+    }
+
+    //check planting situation of hay farm
+    if(hayFarm.getDaysToFinishPlanting() != 0)
+    {
+        hayFarm.passDayToFinishPlanting();
+        if(hayFarm.getDaysToFinishPlanting() == 0)
+            hayFarm.finishPlanting();
+    }
+
+    //check plowing situation of hay farm
+    if(hayFarm.getDaysToFinishPlowing() != 0)
+    {
+        hayFarm.passDayToFinishPlowing();
+        if(hayFarm.getDaysToFinishPlowing() == 0)
+            hayFarm.finishPlowing();
+    }
 }
 
 bool User::setUsername(QString username)
@@ -121,50 +146,11 @@ QString User::getEmail()
     return qjo["email"].toString();
 }
 
-int User::getLevel()
-{
-    return qjo["level"].toInt();
-}
-
-void User::setExp(int add)
-{
-    if(getExp() + add >= upperBoundExp)
-    {
-        qjo["level"] = getLevel() + 1;
-        qjo["exp"] = getExp() + add - upperBoundExp;
-        //checkLevel();
-    }
-    else
-    {
-        qjo["exp"] = getExp() + add;
-    }
-}
-
-int User::getExp()
-{
-    return qjo["exp"].toInt();
-}
-
-void User::changeCoin(int change)
-{
-    qjo["coin"] = getCoin() + change;
-}
-
-int User::getCoin()
-{
-    return qjo["coin"].toInt();
-}
-
 void User::nextDay()
 {
     qjo["day"] = getDay() + 1;
     setExp(1);
     checkDay();
-}
-
-int User::getDay()
-{
-    return qjo["day"].toInt();
 }
 
 StorageBuilding User::getStorage()
@@ -180,6 +166,11 @@ SiloBuilding User::getSilo()
 WheatFarmBuilding User::getWheatFarm()
 {
     return wheatFarm;
+}
+
+HayFarmBuilding User::getHayFarm()
+{
+    return hayFarm;
 }
 
 void User::saveToFile()

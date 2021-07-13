@@ -8,7 +8,7 @@ DayNight::DayNight(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QMovie *m = new QMovie(":/LevelUp/otherPic/levelUp.gif");
+    QMovie *m = new QMovie(":/nextDay/otherPic/dayNight.gif");
     ui->label->setMovie(m);
     m->start();
     connect(m, SIGNAL(finished()), this, SLOT(close()));

@@ -78,6 +78,7 @@ void Login::on_enterKey_clicked()
         ui->inputUsername->setPlaceholderText("invalid");
         ui->inputPassword->setText("");
         ui->inputPassword->setPlaceholderText("invalid");
+        ui->eye->setHidden(true);
     }
 }
 

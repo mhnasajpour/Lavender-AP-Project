@@ -9,10 +9,15 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    basefarm.cpp \
+    basesilo.cpp \
+    basestorage.cpp \
+    baseuser.cpp \
     courtgame.cpp \
     dairyfarm.cpp \
     daynight.cpp \
     hayfarm.cpp \
+    hayfarmbuilding.cpp \
     levelup.cpp \
     main.cpp \
     login.cpp \
@@ -29,11 +34,18 @@ SOURCES += \
     wheatfarmbuilding.cpp
 
 HEADERS += \
+    baseestablish.h \
+    basefarm.h \
+    basesilo.h \
+    basestorage.h \
+    baseupgrade.h \
+    baseuser.h \
     courtgame.h \
     dairyfarm.h \
     daynight.h \
     hayfarm.h \
     levelup.h \
+    hayfarmbuilding.h \
     login.h \
     mainmenu.h \
     poultryfarm.h \

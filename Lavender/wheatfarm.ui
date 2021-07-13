@@ -213,9 +213,6 @@ background-color:transparent;
    <property name="openExternalLinks">
     <bool>false</bool>
    </property>
-   <property name="buddy">
-    <cstring></cstring>
-   </property>
   </widget>
   <widget class="QLabel" name="upPic1">
    <property name="geometry">
