@@ -28,6 +28,8 @@ private slots:
 
     void on_dairyFarm_clicked();
 
+    void on_sheepfold_clicked();
+
 private:
     Ui::CourtGame *ui;
     User user;

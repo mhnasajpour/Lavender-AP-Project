@@ -83,5 +83,8 @@
         <file>otherPic/animals/level.png</file>
         <file>otherPic/animals/doorClose.png</file>
         <file>otherPic/animals/doorOpen.png</file>
+        <file>otherPic/animals/level2.png</file>
+        <file>otherPic/animals/sheepBackground.jpg</file>
+        <file>otherPic/animals/wood.png</file>
     </qresource>
 </RCC>

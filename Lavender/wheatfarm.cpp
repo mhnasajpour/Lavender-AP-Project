@@ -13,7 +13,7 @@ WheatFarm::WheatFarm(QJsonObject _qjo, int _index, QWidget *parent) :
     ui->setupUi(this);
 
     ui->level->setText(QString::number(wheatFarm.getLevel()));
-    ui->area->setText(QString::number(wheatFarm.getMaxPlantingArea()));
+    ui->area->setText("مساحت زیر کشت  " + QString::number(wheatFarm.getMaxPlantingArea()));
 
     if(wheatFarm.getDaysToFinishUpgrading() != 0)
     {
@@ -23,6 +23,7 @@ WheatFarm::WheatFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->boardKey->setHidden(true);
         ui->spinBox->setHidden(true);
         ui->textEdit->setText("مزرعه در حال ارتقا است\n\n" + QString::number(wheatFarm.getDaysToFinishUpgrading()) + " روز باقی مانده است");
+        ui->request->setHidden(true);
     }
     else
     {

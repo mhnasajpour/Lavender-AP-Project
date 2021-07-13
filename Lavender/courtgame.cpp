@@ -11,6 +11,7 @@
 #include "hayfarm.h"
 #include "poultryfarm.h"
 #include "dairyfarm.h"
+#include "sheepfold.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -90,6 +91,14 @@ void CourtGame::on_dairyFarm_clicked()
 {
     DairyFarm *df = new DairyFarm;
     df->show();
+    close();
+}
+
+
+void CourtGame::on_sheepfold_clicked()
+{
+    Sheepfold *shp = new Sheepfold;
+    shp->show();
     close();
 }
 
