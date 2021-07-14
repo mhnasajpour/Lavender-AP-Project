@@ -35,6 +35,9 @@ background-color:transparent;
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="dairyFarm">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>750</x>
@@ -203,6 +206,9 @@ background-color:transparent;
     </property>
    </widget>
    <widget class="QPushButton" name="hayFarm">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>710</x>
@@ -222,7 +228,7 @@ background-color:transparent;
     </property>
     <property name="icon">
      <iconset resource="pic.qrc">
-      <normaloff>:/hayLand/lands/hay8.png</normaloff>:/hayLand/lands/hay8.png</iconset>
+      <normaloff>:/hayLand/lands/hay1.png</normaloff>:/hayLand/lands/hay1.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1132,6 +1138,110 @@ color: rgb(170, 0, 0);
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="lockHayFarm">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>440</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/tools/otherPic/lock.png</normaloff>:/tools/otherPic/lock.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lockDairyFarm">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>280</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/tools/otherPic/lock.png</normaloff>:/tools/otherPic/lock.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lockPoultryFarm">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>150</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/tools/otherPic/lock.png</normaloff>:/tools/otherPic/lock.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lockSheepfold">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>520</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/tools/otherPic/lock.png</normaloff>:/tools/otherPic/lock.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>exp</zorder>
    <zorder>levelPic</zorder>
@@ -1147,6 +1257,10 @@ color: rgb(170, 0, 0);
    <zorder>sheepfold</zorder>
    <zorder>coinShow</zorder>
    <zorder>coinPic</zorder>
+   <zorder>lockHayFarm</zorder>
+   <zorder>lockDairyFarm</zorder>
+   <zorder>lockPoultryFarm</zorder>
+   <zorder>lockSheepfold</zorder>
   </widget>
  </widget>
  <resources>

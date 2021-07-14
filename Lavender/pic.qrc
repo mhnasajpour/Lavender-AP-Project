@@ -15,6 +15,9 @@
         <file>otherPic/invalid.png</file>
         <file>otherPic/valid.png</file>
         <file>otherPic/money.png</file>
+        <file>otherPic/lock.png</file>
+        <file>otherPic/doorLock.png</file>
+        <file>otherPic/padlock.png</file>
     </qresource>
     <qresource prefix="/buildings">
         <file>lands/storage.png</file>

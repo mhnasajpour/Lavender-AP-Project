@@ -19,6 +19,7 @@ SOURCES += \
     hayfarm.cpp \
     hayfarmbuilding.cpp \
     levelup.cpp \
+    locklands.cpp \
     main.cpp \
     login.cpp \
     mainmenu.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     hayfarm.h \
     levelup.h \
     hayfarmbuilding.h \
+    locklands.h \
     login.h \
     mainmenu.h \
     poultryfarm.h \
@@ -65,6 +67,7 @@ FORMS += \
     daynight.ui \
     hayfarm.ui \
     levelup.ui \
+    locklands.ui \
     login.ui \
     mainmenu.ui \
     poultryfarm.ui \
