@@ -64,6 +64,13 @@ int HayFarmBuilding::getDaysToFinishEstablishing()
     return qjoFarm["daysToFinishEstablishing"].toInt();
 }
 
+bool HayFarmBuilding::isLevelEnough()
+{
+    if(getLevelPlayer() < minLevelRequiredE)
+        return false;
+    return true;
+}
+
 bool HayFarmBuilding::canEstablish()
 {
     if(getNail() < nailE)
@@ -81,10 +88,9 @@ void HayFarmBuilding::startEstablishing()
 {
     if(!canEstablish())
         return;
-    addNail(-1 * nailU);
-    addShovel(-1 * shovelU);
-    changeCoin(-1 * coinU);
-    qjoFarm["daysToFinishUpgrading"] = timeU;
+    addNail(-1 * nailE);
+    addShovel(-1 * shovelE);
+    changeCoin(-1 * coinE);
     qjoFarm["daysToFinishEstablishing"] = timeE;
 }
 

@@ -12,6 +12,7 @@
 #include "poultryfarm.h"
 #include "dairyfarm.h"
 #include "sheepfold.h"
+#include "locklands.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -52,6 +53,9 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay7.png"));
     else if(user.getHayFarm().getFlag() == 3)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay8.png"));
+
+    if(user.getHayFarm().getLevelFarm() > 0)
+        ui->lockHayFarm->setHidden(true);
 }
 
 CourtGame::~CourtGame()
@@ -89,10 +93,25 @@ void CourtGame::on_wheatFarm_clicked()
 
 void CourtGame::on_hayFarm_clicked()
 {
-    hayFarm *hay = new hayFarm;
-    hay->show();
-    close();
+    if(user.getHayFarm().getLevelFarm() == 0)
+    {
+        LockLands *llp = new LockLands(user.getHayFarm());
+        llp->exec();
+    }
+    else
+    {
+        hayFarm *hay = new hayFarm;
+        hay->show();
+        close();
+    }
 }
+
+void CourtGame::on_lockHayFarm_clicked()
+{
+    LockLands *llp = new LockLands(user.getHayFarm());
+    llp->exec();
+}
+
 
 void CourtGame::on_poultryFarm_clicked()
 {
@@ -114,3 +133,5 @@ void CourtGame::on_sheepfold_clicked()
     shp->show();
     close();
 }
+
+

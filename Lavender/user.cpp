@@ -92,6 +92,14 @@ void User::checkDay()
         if(hayFarm.getDaysToFinishPlowing() == 0)
             hayFarm.finishPlowing();
     }
+
+    //check establishing of hay farm
+    if(hayFarm.getDaysToFinishEstablishing() > 0)
+    {
+        hayFarm.passDayToFinishEstablishing();
+        if(hayFarm.getDaysToFinishEstablishing() == 0)
+            hayFarm.finishEstablishing();
+    }
 }
 
 bool User::setUsername(QString username)
@@ -168,7 +176,7 @@ WheatFarmBuilding User::getWheatFarm()
     return wheatFarm;
 }
 
-HayFarmBuilding User::getHayFarm()
+HayFarmBuilding &User::getHayFarm()
 {
     return hayFarm;
 }

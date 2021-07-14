@@ -15,6 +15,7 @@ public:
     QJsonObject getQjoFarm();
     void passDayToFinishEstablishing();
     int getDaysToFinishEstablishing();
+    bool isLevelEnough();
     bool canEstablish();
     void startEstablishing();
     void finishEstablishing();

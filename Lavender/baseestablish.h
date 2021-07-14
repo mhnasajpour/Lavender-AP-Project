@@ -17,6 +17,11 @@ protected:
     int minLevelRequiredE;
     int addToExpE;
 public:
+    int getNailE();
+    int getShovelE();
+    int getCoinE();
+    int getMinLevelRequiredE();
+    virtual bool isLevelEnough() = 0;
     virtual void passDayToFinishEstablishing() = 0;
     virtual int getDaysToFinishEstablishing() = 0;
     virtual bool canEstablish() = 0;
