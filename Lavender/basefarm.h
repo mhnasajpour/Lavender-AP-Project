@@ -3,8 +3,9 @@
 
 #include "basesilo.h"
 #include "baseupgrade.h"
+#include "baseestablish.h"
 
-class BaseFarm: public BaseSilo, public BaseUpgrade
+class BaseFarm: public BaseSilo, public BaseUpgrade, public BaseEstablish
 {
 protected:
     QJsonObject qjoFarm;
@@ -20,6 +21,12 @@ public:
     bool canUpgrade();
     void startUpgrading();
     void finishUpgrading();
+    void passDayToFinishEstablishing();
+    int getDaysToFinishEstablishing();
+    bool isLevelEnough();
+    bool canEstablish();
+    void startEstablishing();
+    void finishEstablishing();
     int getLevelFarm();
     void setPlantingArea(int);
     int getPlantingArea();

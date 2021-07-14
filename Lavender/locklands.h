@@ -13,7 +13,7 @@ class LockLands : public QDialog
     Q_OBJECT
 
 public:
-    explicit LockLands(BaseEstablish&, QWidget *parent = nullptr);
+    explicit LockLands(QJsonObject, int, QWidget *parent = nullptr);
     ~LockLands();
 
 private slots:
@@ -21,7 +21,8 @@ private slots:
 
 private:
     Ui::LockLands *ui;
-    BaseEstablish& bte;
+    HayFarmBuilding hay_farm;
+    int index;
 };
 
 #endif // LOCKLANDS_H

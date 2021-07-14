@@ -32,7 +32,7 @@ public:
     StorageBuilding getStorage();
     SiloBuilding getSilo();
     WheatFarmBuilding getWheatFarm();
-    HayFarmBuilding& getHayFarm();
+    HayFarmBuilding getHayFarm();
     /*PoultryFarm getPoultryFarm ();
     DairyFarm getDairyFarm ();
     Sheepfold getSheepfold ();

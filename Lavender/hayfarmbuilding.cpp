@@ -54,52 +54,6 @@ QJsonObject HayFarmBuilding::getQjoFarm()
     return qjoFarm;
 }
 
-void HayFarmBuilding::passDayToFinishEstablishing()
-{
-    qjoFarm["daysToFinishEstablishing"] = getDaysToFinishEstablishing() - 1;
-}
-
-int HayFarmBuilding::getDaysToFinishEstablishing()
-{
-    return qjoFarm["daysToFinishEstablishing"].toInt();
-}
-
-bool HayFarmBuilding::isLevelEnough()
-{
-    if(getLevelPlayer() < minLevelRequiredE)
-        return false;
-    return true;
-}
-
-bool HayFarmBuilding::canEstablish()
-{
-    if(getNail() < nailE)
-        return false;
-    if(getShovel() < shovelE)
-        return false;
-    if(getCoin() < coinE)
-        return false;
-    if(getLevelPlayer() < minLevelRequiredE)
-        return false;
-    return true;
-}
-
-void HayFarmBuilding::startEstablishing()
-{
-    if(!canEstablish())
-        return;
-    addNail(-1 * nailE);
-    addShovel(-1 * shovelE);
-    changeCoin(-1 * coinE);
-    qjoFarm["daysToFinishEstablishing"] = timeE;
-}
-
-void HayFarmBuilding::finishEstablishing()
-{
-    qjoFarm["level"] = 1;
-    setExp(addToExpE);
-}
-
 void HayFarmBuilding::startPlanting(int plantingArea)
 {
     setPlantingArea(plantingArea);
@@ -111,7 +65,7 @@ void HayFarmBuilding::startPlanting(int plantingArea)
 
 bool HayFarmBuilding::canHarvest()
 {
-    if(getHay() + (getPlantingArea() * 2) > maxCapacityStorage)
+    if(getUsedCapacity() + (getPlantingArea() * 2) > maxCapacityStorage)
         return false;
     return true;
 }
@@ -122,16 +76,6 @@ void HayFarmBuilding::harvest()
     addHay(2 * getPlantingArea());
     setExp(getPlantingArea() * 2);
     setPlantingArea(0);
-}
-
-void HayFarmBuilding::setPlowingArea(int plowingArea)
-{
-    qjoFarm["plowingArea"] = plowingArea;
-}
-
-int HayFarmBuilding::getPlowingArea()
-{
-    return qjoFarm["plowingArea"].toInt();
 }
 
 void HayFarmBuilding::passDayToFinishPlowing()
@@ -146,18 +90,17 @@ int HayFarmBuilding::getDaysToFinishPlowing()
 
 bool HayFarmBuilding::canPlow()
 {
-    if(getCoin() < getPlowingArea() * 5)
+    if(getCoin() < maxArea * 5)
         return false;
     return true;
 }
 
-void HayFarmBuilding::startPlowing(int plowingArea)
+void HayFarmBuilding::startPlowing()
 {
-    setPlowingArea(plowingArea);
     setFlag(5);
     qjoFarm["daysToFinishPlowing"] = 1;
-    changeCoin(-5 * plowingArea);
-    setExp(plowingArea);
+    changeCoin(-5 * maxArea);
+    setExp(maxArea);
 }
 
 void HayFarmBuilding::finishPlowing()

@@ -59,7 +59,6 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     hayFarm.insert("daysToFinishEstablishing", -1);
     hayFarm.insert("plantingArea", 0);
     hayFarm.insert("daysToFinishPlanting", 0);
-    hayFarm.insert("plowingArea", 0);
     hayFarm.insert("daysToFinishPlowing", 0);
     hayFarm.insert("flag", 4);
 

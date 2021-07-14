@@ -176,7 +176,7 @@ WheatFarmBuilding User::getWheatFarm()
     return wheatFarm;
 }
 
-HayFarmBuilding &User::getHayFarm()
+HayFarmBuilding User::getHayFarm()
 {
     return hayFarm;
 }

@@ -95,12 +95,12 @@ void CourtGame::on_hayFarm_clicked()
 {
     if(user.getHayFarm().getLevelFarm() == 0)
     {
-        LockLands *llp = new LockLands(user.getHayFarm());
+        LockLands *llp = new LockLands(user.getQjo(), user.getIndex());
         llp->exec();
     }
     else
     {
-        hayFarm *hay = new hayFarm;
+        hayFarm *hay = new hayFarm(user.getQjo(), user.getIndex());
         hay->show();
         close();
     }
@@ -108,10 +108,9 @@ void CourtGame::on_hayFarm_clicked()
 
 void CourtGame::on_lockHayFarm_clicked()
 {
-    LockLands *llp = new LockLands(user.getHayFarm());
+    LockLands *llp = new LockLands(user.getQjo(), user.getIndex());
     llp->exec();
 }
-
 
 void CourtGame::on_poultryFarm_clicked()
 {

@@ -23,11 +23,10 @@ private slots:
     void on_silo_clicked();
     void on_wheatFarm_clicked();
     void on_hayFarm_clicked();
+    void on_lockHayFarm_clicked();
     void on_poultryFarm_clicked();
     void on_dairyFarm_clicked();
     void on_sheepfold_clicked();
-
-    void on_lockHayFarm_clicked();
 
 private:
     Ui::CourtGame *ui;
