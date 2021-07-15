@@ -34,18 +34,24 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     silo.insert("wheat", 1);
 
     poultryFarm.insert("level", 0);
-    poultryFarm.insert("poultry", 0);
-    poultryFarm.insert("feedTime", 0);
+    poultryFarm.insert("daysToFinishUpgrading", 0);
+    poultryFarm.insert("daysToFinishEstablishing", -1);
+    poultryFarm.insert("daysToFinishFeeding", 0);
+    poultryFarm.insert("animals", 0);
     poultryFarm.insert("flag", 1);
 
     dairyFarm.insert("level", 0);
-    dairyFarm.insert("cattle", 0);
-    dairyFarm.insert("feedTime", 0);
+    dairyFarm.insert("daysToFinishUpgrading", 0);
+    dairyFarm.insert("daysToFinishEstablishing", -1);
+    dairyFarm.insert("daysToFinishFeeding", 0);
+    dairyFarm.insert("animals", 0);
     dairyFarm.insert("flag", 1);
 
     sheepfold.insert("level", 0);
-    sheepfold.insert("sheep", 0);
-    sheepfold.insert("feedTime", 0);
+    sheepfold.insert("daysToFinishUpgrading", 0);
+    sheepfold.insert("daysToFinishEstablishing", -1);
+    sheepfold.insert("daysToFinishFeeding", 0);
+    sheepfold.insert("animals", 0);
     sheepfold.insert("flag", 1);
 
     wheatFarm.insert("level", 1);

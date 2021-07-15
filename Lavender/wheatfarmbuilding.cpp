@@ -47,6 +47,17 @@ QJsonObject WheatFarmBuilding::getQjoFarm()
     return qjoFarm;
 }
 
+void WheatFarmBuilding::finishUpgrading()
+{
+    qjoFarm["level"] = getLevelFarm() + 1;
+    maxArea *= 2;
+    setExp(addToExpU);
+
+    shovelU = maxArea;
+    coinU = maxArea * 5;
+    addToExpU = maxArea * 3;
+}
+
 void WheatFarmBuilding::startPlanting(int plantingArea)
 {
     setPlantingArea(plantingArea);

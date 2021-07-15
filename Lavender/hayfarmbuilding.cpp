@@ -54,6 +54,63 @@ QJsonObject HayFarmBuilding::getQjoFarm()
     return qjoFarm;
 }
 
+void HayFarmBuilding::passDayToFinishEstablishing()
+{
+    qjoFarm["daysToFinishEstablishing"] = getDaysToFinishEstablishing() - 1;
+}
+
+int HayFarmBuilding::getDaysToFinishEstablishing()
+{
+    return qjoFarm["daysToFinishEstablishing"].toInt();
+}
+
+bool HayFarmBuilding::isLevelEnough()
+{
+    if(getLevelPlayer() < minLevelRequiredE)
+        return false;
+    return true;
+}
+
+bool HayFarmBuilding::canEstablish()
+{
+    if(getNail() < nailE)
+        return false;
+    if(getShovel() < shovelE)
+        return false;
+    if(getCoin() < coinE)
+        return false;
+    if(getLevelPlayer() < minLevelRequiredE)
+        return false;
+    return true;
+}
+
+void HayFarmBuilding::startEstablishing()
+{
+    if(!canEstablish())
+        return;
+    addNail(-1 * nailE);
+    addShovel(-1 * shovelE);
+    changeCoin(-1 * coinE);
+    qjoFarm["daysToFinishEstablishing"] = timeE;
+}
+
+void HayFarmBuilding::finishEstablishing()
+{
+    qjoFarm["level"] = 1;
+    setExp(addToExpE);
+}
+
+void HayFarmBuilding::finishUpgrading()
+{
+    qjoFarm["level"] = getLevelFarm() + 1;
+    maxArea *= 2;
+    setExp(addToExpU);
+
+    shovelU = maxArea * 2;
+    coinU = maxArea * 5;
+    addToExpU = maxArea * 3;
+}
+
 void HayFarmBuilding::startPlanting(int plantingArea)
 {
     setPlantingArea(plantingArea);

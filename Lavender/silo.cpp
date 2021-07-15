@@ -45,8 +45,8 @@ void Silo::on_pushButton_clicked()
     ui->man->setHidden(false);
     if(silo.canUpgrade())
     {
-        ui->coinReq->setText(QString::number(100 * pow(silo.getLevelSilo() * 2, 2)));
-        ui->nailReq->setText(QString::number(2 * silo.getLevelSilo()));
+        ui->coinReq->setText(QString::number(silo.getCoinU()));
+        ui->nailReq->setText(QString::number(silo.getNailU()));
 
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);

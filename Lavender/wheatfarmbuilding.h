@@ -12,6 +12,7 @@ public:
     QJsonObject getQjoStorage();
     QJsonObject getQjoSilo();
     QJsonObject getQjoFarm();
+    void finishUpgrading();
     void startPlanting(int);
     bool canHarvest();
     void harvest();

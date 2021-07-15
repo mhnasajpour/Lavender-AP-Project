@@ -5,7 +5,8 @@ User::User(QJsonObject _qjo, int _index):
     storage(_qjo),
     silo(_qjo),
     wheatFarm(_qjo),
-    hayFarm(_qjo)
+    hayFarm(_qjo),
+    poultryFarm((_qjo))
 {
     index = _index;
 }
@@ -34,7 +35,7 @@ void User::checkDay()
             storage.finishUpgrading();
     }
 
-    //check spoiled milks
+    //check spoiled milks in storage
     while(true)
     {
         if(storage.getMilk().size() == 0)
@@ -69,6 +70,14 @@ void User::checkDay()
             wheatFarm.finishPlanting();
     }
 
+    //check establishing of hay farm
+    if(hayFarm.getDaysToFinishEstablishing() > 0)
+    {
+        hayFarm.passDayToFinishEstablishing();
+        if(hayFarm.getDaysToFinishEstablishing() == 0)
+            hayFarm.finishEstablishing();
+    }
+
     //check finishing upgrade of hay farm
     if(hayFarm.getDaysToFinishUpgrading() != 0)
     {
@@ -93,12 +102,28 @@ void User::checkDay()
             hayFarm.finishPlowing();
     }
 
-    //check establishing of hay farm
-    if(hayFarm.getDaysToFinishEstablishing() > 0)
+    //check establishing of poultry farm
+    if(poultryFarm.getDaysToFinishEstablishing() > 0)
     {
-        hayFarm.passDayToFinishEstablishing();
-        if(hayFarm.getDaysToFinishEstablishing() == 0)
-            hayFarm.finishEstablishing();
+        poultryFarm.passDayToFinishEstablishing();
+        if(poultryFarm.getDaysToFinishEstablishing() == 0)
+            poultryFarm.finishEstablishing();
+    }
+
+    //check finishing upgrade of poultry farm
+    if(poultryFarm.getDaysToFinishUpgrading() != 0)
+    {
+        poultryFarm.passDayToFinishUpgrading();
+        if(poultryFarm.getDaysToFinishUpgrading() == 0)
+            hayFarm.finishUpgrading();
+    }
+
+    //check feeding of poultry farm
+    if(poultryFarm.getDaysToFinishFeeding() != 0)
+    {
+        poultryFarm.passDayToFinishFeeding();
+        if(poultryFarm.getDaysToFinishFeeding() == 0)
+            poultryFarm.finishFeeding();
     }
 }
 
@@ -179,6 +204,11 @@ WheatFarmBuilding User::getWheatFarm()
 HayFarmBuilding User::getHayFarm()
 {
     return hayFarm;
+}
+
+PoultryFarmBuilding User::getPoultryFarm()
+{
+    return poultryFarm;
 }
 
 void User::saveToFile()

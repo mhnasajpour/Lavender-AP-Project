@@ -21,12 +21,12 @@ public:
     int getShovelE();
     int getCoinE();
     int getMinLevelRequiredE();
-    virtual bool isLevelEnough() {return 0;}
-    virtual void passDayToFinishEstablishing() {return;}
-    virtual int getDaysToFinishEstablishing() {return 0;}
-    virtual bool canEstablish() {return 0;}
-    virtual void startEstablishing() {return;}
-    virtual void finishEstablishing() {return;}
+    virtual bool isLevelEnough() = 0;
+    virtual void passDayToFinishEstablishing() = 0;
+    virtual int getDaysToFinishEstablishing() = 0;
+    virtual bool canEstablish() = 0;
+    virtual void startEstablishing() = 0;
+    virtual void finishEstablishing() = 0;
 };
 
 #endif // BASEESTABLISH_H

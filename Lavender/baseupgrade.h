@@ -18,6 +18,11 @@ protected:
     int maxLevelRequiredU;
     int addToExpU;
 public:
+    int getNailU();
+    int getShoveU();
+    int getCoinU();
+    int getMinLevelRequiredU();
+    int getMaxLevelRequiredU();
     virtual void passDayToFinishUpgrading() = 0;
     virtual int getDaysToFinishUpgrading() = 0;
     virtual bool canUpgrade() = 0;

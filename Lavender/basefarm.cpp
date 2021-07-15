@@ -38,63 +38,6 @@ void BaseFarm::startUpgrading()
     qjoFarm["daysToFinishUpgrading"] = timeU;
 }
 
-void BaseFarm::finishUpgrading()
-{
-    qjoFarm["level"] = getLevelFarm() + 1;
-    maxArea *= 2;
-    setExp(addToExpU);
-
-    shovelU = maxArea;
-    coinU = maxArea * 5;
-    addToExpU = maxArea * 3;
-}
-
-void BaseFarm::passDayToFinishEstablishing()
-{
-    qjoFarm["daysToFinishEstablishing"] = getDaysToFinishEstablishing() - 1;
-}
-
-int BaseFarm::getDaysToFinishEstablishing()
-{
-    return qjoFarm["daysToFinishEstablishing"].toInt();
-}
-
-bool BaseFarm::isLevelEnough()
-{
-    if(getLevelPlayer() < minLevelRequiredE)
-        return false;
-    return true;
-}
-
-bool BaseFarm::canEstablish()
-{
-    if(getNail() < nailE)
-        return false;
-    if(getShovel() < shovelE)
-        return false;
-    if(getCoin() < coinE)
-        return false;
-    if(getLevelPlayer() < minLevelRequiredE)
-        return false;
-    return true;
-}
-
-void BaseFarm::startEstablishing()
-{
-    if(!canEstablish())
-        return;
-    addNail(-1 * nailE);
-    addShovel(-1 * shovelE);
-    changeCoin(-1 * coinE);
-    qjoFarm["daysToFinishEstablishing"] = timeE;
-}
-
-void BaseFarm::finishEstablishing()
-{
-    qjoFarm["level"] = 1;
-    setExp(addToExpE);
-}
-
 int BaseFarm::getLevelFarm()
 {
     return qjoFarm["level"].toInt();

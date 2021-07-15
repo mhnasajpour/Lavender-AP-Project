@@ -123,8 +123,8 @@ void WheatFarm::on_upgradeKey_clicked()
     ui->man->setHidden(false);
     if(wheatFarm.canUpgrade())
     {
-        ui->coinReq->setText(QString::number(wheatFarm.getMaxArea() * 5));
-        ui->shovelReq->setText(QString::number(wheatFarm.getMaxArea()));
+        ui->coinReq->setText(QString::number(wheatFarm.getCoinU()));
+        ui->shovelReq->setText(QString::number(wheatFarm.getShoveU()));
 
         ui->coinReq->setHidden(false);
         ui->shovelReq->setHidden(false);

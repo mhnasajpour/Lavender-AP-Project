@@ -163,8 +163,8 @@ void hayFarm::on_upgradeKey_clicked()
     ui->man->setHidden(false);
     if(hay_farm.canUpgrade())
     {
-        ui->coinReq->setText(QString::number(hay_farm.getMaxArea() * 5));
-        ui->shovelReq->setText(QString::number(hay_farm.getMaxArea() * 2));
+        ui->coinReq->setText(QString::number(hay_farm.getCoinU()));
+        ui->shovelReq->setText(QString::number(hay_farm.getShoveU()));
 
         ui->coinReq->setHidden(false);
         ui->shovelReq->setHidden(false);
@@ -173,9 +173,7 @@ void hayFarm::on_upgradeKey_clicked()
         ui->upPic2->setHidden(false);
     }
     else
-    {
         ui->textEdit->setHidden(false);
-    }
 }
 
 void hayFarm::on_request_accepted()

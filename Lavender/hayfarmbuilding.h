@@ -2,8 +2,9 @@
 #define HAYFARMBUILDING_H
 
 #include "basefarm.h"
+#include "baseestablish.h"
 
-class HayFarmBuilding: public BaseFarm
+class HayFarmBuilding: public BaseFarm, public BaseEstablish
 {
 public:
     HayFarmBuilding(QJsonObject);
@@ -11,6 +12,13 @@ public:
     QJsonObject getQjoStorage();
     QJsonObject getQjoSilo();
     QJsonObject getQjoFarm();
+    void passDayToFinishEstablishing();
+    int getDaysToFinishEstablishing();
+    bool isLevelEnough();
+    bool canEstablish();
+    void startEstablishing();
+    void finishEstablishing();
+    void finishUpgrading();
     void startPlanting(int);
     bool canHarvest();
     void harvest();

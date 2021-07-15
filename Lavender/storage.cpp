@@ -54,9 +54,9 @@ void Storage::on_pushButton_clicked()
     ui->man->setHidden(false);
     if(storage.canUpgrade())
     {
-        ui->coinReq->setText(QString::number(pow(storage.getLevelStorage(), 3) * 10));
-        ui->nailReq->setText(QString::number(storage.getLevelStorage()));
-        ui->shovelReq->setText(QString::number(storage.getLevelStorage() - 1));
+        ui->coinReq->setText(QString::number(storage.getCoinU()));
+        ui->nailReq->setText(QString::number(storage.getNailU()));
+        ui->shovelReq->setText(QString::number(storage.getShoveU()));
 
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);
