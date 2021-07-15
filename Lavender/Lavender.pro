@@ -20,7 +20,10 @@ SOURCES += \
     hayfarm.cpp \
     hayfarmbuilding.cpp \
     levelup.cpp \
-    locklands.cpp \
+    lockdairyfarm.cpp \
+    lockhayfarm.cpp \
+    lockpoultryfarm.cpp \
+    locksheepfold.cpp \
     main.cpp \
     login.cpp \
     mainmenu.cpp \
@@ -48,7 +51,10 @@ HEADERS += \
     hayfarm.h \
     levelup.h \
     hayfarmbuilding.h \
-    locklands.h \
+    lockdairyfarm.h \
+    lockhayfarm.h \
+    lockpoultryfarm.h \
+    locksheepfold.h \
     login.h \
     mainmenu.h \
     poultryfarm.h \
@@ -68,7 +74,10 @@ FORMS += \
     daynight.ui \
     hayfarm.ui \
     levelup.ui \
-    locklands.ui \
+    lockdairyfarm.ui \
+    lockhayfarm.ui \
+    lockpoultryfarm.ui \
+    locksheepfold.ui \
     login.ui \
     mainmenu.ui \
     poultryfarm.ui \

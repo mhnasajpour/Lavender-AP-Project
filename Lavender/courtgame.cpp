@@ -12,7 +12,7 @@
 #include "poultryfarm.h"
 #include "dairyfarm.h"
 #include "sheepfold.h"
-#include "locklands.h"
+#include "lockhayfarm.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -94,10 +94,7 @@ void CourtGame::on_wheatFarm_clicked()
 void CourtGame::on_hayFarm_clicked()
 {
     if(user.getHayFarm().getLevelFarm() == 0)
-    {
-        LockLands *llp = new LockLands(user.getQjo(), user.getIndex());
-        llp->exec();
-    }
+        on_lockHayFarm_clicked();
     else
     {
         hayFarm *hay = new hayFarm(user.getQjo(), user.getIndex());
@@ -108,8 +105,9 @@ void CourtGame::on_hayFarm_clicked()
 
 void CourtGame::on_lockHayFarm_clicked()
 {
-    LockLands *llp = new LockLands(user.getQjo(), user.getIndex());
-    llp->exec();
+    lockHayFarm *llp = new lockHayFarm(user.getQjo(), user.getIndex());
+    llp->show();
+    close();
 }
 
 void CourtGame::on_poultryFarm_clicked()

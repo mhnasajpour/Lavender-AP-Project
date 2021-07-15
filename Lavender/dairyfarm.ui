@@ -488,7 +488,7 @@ color: rgb(212, 212, 212);</string>
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>520</y>
+     <y>510</y>
      <width>91</width>
      <height>111</height>
     </rect>
@@ -496,12 +496,17 @@ color: rgb(212, 212, 212);</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:hover{
+	image: url(:/animal/otherPic/animals/doorOpen.png);
+}
+QPushButton{
+	image: url(:/animal/otherPic/animals/doorClose.png);
+}
+</string>
+   </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="pic.qrc">
-     <normaloff>:/animal/otherPic/animals/doorClose.png</normaloff>:/animal/otherPic/animals/doorClose.png</iconset>
    </property>
    <property name="iconSize">
     <size>
