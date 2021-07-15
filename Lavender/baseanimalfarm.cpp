@@ -84,6 +84,13 @@ void BaseAnimalFarm::startUpgrading()
     qjoAnimalFarm["daysToFinishUpgrading"] = timeU;
 }
 
+void BaseAnimalFarm::finishUpgrading()
+{
+    qjoAnimalFarm["level"] = getLevelAnimalFarm() + 1;
+    maxCapacityAnimalFarm *= 2;
+    setExp(addToExpU);
+}
+
 int BaseAnimalFarm::getLevelAnimalFarm()
 {
     return qjoAnimalFarm["level"].toInt();

@@ -26,7 +26,7 @@ public:
     int getDaysToFinishUpgrading();
     bool canUpgrade();
     void startUpgrading();
-    virtual void finishUpgrading() = 0;
+    void finishUpgrading();
     int getLevelAnimalFarm();
     bool addAnimals(int);
     int getAnimals();

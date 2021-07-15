@@ -18,6 +18,7 @@ SOURCES += \
     baseuser.cpp \
     courtgame.cpp \
     dairyfarm.cpp \
+    dairyfarmbuilding.cpp \
     daynight.cpp \
     hayfarm.cpp \
     hayfarmbuilding.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
     poultryfarm.cpp \
     poultryfarmbuilding.cpp \
     sheepfold.cpp \
+    sheepfoldbuilding.cpp \
     signup.cpp \
     silo.cpp \
     silobuilding.cpp \
@@ -48,6 +50,7 @@ HEADERS += \
     baseuser.h \
     courtgame.h \
     dairyfarm.h \
+    dairyfarmbuilding.h \
     daynight.h \
     hayfarm.h \
     levelup.h \
@@ -58,6 +61,7 @@ HEADERS += \
     poultryfarm.h \
     poultryfarmbuilding.h \
     sheepfold.h \
+    sheepfoldbuilding.h \
     signup.h \
     silo.h \
     silobuilding.h \

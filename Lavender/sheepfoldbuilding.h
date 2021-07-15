@@ -1,12 +1,12 @@
-#ifndef POULTRYFARMBUILDING_H
-#define POULTRYFARMBUILDING_H
+#ifndef SHEEPFOLDBUILDING_H
+#define SHEEPFOLDBUILDING_H
 
 #include "baseanimalfarm.h"
 
-class PoultryFarmBuilding: public BaseAnimalFarm
+class SheepFoldBuilding: public BaseAnimalFarm
 {
 public:
-    PoultryFarmBuilding(QJsonObject);
+    SheepFoldBuilding(QJsonObject);
     QJsonObject getQjo();
     QJsonObject getQjoStorage();
     QJsonObject getQjoSilo();
@@ -17,4 +17,4 @@ public:
     void collectProduct();
 };
 
-#endif // POULTRYFARMBUILDING_H
+#endif // SHEEPFOLDBUILDING_H

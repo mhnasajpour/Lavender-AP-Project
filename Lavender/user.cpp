@@ -6,7 +6,9 @@ User::User(QJsonObject _qjo, int _index):
     silo(_qjo),
     wheatFarm(_qjo),
     hayFarm(_qjo),
-    poultryFarm((_qjo))
+    poultryFarm((_qjo)),
+    dairyFarm(_qjo),
+    sheepFold(_qjo)
 {
     index = _index;
 }
@@ -115,7 +117,7 @@ void User::checkDay()
     {
         poultryFarm.passDayToFinishUpgrading();
         if(poultryFarm.getDaysToFinishUpgrading() == 0)
-            hayFarm.finishUpgrading();
+            poultryFarm.finishUpgrading();
     }
 
     //check feeding of poultry farm
@@ -124,6 +126,54 @@ void User::checkDay()
         poultryFarm.passDayToFinishFeeding();
         if(poultryFarm.getDaysToFinishFeeding() == 0)
             poultryFarm.finishFeeding();
+    }
+
+    //check establishing of dairy farm
+    if(dairyFarm.getDaysToFinishEstablishing() > 0)
+    {
+        dairyFarm.passDayToFinishEstablishing();
+        if(dairyFarm.getDaysToFinishEstablishing() == 0)
+            dairyFarm.finishEstablishing();
+    }
+
+    //check finishing upgrade of dairy farm
+    if(dairyFarm.getDaysToFinishUpgrading() != 0)
+    {
+        dairyFarm.passDayToFinishUpgrading();
+        if(dairyFarm.getDaysToFinishUpgrading() == 0)
+            dairyFarm.finishUpgrading();
+    }
+
+    //check feeding of dairy farm
+    if(dairyFarm.getDaysToFinishFeeding() != 0)
+    {
+        dairyFarm.passDayToFinishFeeding();
+        if(dairyFarm.getDaysToFinishFeeding() == 0)
+            dairyFarm.finishFeeding();
+    }
+
+    //check establishing of sheepfold
+    if(sheepFold.getDaysToFinishEstablishing() > 0)
+    {
+        sheepFold.passDayToFinishEstablishing();
+        if(sheepFold.getDaysToFinishEstablishing() == 0)
+            sheepFold.finishEstablishing();
+    }
+
+    //check finishing upgrade of sheepfold
+    if(sheepFold.getDaysToFinishUpgrading() != 0)
+    {
+        sheepFold.passDayToFinishUpgrading();
+        if(sheepFold.getDaysToFinishUpgrading() == 0)
+            sheepFold.finishUpgrading();
+    }
+
+    //check feeding of sheepfold
+    if(sheepFold.getDaysToFinishFeeding() != 0)
+    {
+        sheepFold.passDayToFinishFeeding();
+        if(sheepFold.getDaysToFinishFeeding() == 0)
+            sheepFold.finishFeeding();
     }
 }
 
@@ -209,6 +259,16 @@ HayFarmBuilding User::getHayFarm()
 PoultryFarmBuilding User::getPoultryFarm()
 {
     return poultryFarm;
+}
+
+DairyFarmBuilding User::getDairyFarm()
+{
+    return dairyFarm;
+}
+
+SheepFoldBuilding User::getSheepfold()
+{
+    return sheepFold;
 }
 
 void User::saveToFile()

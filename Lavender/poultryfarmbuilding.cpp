@@ -54,13 +54,6 @@ QJsonObject PoultryFarmBuilding::getQjoAnimalFarm()
     return qjoAnimalFarm;
 }
 
-void PoultryFarmBuilding::finishUpgrading()
-{
-    qjoAnimalFarm["level"] = getLevelAnimalFarm() + 1;
-    maxCapacityAnimalFarm *= 2;
-    setExp(addToExpU);
-}
-
 bool PoultryFarmBuilding::canFeed()
 {
     if(getWheat() < getAnimals())
