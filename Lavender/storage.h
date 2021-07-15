@@ -3,8 +3,6 @@
 
 #include <QWidget>
 #include "storagebuilding.h"
-#include "user.h"
-#include <QJsonObject>
 
 namespace Ui {
 class Storage;

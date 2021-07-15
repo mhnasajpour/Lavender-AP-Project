@@ -70,6 +70,8 @@
         <file>otherPic/product/area.png</file>
         <file>otherPic/product/hayBackground.jpg</file>
         <file>otherPic/product/sun.png</file>
+        <file>otherPic/product/unlockHay.jpg</file>
+        <file>otherPic/product/unlockHay2.jpg</file>
     </qresource>
     <qresource prefix="/animal">
         <file>otherPic/animals/upgrade.png</file>
@@ -89,5 +91,7 @@
         <file>otherPic/animals/level2.png</file>
         <file>otherPic/animals/sheepBackground.jpg</file>
         <file>otherPic/animals/wood.png</file>
+        <file>otherPic/animals/unlockCowSheep.jpg</file>
+        <file>otherPic/animals/unlockPoultry.jpg</file>
     </qresource>
 </RCC>

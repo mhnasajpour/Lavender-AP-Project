@@ -1,7 +1,6 @@
 #include "wheatfarm.h"
 #include "ui_wheatfarm.h"
 #include <algorithm>
-#include <QDebug>
 #include <courtgame.h>
 
 WheatFarm::WheatFarm(QJsonObject _qjo, int _index, QWidget *parent) :

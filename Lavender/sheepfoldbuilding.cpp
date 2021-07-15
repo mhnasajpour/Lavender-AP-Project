@@ -61,7 +61,7 @@ bool SheepFoldBuilding::canFeed()
     return true;
 }
 
-void SheepFoldBuilding::Feed()
+void SheepFoldBuilding::feed()
 {
     if(!canFeed())
         return;

@@ -35,7 +35,7 @@ public:
     void passDayToFinishFeeding();
     int getDaysToFinishFeeding();
     virtual bool canFeed() = 0;
-    virtual void Feed() = 0;
+    virtual void feed() = 0;
     void finishFeeding();
     virtual bool canCollectProduct() = 0;
     virtual void collectProduct() = 0;

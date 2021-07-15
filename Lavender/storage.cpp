@@ -1,7 +1,6 @@
 #include "storage.h"
 #include "ui_storage.h"
 #include "courtgame.h"
-#include <QDebug>
 
 Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) :
     QWidget(parent),

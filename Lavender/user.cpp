@@ -19,6 +19,9 @@ QJsonObject User::getQjo()
     qjo["silo"] = silo.getQjoSilo();
     qjo["wheatFarm"] = wheatFarm.getQjoFarm();
     qjo["hayFarm"] = hayFarm.getQjoFarm();
+    qjo["poultryFarm"] = poultryFarm.getQjoAnimalFarm();
+    qjo["dairyFarm"] = dairyFarm.getQjoAnimalFarm();
+    qjo["sheepfold"] = sheepFold.getQjoAnimalFarm();
     return qjo;
 }
 

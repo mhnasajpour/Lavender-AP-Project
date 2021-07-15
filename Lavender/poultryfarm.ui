@@ -94,7 +94,7 @@
    <property name="font">
     <font>
      <family>B Koodak</family>
-     <pointsize>16</pointsize>
+     <pointsize>18</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -121,7 +121,7 @@
    <property name="font">
     <font>
      <family>B Koodak</family>
-     <pointsize>16</pointsize>
+     <pointsize>18</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -227,7 +227,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>520</y>
+     <y>510</y>
      <width>33</width>
      <height>20</height>
     </rect>
@@ -256,7 +256,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>520</y>
+     <y>510</y>
      <width>20</width>
      <height>20</height>
     </rect>
@@ -275,7 +275,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>560</y>
+     <y>540</y>
      <width>33</width>
      <height>20</height>
     </rect>
@@ -304,7 +304,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>560</y>
+     <y>540</y>
      <width>20</width>
      <height>20</height>
     </rect>
@@ -481,12 +481,17 @@ color: rgb(212, 212, 212);</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:hover{
+	image: url(:/animal/otherPic/animals/doorOpen.png);
+}
+QPushButton{
+	image: url(:/animal/otherPic/animals/doorClose.png);
+}
+</string>
+   </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="pic.qrc">
-     <normaloff>:/animal/otherPic/animals/doorClose.png</normaloff>:/animal/otherPic/animals/doorClose.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -496,6 +501,35 @@ color: rgb(212, 212, 212);</string>
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="request">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>590</y>
+     <width>167</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 0, 0);
+</string>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+   <property name="centerButtons">
+    <bool>false</bool>
    </property>
   </widget>
   <zorder>pic</zorder>
@@ -512,10 +546,11 @@ color: rgb(212, 212, 212);</string>
   <zorder>textEdit</zorder>
   <zorder>board</zorder>
   <zorder>boardKey</zorder>
-  <zorder>description</zorder>
   <zorder>level</zorder>
   <zorder>upgradeKey</zorder>
   <zorder>door</zorder>
+  <zorder>request</zorder>
+  <zorder>description</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>

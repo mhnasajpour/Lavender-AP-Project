@@ -12,7 +12,10 @@
 #include "poultryfarm.h"
 #include "dairyfarm.h"
 #include "sheepfold.h"
-#include "locklands.h"
+#include "lockhayfarm.h"
+#include "lockpoultryfarm.h"
+#include "lockdairyfarm.h"
+#include "locksheepfold.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -56,6 +59,12 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
 
     if(user.getHayFarm().getLevelFarm() > 0)
         ui->lockHayFarm->setHidden(true);
+    if(user.getPoultryFarm().getLevelAnimalFarm() > 0)
+        ui->lockPoultryFarm->setHidden(true);
+    if(user.getDairyFarm().getLevelAnimalFarm() > 0)
+        ui->lockDairyFarm->setHidden(true);
+    if(user.getSheepfold().getLevelAnimalFarm() > 0)
+        ui->lockSheepfold->setHidden(true);
 }
 
 CourtGame::~CourtGame()
@@ -94,10 +103,7 @@ void CourtGame::on_wheatFarm_clicked()
 void CourtGame::on_hayFarm_clicked()
 {
     if(user.getHayFarm().getLevelFarm() == 0)
-    {
-        LockLands *llp = new LockLands(user.getQjo(), user.getIndex());
-        llp->exec();
-    }
+        on_lockHayFarm_clicked();
     else
     {
         hayFarm *hay = new hayFarm(user.getQjo(), user.getIndex());
@@ -108,14 +114,27 @@ void CourtGame::on_hayFarm_clicked()
 
 void CourtGame::on_lockHayFarm_clicked()
 {
-    LockLands *llp = new LockLands(user.getQjo(), user.getIndex());
-    llp->exec();
+    lockHayFarm *llp = new lockHayFarm(user.getQjo(), user.getIndex());
+    llp->show();
+    close();
 }
 
 void CourtGame::on_poultryFarm_clicked()
 {
-    PoultryFarm *p = new PoultryFarm;
-    p->show();
+    if(user.getPoultryFarm().getLevelAnimalFarm() == 0)
+        on_lockPoultryFarm_clicked();
+    else
+    {
+        PoultryFarm *p = new PoultryFarm(user.getQjo(), user.getIndex());
+        p->show();
+        close();
+    }
+}
+
+void CourtGame::on_lockPoultryFarm_clicked()
+{
+    LockPoultryFarm *lpf = new LockPoultryFarm(user.getQjo(), user.getIndex());
+    lpf->show();
     close();
 }
 
@@ -132,5 +151,6 @@ void CourtGame::on_sheepfold_clicked()
     shp->show();
     close();
 }
+
 
 

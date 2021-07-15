@@ -61,7 +61,7 @@ bool PoultryFarmBuilding::canFeed()
     return true;
 }
 
-void PoultryFarmBuilding::Feed()
+void PoultryFarmBuilding::feed()
 {
     if(!canFeed())
         return;

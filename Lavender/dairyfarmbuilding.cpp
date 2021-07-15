@@ -61,7 +61,7 @@ bool DairyFarmBuilding::canFeed()
     return true;
 }
 
-void DairyFarmBuilding::Feed()
+void DairyFarmBuilding::feed()
 {
     if(!canFeed())
         return;

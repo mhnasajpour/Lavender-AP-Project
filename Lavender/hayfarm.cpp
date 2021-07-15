@@ -173,7 +173,10 @@ void hayFarm::on_upgradeKey_clicked()
         ui->upPic2->setHidden(false);
     }
     else
+    {
         ui->textEdit->setHidden(false);
+        ui->textEdit->setText("ارتقای مزرعه اکنون در دسترس نیست");
+    }
 }
 
 void hayFarm::on_request_accepted()

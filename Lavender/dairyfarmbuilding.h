@@ -12,7 +12,7 @@ public:
     QJsonObject getQjoSilo();
     QJsonObject getQjoAnimalFarm();
     bool canFeed();
-    void Feed();
+    void feed();
     bool canCollectProduct();
     void collectProduct();
 };
