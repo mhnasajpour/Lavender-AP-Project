@@ -6,6 +6,7 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+#include "levelup.h"
 
 class BaseUser
 {

@@ -14,15 +14,23 @@ Silo::Silo(QJsonObject _qjo, int _index, QWidget *parent) :
     {
         ui->textEdit->setText("سیلو در حال ارتقا است\n\n" + QString::number(silo.getDaysToFinishUpgrading()) + " روز باقی مانده است");
         ui->pushButton->setHidden(true);
+        ui->coinReq->setHidden(true);
+        ui->nailReq->setHidden(true);
+        ui->shovelReq->setHidden(true);
+        ui->upPic1->setHidden(true);
+        ui->upPic2->setHidden(true);
+        ui->upPic3->setHidden(true);
     }
     else
     {
         ui->man->setHidden(true);
         ui->coinReq->setHidden(true);
         ui->nailReq->setHidden(true);
+        ui->shovelReq->setHidden(true);
         ui->textEdit->setHidden(true);
         ui->upPic1->setHidden(true);
         ui->upPic2->setHidden(true);
+        ui->upPic3->setHidden(true);
     }
     ui->request->setHidden(true);
     ui->level->setText(QString::number(silo.getLevelSilo()));
@@ -47,12 +55,15 @@ void Silo::on_pushButton_clicked()
     {
         ui->coinReq->setText(QString::number(silo.getCoinU()));
         ui->nailReq->setText(QString::number(silo.getNailU()));
+        ui->shovelReq->setText(QString::number(silo.getShoveU()));
 
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);
+        ui->shovelReq->setHidden(false);
         ui->request->setHidden(false);
         ui->upPic1->setHidden(false);
         ui->upPic2->setHidden(false);
+        ui->upPic3->setHidden(false);
     }
     else
     {
@@ -66,9 +77,11 @@ void Silo::on_request_accepted()
 
     ui->coinReq->setHidden(true);
     ui->nailReq->setHidden(true);
+    ui->shovelReq->setHidden(true);
     ui->request->setHidden(true);
     ui->upPic1->setHidden(true);
     ui->upPic2->setHidden(true);
+    ui->upPic3->setHidden(true);
     ui->textEdit->setHidden(false);
     ui->pushButton->setHidden(true);
     ui->textEdit->setText("سیلو در حال ارتقا است\n\n" + QString::number(silo.getDaysToFinishUpgrading()) + " روز باقی مانده است");
@@ -78,10 +91,12 @@ void Silo::on_request_rejected()
 {
     ui->coinReq->setHidden(true);
     ui->nailReq->setHidden(true);
+    ui->shovelReq->setHidden(true);
     ui->request->setHidden(true);
     ui->textEdit->setHidden(true);
     ui->upPic1->setHidden(true);
     ui->upPic2->setHidden(true);
+    ui->upPic3->setHidden(true);
     ui->man->setHidden(true);
 }
 

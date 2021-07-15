@@ -140,17 +140,39 @@ void CourtGame::on_lockPoultryFarm_clicked()
 
 void CourtGame::on_dairyFarm_clicked()
 {
-    DairyFarm *df = new DairyFarm;
-    df->show();
+    if(user.getDairyFarm().getLevelAnimalFarm() == 0)
+        on_lockDairyFarm_clicked();
+    else
+    {
+        DairyFarm *df = new DairyFarm(user.getQjo(), user.getIndex());
+        df->show();
+        close();
+    }
+}
+
+void CourtGame::on_lockDairyFarm_clicked()
+{
+    LockDairyFarm *ldf = new LockDairyFarm(user.getQjo(), user.getIndex());
+    ldf->show();
     close();
 }
 
 void CourtGame::on_sheepfold_clicked()
 {
-    Sheepfold *shp = new Sheepfold;
-    shp->show();
-    close();
+    if(user.getSheepfold().getLevelAnimalFarm() == 0)
+        on_lockSheepfold_clicked();
+    else
+    {
+        Sheepfold *sp = new Sheepfold(user.getQjo(), user.getIndex());
+        sp->show();
+        close();
+    }
 }
 
-
+void CourtGame::on_lockSheepfold_clicked()
+{
+    LockSheepfold *lsp = new LockSheepfold(user.getQjo(), user.getIndex());
+    lsp->show();
+    close();
+}
 

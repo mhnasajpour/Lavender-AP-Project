@@ -17,6 +17,8 @@ void BaseUser::setExp(int add)
     {
         qjo["level"] = getLevelPlayer() + 1;
         qjo["exp"] = getExp() + add - upperBoundExp;
+        LevelUp* lu = new LevelUp();
+        lu->exec();
         //checkLevel();
     }
     else

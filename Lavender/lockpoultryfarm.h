@@ -19,7 +19,6 @@ public:
 
 private slots:
     void on_unlock_clicked();
-
     void on_door_clicked();
 
 private:

@@ -129,9 +129,9 @@ void mainMenu::on_inputUsername_textEdited(const QString &arg1)
 
 void mainMenu::on_nextDay_clicked()
 {
+    DayNight *dn = new DayNight();
+    dn->exec();
     user.nextDay();
-    DayNight dn;
-    dn.exec();
     ui->levelShow->setText(QString::number(user.getLevelPlayer()));
     ui->expShow->setText(QString::number(user.getExp()));
     ui->coinShow->setText(QString::number(user.getCoin()));

@@ -69,7 +69,7 @@ background-color: transparent;
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>560</y>
+     <y>540</y>
      <width>20</width>
      <height>20</height>
     </rect>
@@ -134,7 +134,7 @@ background-color: transparent;
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>510</y>
+     <y>500</y>
      <width>111</width>
      <height>81</height>
     </rect>
@@ -265,7 +265,7 @@ color: rgb(212, 212, 212);</string>
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>520</y>
+     <y>510</y>
      <width>33</width>
      <height>20</height>
     </rect>
@@ -294,7 +294,7 @@ color: rgb(212, 212, 212);</string>
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>520</y>
+     <y>510</y>
      <width>20</width>
      <height>20</height>
     </rect>
@@ -427,7 +427,7 @@ color: rgb(212, 212, 212);</string>
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>560</y>
+     <y>540</y>
      <width>33</width>
      <height>20</height>
     </rect>
@@ -518,6 +518,35 @@ QPushButton{
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QDialogButtonBox" name="request">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>583</y>
+     <width>167</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 0, 0);
+</string>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+   <property name="centerButtons">
+    <bool>false</bool>
+   </property>
+  </widget>
   <zorder>pic</zorder>
   <zorder>man</zorder>
   <zorder>label</zorder>
@@ -529,7 +558,6 @@ QPushButton{
   <zorder>upgradeKey</zorder>
   <zorder>level</zorder>
   <zorder>coinReq</zorder>
-  <zorder>boardKey</zorder>
   <zorder>nailReq</zorder>
   <zorder>upPic1</zorder>
   <zorder>upPic2</zorder>
@@ -537,6 +565,8 @@ QPushButton{
   <zorder>textEdit</zorder>
   <zorder>line</zorder>
   <zorder>door</zorder>
+  <zorder>request</zorder>
+  <zorder>boardKey</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>

@@ -231,71 +231,6 @@ background-color:transparent;
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="nailReq">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>440</y>
-     <width>33</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial Rounded MT Bold</family>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>6</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="coinReq">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>470</y>
-     <width>33</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial Rounded MT Bold</family>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>50</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="upPic2">
-   <property name="geometry">
-    <rect>
-     <x>740</x>
-     <y>470</y>
-     <width>20</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="pic.qrc">:/storage/otherPic/storage/coin.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
@@ -367,25 +302,6 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="centerButtons">
     <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="upPic1">
-   <property name="geometry">
-    <rect>
-     <x>740</x>
-     <y>440</y>
-     <width>20</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="pic.qrc">:/storage/otherPic/storage/nail.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QProgressBar" name="progressBar">
@@ -856,6 +772,132 @@ QProgressBar::chunk {
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="nailReq">
+   <property name="geometry">
+    <rect>
+     <x>766</x>
+     <y>427</y>
+     <width>33</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Rounded MT Bold</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>6</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="upPic2">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>451</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="pic.qrc">:/storage/otherPic/storage/shovel.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="coinReq">
+   <property name="geometry">
+    <rect>
+     <x>766</x>
+     <y>480</y>
+     <width>33</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Rounded MT Bold</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>50</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="upPic3">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>480</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="pic.qrc">:/storage/otherPic/storage/coin.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shovelReq">
+   <property name="geometry">
+    <rect>
+     <x>766</x>
+     <y>453</y>
+     <width>33</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Rounded MT Bold</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>6</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="upPic1">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>426</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="pic.qrc">:/storage/otherPic/storage/nail.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>pic</zorder>
   <zorder>man</zorder>
   <zorder>siloPic</zorder>
@@ -865,13 +907,15 @@ QProgressBar::chunk {
   <zorder>continueKey</zorder>
   <zorder>progressBar</zorder>
   <zorder>request</zorder>
-  <zorder>upPic1</zorder>
-  <zorder>upPic2</zorder>
-  <zorder>nailReq</zorder>
-  <zorder>coinReq</zorder>
-  <zorder>textEdit</zorder>
   <zorder>wheatPic</zorder>
   <zorder>pushButton</zorder>
+  <zorder>nailReq</zorder>
+  <zorder>upPic2</zorder>
+  <zorder>coinReq</zorder>
+  <zorder>upPic3</zorder>
+  <zorder>shovelReq</zorder>
+  <zorder>upPic1</zorder>
+  <zorder>textEdit</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>

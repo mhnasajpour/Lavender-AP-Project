@@ -286,7 +286,7 @@ padding:6px;
   <widget class="QLabel" name="pic">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>-10</x>
      <y>0</y>
      <width>1000</width>
      <height>630</height>

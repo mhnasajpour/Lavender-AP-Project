@@ -86,6 +86,16 @@ void PoultryFarm::on_boardKey_clicked()
             ui->boardKey->setHidden(true);
             ui->description->setText("...اندکی صبر کنید\n" + QString::number(poultryFarm.getDaysToFinishFeeding()) + " روز دیگر تخم مرغ ها\nآماده است");
             ui->description->setGeometry(600, 510, 241, 91);
+            if(!ui->man->isHidden())
+            {
+                ui->man->setHidden(true);
+                ui->textEdit->setHidden(true);
+                ui->request->setHidden(true);
+                ui->coinReq->setHidden(true);
+                ui->nailReq->setHidden(true);
+                ui->upPic1->setHidden(true);
+                ui->upPic2->setHidden(true);
+            }
         }
         else
         {

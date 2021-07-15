@@ -545,12 +545,12 @@ QPushButton{
   <zorder>coinReq</zorder>
   <zorder>textEdit</zorder>
   <zorder>board</zorder>
-  <zorder>boardKey</zorder>
   <zorder>level</zorder>
   <zorder>upgradeKey</zorder>
   <zorder>door</zorder>
   <zorder>request</zorder>
   <zorder>description</zorder>
+  <zorder>boardKey</zorder>
  </widget>
  <resources>
   <include location="pic.qrc"/>

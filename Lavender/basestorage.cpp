@@ -95,10 +95,11 @@ bool BaseStorage::addMilk(int change)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     QJsonArray milk = getMilk();
-    for(int i = 0; i < change; i++)
-        if(change > 0)
+    if(change > 0)
+        for(int i = 0; i < change; i++)
             milk.push_back(getDay());
-        else
+    else
+        for(int i = 0; i > change; i--)
             milk.pop_front();
     qjoStorage["milk"] = milk;
     return true;
