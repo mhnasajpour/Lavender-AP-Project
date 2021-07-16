@@ -807,8 +807,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -816,7 +816,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -845,8 +845,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -854,7 +854,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -865,8 +865,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -874,7 +874,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -905,8 +905,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -914,7 +914,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -943,8 +943,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -952,7 +952,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -963,8 +963,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -972,7 +972,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -1003,8 +1003,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -1012,7 +1012,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -1041,8 +1041,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -1050,7 +1050,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -1061,8 +1061,8 @@ QProgressBar::chunk {
          <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="ReflectSpread" coordinatemode="ObjectBoundingMode">
           <gradientstop position="0.000000000000000">
            <color alpha="255">
-            <red>234</red>
-            <green>176</green>
+            <red>214</red>
+            <green>150</green>
             <blue>0</blue>
            </color>
           </gradientstop>
@@ -1070,7 +1070,7 @@ QProgressBar::chunk {
            <color alpha="255">
             <red>255</red>
             <green>255</green>
-            <blue>255</blue>
+            <blue>127</blue>
            </color>
           </gradientstop>
          </gradient>
@@ -1103,10 +1103,11 @@ QProgressBar::chunk {
      <enum>Qt::StrongFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(234, 176, 0, 255), stop:1 rgba(255, 255, 255, 255));
+     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(214, 150, 0, 255), stop:1 rgba(255, 255, 127, 255));
 border:2px solid #aa0000;
 border-radius:10px;
 color: rgb(170, 0, 0);
+padding:4px;
 
 </string>
     </property>
@@ -1123,7 +1124,7 @@ color: rgb(170, 0, 0);
      <number>3</number>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
     <property name="dragEnabled">
      <bool>false</bool>

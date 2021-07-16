@@ -16,6 +16,7 @@
 #include "lockpoultryfarm.h"
 #include "lockdairyfarm.h"
 #include "locksheepfold.h"
+#include "shop.h"
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -173,6 +174,14 @@ void CourtGame::on_lockSheepfold_clicked()
 {
     LockSheepfold *lsp = new LockSheepfold(user.getQjo(), user.getIndex());
     lsp->show();
+    close();
+}
+
+
+void CourtGame::on_shop_clicked()
+{
+    Shop *sh = new Shop;
+    sh->show();
     close();
 }
 

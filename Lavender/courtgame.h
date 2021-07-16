@@ -31,6 +31,8 @@ private slots:
     void on_sheepfold_clicked();
     void on_lockSheepfold_clicked();
 
+    void on_shop_clicked();
+
 private:
     Ui::CourtGame *ui;
     User user;

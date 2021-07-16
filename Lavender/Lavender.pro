@@ -34,7 +34,11 @@ SOURCES += \
     poultryfarmbuilding.cpp \
     sheepfold.cpp \
     sheepfoldbuilding.cpp \
+<<<<<<< HEAD
     shopbuilding.cpp \
+=======
+    shop.cpp \
+>>>>>>> 979741abfcf3cf07f5eff967ef327e19a0c58c39
     signup.cpp \
     silo.cpp \
     silobuilding.cpp \
@@ -69,7 +73,11 @@ HEADERS += \
     poultryfarmbuilding.h \
     sheepfold.h \
     sheepfoldbuilding.h \
+<<<<<<< HEAD
     shopbuilding.h \
+=======
+    shop.h \
+>>>>>>> 979741abfcf3cf07f5eff967ef327e19a0c58c39
     signup.h \
     silo.h \
     silobuilding.h \
@@ -93,6 +101,7 @@ FORMS += \
     mainmenu.ui \
     poultryfarm.ui \
     sheepfold.ui \
+    shop.ui \
     signup.ui \
     silo.ui \
     storage.ui \

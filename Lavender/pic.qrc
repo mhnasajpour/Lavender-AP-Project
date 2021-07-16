@@ -16,7 +16,6 @@
         <file>otherPic/valid.png</file>
         <file>otherPic/money.png</file>
         <file>otherPic/lock.png</file>
-        <file>otherPic/doorLock.png</file>
         <file>otherPic/padlock.png</file>
     </qresource>
     <qresource prefix="/buildings">
@@ -93,5 +92,18 @@
         <file>otherPic/animals/wood.png</file>
         <file>otherPic/animals/unlockCowSheep.jpg</file>
         <file>otherPic/animals/unlockPoultry.jpg</file>
+    </qresource>
+    <qresource prefix="/shop">
+        <file>otherPic/shop/back1.jpg</file>
+        <file>otherPic/shop/cow.png</file>
+        <file>otherPic/shop/egg.png</file>
+        <file>otherPic/shop/hay.png</file>
+        <file>otherPic/shop/milk.png</file>
+        <file>otherPic/shop/nail.png</file>
+        <file>otherPic/shop/poultry.png</file>
+        <file>otherPic/shop/sheep.png</file>
+        <file>otherPic/shop/shovel.png</file>
+        <file>otherPic/shop/wheat.png</file>
+        <file>otherPic/shop/wool.png</file>
     </qresource>
 </RCC>
