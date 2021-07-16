@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "hayfarmbuilding.h"
+#include "user.h"
 
 namespace Ui {
 class lockHayFarm;
@@ -19,6 +20,7 @@ public:
 private slots:
     void on_unlock_clicked();
     void on_door_clicked();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::lockHayFarm *ui;

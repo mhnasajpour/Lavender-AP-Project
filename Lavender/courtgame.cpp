@@ -17,6 +17,7 @@
 #include "lockdairyfarm.h"
 #include "locksheepfold.h"
 #include "shop.h"
+#include <QCloseEvent>
 
 CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     QMainWindow(parent),
@@ -188,4 +189,10 @@ void CourtGame::on_shop_clicked()
         sh->show();
         close();
     }
+}
+
+void CourtGame::closeEvent(QCloseEvent *event)
+{
+    user.saveToFile();
+    event->accept();
 }

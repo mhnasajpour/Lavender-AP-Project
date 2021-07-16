@@ -30,7 +30,8 @@ private slots:
     void on_lockDairyFarm_clicked();
     void on_sheepfold_clicked();
     void on_lockSheepfold_clicked();
-    void on_shop_clicked();    
+    void on_shop_clicked();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::CourtGame *ui;

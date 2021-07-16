@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QJsonObject>
-#include <user.h>
+#include "user.h"
 
 namespace Ui {
 class mainMenu;
@@ -29,6 +29,7 @@ private slots:
     void on_nextDay_clicked();
     void on_exitKey_clicked();
     void on_continueKey_clicked();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::mainMenu *ui;

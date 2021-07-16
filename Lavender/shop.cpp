@@ -268,7 +268,6 @@ void Shop::on_sell2_clicked()
     }
 }
 
-
 void Shop::on_buy3_clicked()
 {
     setError(shop.buySheep());
@@ -280,3 +279,9 @@ void Shop::on_sell3_clicked()
     category == 2 ? setError(shop.sellWool()) : setError(shop.sellSheep());
 }
 
+void Shop::closeEvent(QCloseEvent *event)
+{
+    User tmp(shop.getQjo(), index);
+    tmp.saveToFile();
+    event->accept();
+}

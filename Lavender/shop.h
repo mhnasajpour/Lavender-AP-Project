@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "shopbuilding.h"
 #include "courtgame.h"
+#include "user.h"
 
 namespace Ui {
 class Shop;
@@ -19,26 +20,17 @@ public:
 
 private slots:
     void on_door_clicked();
-
     void on_product1_clicked();
-
     void on_product2_clicked();
-
     void on_product3_clicked();
-
     void on_product4_clicked();
-
     void on_buy1_clicked();
-
     void on_sell1_clicked();
-
     void on_buy2_clicked();
-
     void on_sell2_clicked();
-
     void on_buy3_clicked();
-
     void on_sell3_clicked();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::Shop *ui;

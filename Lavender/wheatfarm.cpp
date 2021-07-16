@@ -166,3 +166,9 @@ void WheatFarm::on_request_rejected()
     ui->upPic2->setHidden(true);
 }
 
+void WheatFarm::closeEvent(QCloseEvent *event)
+{
+    User tmp(wheatFarm.getQjo(), index);
+    tmp.saveToFile();
+    event->accept();
+}

@@ -70,3 +70,10 @@ void LockDairyFarm::on_door_clicked()
     cg->show();
     close();
 }
+
+void LockDairyFarm::closeEvent(QCloseEvent *event)
+{
+    User tmp(dairyFarm.getQjo(), index);
+    tmp.saveToFile();
+    event->accept();
+}

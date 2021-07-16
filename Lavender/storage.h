@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "storagebuilding.h"
+#include "user.h"
 
 namespace Ui {
 class Storage;
@@ -21,6 +22,7 @@ private slots:
     void on_request_accepted();
     void on_request_rejected();
     void on_continueKey_clicked();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::Storage *ui;

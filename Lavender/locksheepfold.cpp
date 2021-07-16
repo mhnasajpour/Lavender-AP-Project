@@ -70,3 +70,10 @@ void LockSheepfold::on_door_clicked()
     cg->show();
     close();
 }
+
+void LockSheepfold::closeEvent(QCloseEvent *event)
+{
+    User tmp(sheepfold.getQjo(), index);
+    tmp.saveToFile();
+    event->accept();
+}

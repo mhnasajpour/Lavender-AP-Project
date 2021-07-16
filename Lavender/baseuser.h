@@ -7,6 +7,8 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include "levelup.h"
+#include <QMessageBox>
+#include <QCloseEvent>
 
 class BaseUser
 {

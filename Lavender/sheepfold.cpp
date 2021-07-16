@@ -176,3 +176,10 @@ void Sheepfold::on_request_rejected()
     ui->upPic2->setHidden(true);
     ui->upPic3->setHidden(true);
 }
+
+void Sheepfold::closeEvent(QCloseEvent *event)
+{
+    User tmp(sheepfold.getQjo(), index);
+    tmp.saveToFile();
+    event->accept();
+}

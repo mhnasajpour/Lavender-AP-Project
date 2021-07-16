@@ -167,3 +167,10 @@ void PoultryFarm::on_request_rejected()
     ui->upPic1->setHidden(true);
     ui->upPic2->setHidden(true);
 }
+
+void PoultryFarm::closeEvent(QCloseEvent *event)
+{
+    User tmp(poultryFarm.getQjo(), index);
+    tmp.saveToFile();
+    event->accept();
+}

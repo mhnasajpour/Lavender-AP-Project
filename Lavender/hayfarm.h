@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "hayfarmbuilding.h"
+#include "user.h"
 
 namespace Ui {
 class hayFarm;
@@ -18,14 +19,11 @@ public:
 
 private slots:
     void on_continueKey_clicked();
-
     void on_boardKey_clicked();
-
     void on_upgradeKey_clicked();
-
     void on_request_accepted();
-
     void on_request_rejected();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::hayFarm *ui;

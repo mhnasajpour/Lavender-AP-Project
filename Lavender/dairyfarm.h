@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "dairyfarmbuilding.h"
+#include "user.h"
 
 namespace Ui {
 class DairyFarm;
@@ -22,6 +23,7 @@ private slots:
     void on_upgradeKey_clicked();
     void on_request_accepted();
     void on_request_rejected();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::DairyFarm *ui;

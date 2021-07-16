@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "poultryfarmbuilding.h"
 #include "courtgame.h"
+#include "user.h"
 
 namespace Ui {
 class LockPoultryFarm;
@@ -20,6 +21,7 @@ public:
 private slots:
     void on_unlock_clicked();
     void on_door_clicked();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::LockPoultryFarm *ui;

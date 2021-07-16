@@ -159,3 +159,8 @@ void mainMenu::on_continueKey_clicked()
     close();
 }
 
+void mainMenu::closeEvent(QCloseEvent *event)
+{
+    user.saveToFile();
+    event->accept();
+}
