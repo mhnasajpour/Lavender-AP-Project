@@ -8,7 +8,8 @@ User::User(QJsonObject _qjo, int _index):
     hayFarm(_qjo),
     poultryFarm((_qjo)),
     dairyFarm(_qjo),
-    sheepFold(_qjo)
+    sheepFold(_qjo),
+    shop(_qjo)
 {
     index = _index;
 }
@@ -272,6 +273,11 @@ DairyFarmBuilding User::getDairyFarm()
 SheepFoldBuilding User::getSheepfold()
 {
     return sheepFold;
+}
+
+ShopBuilding User::getShop()
+{
+    return shop;
 }
 
 void User::saveToFile()

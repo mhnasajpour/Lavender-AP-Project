@@ -34,6 +34,7 @@ SOURCES += \
     poultryfarmbuilding.cpp \
     sheepfold.cpp \
     sheepfoldbuilding.cpp \
+    shopbuilding.cpp \
     signup.cpp \
     silo.cpp \
     silobuilding.cpp \
@@ -68,6 +69,7 @@ HEADERS += \
     poultryfarmbuilding.h \
     sheepfold.h \
     sheepfoldbuilding.h \
+    shopbuilding.h \
     signup.h \
     silo.h \
     silobuilding.h \

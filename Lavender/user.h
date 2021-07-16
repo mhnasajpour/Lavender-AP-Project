@@ -9,6 +9,7 @@
 #include "poultryfarmbuilding.h"
 #include "dairyfarmbuilding.h"
 #include "sheepfoldbuilding.h"
+#include "shopbuilding.h"
 
 class User: public BaseUser
 {
@@ -21,6 +22,7 @@ private:
     PoultryFarmBuilding poultryFarm;
     DairyFarmBuilding dairyFarm;
     SheepFoldBuilding sheepFold;
+    ShopBuilding shop;
 public:
     User(QJsonObject _qjo, int _index);
     QJsonObject getQjo();
@@ -42,9 +44,7 @@ public:
     PoultryFarmBuilding getPoultryFarm();
     DairyFarmBuilding getDairyFarm();
     SheepFoldBuilding getSheepfold();
-    /*void buy(QString str, int num);
-    void sell(QString str, int num);
-    ~User();*/
+    ShopBuilding getShop();
     void saveToFile();
 };
 
