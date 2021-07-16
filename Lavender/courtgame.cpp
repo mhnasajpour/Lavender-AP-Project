@@ -66,6 +66,8 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
         ui->lockDairyFarm->setHidden(true);
     if(user.getSheepfold().getLevelAnimalFarm() > 0)
         ui->lockSheepfold->setHidden(true);
+    if(user.getLevelPlayer() > 1)
+        ui->lockShop->setHidden(true);
 }
 
 CourtGame::~CourtGame()
@@ -180,8 +182,10 @@ void CourtGame::on_lockSheepfold_clicked()
 
 void CourtGame::on_shop_clicked()
 {
-    Shop *sh = new Shop;
-    sh->show();
-    close();
+    if(user.getLevelPlayer() > 1)
+    {
+        Shop *sh = new Shop(user.getQjo(), user.getIndex());
+        sh->show();
+        close();
+    }
 }
-

@@ -17,7 +17,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Next Day</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/tools/otherPic/icon.png</normaloff>:/tools/otherPic/icon.png</iconset>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -42,6 +46,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections/>
 </ui>

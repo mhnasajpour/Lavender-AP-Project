@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Lavender</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/tools/otherPic/icon.png</normaloff>:/tools/otherPic/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QPushButton:pressed{

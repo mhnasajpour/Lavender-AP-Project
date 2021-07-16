@@ -10,8 +10,24 @@
     <height>630</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>630</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>630</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Lavender</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/tools/otherPic/icon.png</normaloff>:/tools/otherPic/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QPushButton:pressed{
@@ -27,6 +43,9 @@
      <width>241</width>
      <height>630</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(0, 34, 53, 255), stop:1 rgba(9, 9, 9, 255));</string>
@@ -58,6 +77,9 @@
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(85, 0, 0, 255), stop:1 rgba(170, 0, 0, 255));
 color: rgb(255, 255, 0);
@@ -82,11 +104,14 @@ border-radius: 12px;</string>
      <pointsize>9</pointsize>
     </font>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/shop/otherPic/shop/back1.jpg</pixmap>
+    <pixmap resource="pic.qrc">:/shop/otherPic/shop/back1.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -114,6 +139,9 @@ border-radius: 12px;</string>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(85, 0, 0, 255), stop:1 rgba(170, 0, 0, 255));
@@ -144,6 +172,9 @@ border-radius: 12px;</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(85, 0, 0, 255), stop:1 rgba(170, 0, 0, 255));
 color: rgb(255, 255, 0);
@@ -173,6 +204,9 @@ border-radius: 12px;</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(85, 0, 0, 255), stop:1 rgba(170, 0, 0, 255));
 color: rgb(255, 255, 0);
@@ -199,6 +233,9 @@ border-radius: 12px;</string>
      <bold>true</bold>
     </font>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-image: url(:/animal/otherPic/animals/level2.png);
 border-radius:13px;
@@ -224,11 +261,14 @@ color: rgb(170, 0, 0);
      <height>251</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/shop/otherPic/shop/poultry.png</pixmap>
+    <pixmap resource="pic.qrc">:/shop/otherPic/shop/poultry.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -254,6 +294,9 @@ color: rgb(170, 0, 0);
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
    </property>
@@ -267,7 +310,7 @@ padding:10px;</string>
     <string>15        </string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="pic.qrc">
      <normaloff>:/tools/otherPic/money.png</normaloff>:/tools/otherPic/money.png</iconset>
    </property>
    <property name="iconSize">
@@ -297,6 +340,9 @@ padding:10px;</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
    </property>
@@ -310,7 +356,7 @@ padding:10px;</string>
     <string>20        </string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="pic.qrc">
      <normaloff>:/tools/otherPic/money.png</normaloff>:/tools/otherPic/money.png</iconset>
    </property>
    <property name="iconSize">
@@ -340,6 +386,9 @@ padding:10px;</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
    </property>
@@ -353,7 +402,7 @@ padding:10px;</string>
     <string>50        </string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="pic.qrc">
      <normaloff>:/tools/otherPic/money.png</normaloff>:/tools/otherPic/money.png</iconset>
    </property>
    <property name="iconSize">
@@ -375,11 +424,14 @@ padding:10px;</string>
      <height>271</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/shop/otherPic/shop/cow.png</pixmap>
+    <pixmap resource="pic.qrc">:/shop/otherPic/shop/cow.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -405,6 +457,9 @@ padding:10px;</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
    </property>
@@ -418,7 +473,7 @@ padding:10px;</string>
     <string>70        </string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="pic.qrc">
      <normaloff>:/tools/otherPic/money.png</normaloff>:/tools/otherPic/money.png</iconset>
    </property>
    <property name="iconSize">
@@ -451,6 +506,9 @@ padding:10px;</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
    </property>
@@ -464,7 +522,7 @@ padding:10px;</string>
     <string>70        </string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="pic.qrc">
      <normaloff>:/tools/otherPic/money.png</normaloff>:/tools/otherPic/money.png</iconset>
    </property>
    <property name="iconSize">
@@ -486,11 +544,14 @@ padding:10px;</string>
      <height>221</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/shop/otherPic/shop/sheep.png</pixmap>
+    <pixmap resource="pic.qrc">:/shop/otherPic/shop/sheep.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -519,6 +580,9 @@ padding:10px;</string>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
    </property>
@@ -532,7 +596,7 @@ padding:10px;</string>
     <string>80        </string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="pic.qrc">
      <normaloff>:/tools/otherPic/money.png</normaloff>:/tools/otherPic/money.png</iconset>
    </property>
    <property name="iconSize">
@@ -558,6 +622,9 @@ padding:10px;</string>
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">border-image: url(:/animal/otherPic/animals/level2.png);
@@ -588,6 +655,9 @@ color: rgb(170, 0, 0);
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">border-image: url(:/animal/otherPic/animals/level2.png);
@@ -921,7 +991,7 @@ color: rgb(170, 0, 0);
     <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(214, 150, 0, 255), stop:1 rgba(255, 255, 127, 255));
@@ -981,6 +1051,9 @@ padding:4px;
    <property name="cursor">
     <cursorShape>ArrowCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
@@ -988,7 +1061,7 @@ padding:4px;
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="pic.qrc">
      <normaloff>:/tools/otherPic/money.png</normaloff>:/tools/otherPic/money.png</iconset>
    </property>
    <property name="iconSize">
@@ -1013,6 +1086,9 @@ padding:4px;
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton:hover{
 	image: url(:/animal/otherPic/animals/doorOpen.png);
@@ -1035,51 +1111,62 @@ QPushButton{
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QDockWidget" name="dockWidget">
+  <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>25</x>
-     <y>450</y>
-     <width>181</width>
-     <height>69</height>
+     <x>20</x>
+     <y>470</y>
+     <width>191</width>
+     <height>28</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">border-color: rgb(0, 255, 255);</string>
+   <property name="font">
+    <font>
+     <family>B Koodak</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
-   <widget class="QWidget" name="dockWidgetContents">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLineEdit" name="lineEdit">
-       <property name="font">
-        <font>
-         <family>B Koodak</family>
-         <pointsize>9</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 0, 0);
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(85, 0, 255);
 color: rgb(255, 255, 0);
 border-radius:5px;</string>
-       </property>
-       <property name="text">
-        <string>مکان کافی برای ذخیره محصول ندارید</string>
-       </property>
-       <property name="frame">
-        <bool>false</bool>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+   </property>
+   <property name="text">
+    <string>به فروشگاه خوش آمدید !</string>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>40</y>
+     <width>831</width>
+     <height>731</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/shop/otherPic/shop/background shop.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
   <zorder>back1</zorder>
   <zorder>back2</zorder>
@@ -1089,21 +1176,24 @@ border-radius:5px;</string>
   <zorder>product4</zorder>
   <zorder>label1</zorder>
   <zorder>pic1</zorder>
-  <zorder>sell1</zorder>
-  <zorder>buy1</zorder>
-  <zorder>sell2</zorder>
   <zorder>pic2</zorder>
-  <zorder>buy2</zorder>
-  <zorder>sell3</zorder>
   <zorder>pic3</zorder>
-  <zorder>buy3</zorder>
   <zorder>label2</zorder>
   <zorder>label3</zorder>
   <zorder>coinShow</zorder>
   <zorder>coinPic</zorder>
   <zorder>door</zorder>
-  <zorder>dockWidget</zorder>
+  <zorder>buy3</zorder>
+  <zorder>sell3</zorder>
+  <zorder>sell2</zorder>
+  <zorder>buy2</zorder>
+  <zorder>buy1</zorder>
+  <zorder>sell1</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>label</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections/>
 </ui>

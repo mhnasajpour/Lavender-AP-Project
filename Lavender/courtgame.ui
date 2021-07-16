@@ -23,7 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Lavender</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pic.qrc">
+    <normaloff>:/tools/otherPic/icon.png</normaloff>:/tools/otherPic/icon.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -695,11 +699,12 @@ QProgressBar::chunk {
     </property>
     <property name="font">
      <font>
-      <family>Caveat</family>
-      <pointsize>12</pointsize>
+      <family>Yu Gothic</family>
+      <pointsize>10</pointsize>
       <weight>75</weight>
-      <italic>false</italic>
+      <italic>true</italic>
       <bold>true</bold>
+      <underline>false</underline>
      </font>
     </property>
     <property name="cursor">
@@ -1255,6 +1260,35 @@ padding:4px;
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="lockShop">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>140</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/tools/otherPic/lock.png</normaloff>:/tools/otherPic/lock.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>exp</zorder>
    <zorder>levelPic</zorder>
@@ -1274,6 +1308,7 @@ padding:4px;
    <zorder>lockDairyFarm</zorder>
    <zorder>lockPoultryFarm</zorder>
    <zorder>lockSheepfold</zorder>
+   <zorder>lockShop</zorder>
   </widget>
  </widget>
  <resources>

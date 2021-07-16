@@ -17,6 +17,7 @@
         <file>otherPic/money.png</file>
         <file>otherPic/lock.png</file>
         <file>otherPic/padlock.png</file>
+        <file>otherPic/icon.png</file>
     </qresource>
     <qresource prefix="/buildings">
         <file>lands/storage.png</file>
@@ -105,5 +106,6 @@
         <file>otherPic/shop/shovel.png</file>
         <file>otherPic/shop/wheat.png</file>
         <file>otherPic/shop/wool.png</file>
+        <file>otherPic/shop/background shop.png</file>
     </qresource>
 </RCC>
