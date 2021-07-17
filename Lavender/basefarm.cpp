@@ -1,7 +1,6 @@
 #include "basefarm.h"
 
-BaseFarm::BaseFarm(QJsonObject _qjo):
-    BaseSilo(_qjo)
+BaseFarm::BaseFarm(QJsonObject _qjo) : BaseSilo(_qjo)
 {
 }
 
@@ -17,20 +16,20 @@ int BaseFarm::getDaysToFinishUpgrading()
 
 bool BaseFarm::canUpgrade()
 {
-    if(getNail() < nailU)
+    if (getNail() < nailU)
         return false;
-    if(getShovel() < shovelU)
+    if (getShovel() < shovelU)
         return false;
-    if(getCoin() < coinU)
+    if (getCoin() < coinU)
         return false;
-    if(getLevelPlayer() < minLevelRequiredU)
+    if (getLevelPlayer() < minLevelRequiredU)
         return false;
     return true;
 }
 
 void BaseFarm::startUpgrading()
 {
-    if(!canUpgrade())
+    if (!canUpgrade())
         return;
     addNail(-1 * nailU);
     addShovel(-1 * shovelU);

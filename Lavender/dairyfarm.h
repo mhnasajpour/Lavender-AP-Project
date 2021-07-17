@@ -3,10 +3,11 @@
 
 #include <QWidget>
 #include "dairyfarmbuilding.h"
-#include "user.h"
+#include "courtgame.h"
 
-namespace Ui {
-class DairyFarm;
+namespace Ui
+{
+    class DairyFarm;
 }
 
 class DairyFarm : public QWidget
@@ -23,7 +24,7 @@ private slots:
     void on_upgradeKey_clicked();
     void on_request_accepted();
     void on_request_rejected();
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::DairyFarm *ui;

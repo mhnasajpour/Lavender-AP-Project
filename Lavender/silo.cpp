@@ -1,16 +1,14 @@
 #include "silo.h"
 #include "ui_silo.h"
-#include "courtgame.h"
 
-Silo::Silo(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Silo),
-    silo(_qjo),
-    index(_index)
+Silo::Silo(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                            ui(new Ui::Silo),
+                                                            silo(_qjo),
+                                                            index(_index)
 {
     ui->setupUi(this);
 
-    if(silo.getDaysToFinishUpgrading() != 0)
+    if (silo.getDaysToFinishUpgrading() != 0)
     {
         ui->textEdit->setText("سیلو در حال ارتقا است\n\n" + QString::number(silo.getDaysToFinishUpgrading()) + " روز باقی مانده است");
         ui->pushButton->setHidden(true);
@@ -37,7 +35,8 @@ Silo::Silo(QJsonObject _qjo, int _index, QWidget *parent) :
     ui->progressBar->setMaximum(silo.getMaxCapacitySilo());
     ui->progressBar->setValue(silo.getWheat());
     ui->wheatPic->setGeometry(silo.getWheat() * 254 / silo.getMaxCapacitySilo() + 485, 317, 26, 26);
-    if(ui->wheatPic->x() > 612){
+    if (ui->wheatPic->x() > 612)
+    {
         ui->progressBar->setAlignment(Qt::AlignRight);
         ui->progressBar->setAlignment(Qt::AlignVCenter);
     }
@@ -51,7 +50,7 @@ Silo::~Silo()
 void Silo::on_pushButton_clicked()
 {
     ui->man->setHidden(false);
-    if(silo.canUpgrade())
+    if (silo.canUpgrade())
     {
         ui->coinReq->setText(QString::number(silo.getCoinU()));
         ui->nailReq->setText(QString::number(silo.getNailU()));
@@ -102,7 +101,7 @@ void Silo::on_request_rejected()
 
 void Silo::on_continueKey_clicked()
 {
-    CourtGame* cgp = new CourtGame(silo.getQjo(), index);
+    CourtGame *cgp = new CourtGame(silo.getQjo(), index);
     cgp->show();
     close();
 }

@@ -3,11 +3,12 @@
 
 #include "basestorage.h"
 
-class BaseSilo: public BaseStorage
+class BaseSilo : public BaseStorage
 {
 protected:
     QJsonObject qjoSilo;
     int maxCapacitySilo;
+
 public:
     BaseSilo(QJsonObject);
     virtual QJsonObject getQjo() = 0;

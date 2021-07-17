@@ -4,7 +4,7 @@
 #include "basefarm.h"
 #include "baseupgrade.h"
 
-class WheatFarmBuilding: public BaseFarm
+class WheatFarmBuilding : public BaseFarm
 {
 public:
     WheatFarmBuilding(QJsonObject);

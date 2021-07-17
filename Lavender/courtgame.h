@@ -2,11 +2,26 @@
 #define COURTGAME_H
 
 #include <QMainWindow>
-#include <QJsonObject>
+#include <QCloseEvent>
 #include <user.h>
+#include "login.h"
+#include "mainmenu.h"
+#include "storage.h"
+#include "silo.h"
+#include "wheatfarm.h"
+#include "hayfarm.h"
+#include "poultryfarm.h"
+#include "dairyfarm.h"
+#include "sheepfold.h"
+#include "shop.h"
+#include "lockhayfarm.h"
+#include "lockpoultryfarm.h"
+#include "lockdairyfarm.h"
+#include "locksheepfold.h"
 
-namespace Ui {
-class CourtGame;
+namespace Ui
+{
+    class CourtGame;
 }
 
 class CourtGame : public QMainWindow
@@ -31,7 +46,7 @@ private slots:
     void on_sheepfold_clicked();
     void on_lockSheepfold_clicked();
     void on_shop_clicked();
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::CourtGame *ui;

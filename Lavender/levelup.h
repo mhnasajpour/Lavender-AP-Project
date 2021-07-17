@@ -2,9 +2,11 @@
 #define LEVELUP_H
 
 #include <QDialog>
+#include <QMovie>
 
-namespace Ui {
-class LevelUp;
+namespace Ui
+{
+    class LevelUp;
 }
 
 class LevelUp : public QDialog

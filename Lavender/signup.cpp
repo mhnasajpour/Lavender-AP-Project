@@ -1,10 +1,5 @@
 #include "signup.h"
 #include "ui_signup.h"
-#include "login.h"
-#include <QJsonObject>
-#include <QJsonArray>
-#include <QFile>
-#include <QJsonDocument>
 
 void Signup::addUser(QString _name, QString _email, QString _username, unsigned long _password)
 {
@@ -100,19 +95,18 @@ int Signup::check(QString _username, QString _email)
     QJsonArray user = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
     file.close();
 
-    for(int i = 0; i < user.size(); i++)
+    for (int i = 0; i < user.size(); i++)
     {
-        if((user[i].toObject())["email"].toString() == _email)
+        if ((user[i].toObject())["email"].toString() == _email)
             return 2;
-        if((user[i].toObject())["username"].toString() == _username)
+        if ((user[i].toObject())["username"].toString() == _username)
             return 1;
     }
     return 3;
 }
 
-Signup::Signup(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Signup)
+Signup::Signup(QWidget *parent) : QWidget(parent),
+                                  ui(new Ui::Signup)
 {
     ui->setupUi(this);
     ui->nextKey->setHidden(true);
@@ -133,7 +127,6 @@ void Signup::on_returnKey_clicked()
     close();
 }
 
-
 void Signup::on_nextKey_clicked()
 {
     Login *l = new Login;
@@ -144,32 +137,32 @@ void Signup::on_nextKey_clicked()
 void Signup::on_acceptKey_clicked()
 {
     bool isGood = true;
-    if(ui->inputName->text() == "")
+    if (ui->inputName->text() == "")
     {
         ui->inputName->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputUsername->text() == "")
+    if (ui->inputUsername->text() == "")
     {
         ui->inputUsername->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputPassword->text() == "")
+    if (ui->inputPassword->text() == "")
     {
         ui->inputPassword->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputRepeat->text() == "")
+    if (ui->inputRepeat->text() == "")
     {
         ui->inputRepeat->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputEmail->text() == "")
+    if (ui->inputEmail->text() == "")
     {
         ui->inputEmail->setPlaceholderText("is empty");
         isGood = false;
     }
-    if(ui->inputPassword->text() != ui->inputRepeat->text())
+    if (ui->inputPassword->text() != ui->inputRepeat->text())
     {
         ui->inputPassword->setPlaceholderText("not same");
         ui->inputPassword->setText("");
@@ -179,9 +172,9 @@ void Signup::on_acceptKey_clicked()
         ui->eye2->setHidden(true);
         isGood = false;
     }
-    if(check(ui->inputUsername->text(), ui->inputEmail->text()) != 3)
+    if (check(ui->inputUsername->text(), ui->inputEmail->text()) != 3)
     {
-        if(check(ui->inputUsername->text(), ui->inputEmail->text()) == 1)
+        if (check(ui->inputUsername->text(), ui->inputEmail->text()) == 1)
         {
             ui->inputUsername->setPlaceholderText("was taken");
             ui->inputUsername->setText("");
@@ -193,7 +186,7 @@ void Signup::on_acceptKey_clicked()
         }
         isGood = false;
     }
-    if(isGood)
+    if (isGood)
     {
         std::hash<QString> hashedPassword;
         unsigned long i = hashedPassword(ui->inputPassword->text());
@@ -245,7 +238,7 @@ void Signup::on_eye2_released()
 
 void Signup::on_inputPassword_textEdited(const QString &arg1)
 {
-    if(arg1 == "")
+    if (arg1 == "")
         ui->eye1->setHidden(true);
     else
         ui->eye1->setHidden(false);
@@ -253,9 +246,8 @@ void Signup::on_inputPassword_textEdited(const QString &arg1)
 
 void Signup::on_inputRepeat_textEdited(const QString &arg1)
 {
-    if(arg1 == "")
+    if (arg1 == "")
         ui->eye2->setHidden(true);
     else
         ui->eye2->setHidden(false);
 }
-

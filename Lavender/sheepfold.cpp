@@ -1,19 +1,17 @@
 #include "sheepfold.h"
 #include "ui_sheepfold.h"
-#include "courtgame.h"
 
-Sheepfold::Sheepfold(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Sheepfold),
-    sheepfold(_qjo),
-    index(_index)
+Sheepfold::Sheepfold(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                                      ui(new Ui::Sheepfold),
+                                                                      sheepfold(_qjo),
+                                                                      index(_index)
 {
     ui->setupUi(this);
 
     ui->level->setText(QString::number(sheepfold.getLevelAnimalFarm()));
     ui->capacity->setText("ظرفیت : " + QString::number(sheepfold.getMaxCapacityAnimalFarm()));
 
-    if(sheepfold.getAnimals() == 0)
+    if (sheepfold.getAnimals() == 0)
     {
         ui->size->setText("گوسفندی موجود نیست !");
         ui->boardKey->setHidden(true);
@@ -23,7 +21,7 @@ Sheepfold::Sheepfold(QJsonObject _qjo, int _index, QWidget *parent) :
     else
         ui->size->setText("تعداد گوسفند ها : " + QString::number(sheepfold.getAnimals()));
 
-    if(sheepfold.getDaysToFinishUpgrading() != 0)
+    if (sheepfold.getDaysToFinishUpgrading() != 0)
     {
         ui->upgradeKey->setHidden(true);
         ui->description->setHidden(true);
@@ -45,14 +43,14 @@ Sheepfold::Sheepfold(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->upPic3->setHidden(true);
     }
 
-    if(sheepfold.getAnimals() != 0)
+    if (sheepfold.getAnimals() != 0)
     {
-        if(sheepfold.getFlag() == 1)
+        if (sheepfold.getFlag() == 1)
         {
             ui->boardKey->setText("غذا دادن");
             ui->description->setText("...گوسفند ها گرسنه اند\nاز انبار به آن ها " + QString::number(sheepfold.getAnimals()) + " یونجه بدهید");
         }
-        else if(sheepfold.getFlag() == 2)
+        else if (sheepfold.getFlag() == 2)
         {
             ui->upgradeKey->setHidden(true);
             ui->boardKey->setHidden(true);
@@ -71,23 +69,23 @@ Sheepfold::~Sheepfold()
 
 void Sheepfold::on_door_clicked()
 {
-    CourtGame* cgp = new CourtGame(sheepfold.getQjo(), index);
+    CourtGame *cgp = new CourtGame(sheepfold.getQjo(), index);
     cgp->show();
     close();
 }
 
 void Sheepfold::on_boardKey_clicked()
 {
-    if(sheepfold.getFlag() == 1)
+    if (sheepfold.getFlag() == 1)
     {
-        if(sheepfold.canFeed())
+        if (sheepfold.canFeed())
         {
             sheepfold.feed();
             ui->upgradeKey->setHidden(true);
             ui->boardKey->setHidden(true);
             ui->description->setText("...اندکی صبر کنید\n" + QString::number(sheepfold.getDaysToFinishFeeding()) + " روز دیگر پشم ها\nآماده است");
             ui->description->setGeometry(90, 500, 241, 91);
-            if(!ui->man->isHidden())
+            if (!ui->man->isHidden())
             {
                 ui->man->setHidden(true);
                 ui->textEdit->setHidden(true);
@@ -107,9 +105,9 @@ void Sheepfold::on_boardKey_clicked()
             ui->textEdit->setText("\n     یونجه بیشتری\n       نیاز است");
         }
     }
-    else if(sheepfold.getFlag() == 3)
+    else if (sheepfold.getFlag() == 3)
     {
-        if(sheepfold.canCollectProduct())
+        if (sheepfold.canCollectProduct())
         {
             sheepfold.collectProduct();
             ui->boardKey->setText("غذا دادن");
@@ -128,7 +126,7 @@ void Sheepfold::on_boardKey_clicked()
 void Sheepfold::on_upgradeKey_clicked()
 {
     ui->man->setHidden(false);
-    if(sheepfold.canUpgrade())
+    if (sheepfold.canUpgrade())
     {
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);

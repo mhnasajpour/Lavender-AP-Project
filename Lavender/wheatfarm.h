@@ -3,11 +3,11 @@
 
 #include <QWidget>
 #include "wheatfarmbuilding.h"
-#include "user.h"
-#include <QJsonObject>
+#include <courtgame.h>
 
-namespace Ui {
-class WheatFarm;
+namespace Ui
+{
+    class WheatFarm;
 }
 
 class WheatFarm : public QWidget
@@ -24,7 +24,7 @@ private slots:
     void on_upgradeKey_clicked();
     void on_request_accepted();
     void on_request_rejected();
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::WheatFarm *ui;

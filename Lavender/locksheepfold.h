@@ -4,10 +4,10 @@
 #include <QWidget>
 #include "sheepfoldbuilding.h"
 #include "courtgame.h"
-#include "user.h"
 
-namespace Ui {
-class LockSheepfold;
+namespace Ui
+{
+    class LockSheepfold;
 }
 
 class LockSheepfold : public QWidget
@@ -21,7 +21,7 @@ public:
 private slots:
     void on_unlock_clicked();
     void on_door_clicked();
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::LockSheepfold *ui;

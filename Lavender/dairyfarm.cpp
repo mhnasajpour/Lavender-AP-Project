@@ -1,19 +1,17 @@
 #include "dairyfarm.h"
 #include "ui_dairyfarm.h"
-#include "courtgame.h"
 
-DairyFarm::DairyFarm(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::DairyFarm),
-    dairyFarm(_qjo),
-    index(_index)
+DairyFarm::DairyFarm(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                                      ui(new Ui::DairyFarm),
+                                                                      dairyFarm(_qjo),
+                                                                      index(_index)
 {
     ui->setupUi(this);
 
     ui->level->setText(QString::number(dairyFarm.getLevelAnimalFarm()));
     ui->capacity->setText("ظرفیت : " + QString::number(dairyFarm.getMaxCapacityAnimalFarm()));
 
-    if(dairyFarm.getAnimals() == 0)
+    if (dairyFarm.getAnimals() == 0)
     {
         ui->size->setText("هیچ گاوی موجود نمی باشد !");
         ui->boardKey->setHidden(true);
@@ -23,7 +21,7 @@ DairyFarm::DairyFarm(QJsonObject _qjo, int _index, QWidget *parent) :
     else
         ui->size->setText("تعداد گاو ها : " + QString::number(dairyFarm.getAnimals()));
 
-    if(dairyFarm.getDaysToFinishUpgrading() != 0)
+    if (dairyFarm.getDaysToFinishUpgrading() != 0)
     {
         ui->upgradeKey->setHidden(true);
         ui->description->setHidden(true);
@@ -43,14 +41,14 @@ DairyFarm::DairyFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->upPic2->setHidden(true);
     }
 
-    if(dairyFarm.getAnimals() != 0)
+    if (dairyFarm.getAnimals() != 0)
     {
-        if(dairyFarm.getFlag() == 1)
+        if (dairyFarm.getFlag() == 1)
         {
             ui->boardKey->setText("غذا دادن");
             ui->description->setText("...گاو ها گرسنه اند\nاز انبار به آن ها " + QString::number(2 * dairyFarm.getAnimals()) + " یونجه بدهید");
         }
-        else if(dairyFarm.getFlag() == 2)
+        else if (dairyFarm.getFlag() == 2)
         {
             ui->upgradeKey->setHidden(true);
             ui->boardKey->setHidden(true);
@@ -69,24 +67,23 @@ DairyFarm::~DairyFarm()
 
 void DairyFarm::on_door_clicked()
 {
-    CourtGame* cgp = new CourtGame(dairyFarm.getQjo(), index);
+    CourtGame *cgp = new CourtGame(dairyFarm.getQjo(), index);
     cgp->show();
     close();
 }
 
-
 void DairyFarm::on_boardKey_clicked()
 {
-    if(dairyFarm.getFlag() == 1)
+    if (dairyFarm.getFlag() == 1)
     {
-        if(dairyFarm.canFeed())
+        if (dairyFarm.canFeed())
         {
             dairyFarm.feed();
             ui->upgradeKey->setHidden(true);
             ui->boardKey->setHidden(true);
             ui->description->setText("...اندکی صبر کنید\n" + QString::number(dairyFarm.getDaysToFinishFeeding()) + " روز دیگر شیر ها\nآماده است");
             ui->description->setGeometry(590, 515, 241, 91);
-            if(!ui->man->isHidden())
+            if (!ui->man->isHidden())
             {
                 ui->man->setHidden(true);
                 ui->textEdit->setHidden(true);
@@ -104,9 +101,9 @@ void DairyFarm::on_boardKey_clicked()
             ui->textEdit->setText("\n     یونجه بیشتری\n       نیاز است");
         }
     }
-    else if(dairyFarm.getFlag() == 3)
+    else if (dairyFarm.getFlag() == 3)
     {
-        if(dairyFarm.canCollectProduct())
+        if (dairyFarm.canCollectProduct())
         {
             dairyFarm.collectProduct();
             ui->boardKey->setText("غذا دادن");
@@ -125,7 +122,7 @@ void DairyFarm::on_boardKey_clicked()
 void DairyFarm::on_upgradeKey_clicked()
 {
     ui->man->setHidden(false);
-    if(dairyFarm.canUpgrade())
+    if (dairyFarm.canUpgrade())
     {
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);

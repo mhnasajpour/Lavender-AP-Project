@@ -1,7 +1,6 @@
 #include "poultryfarmbuilding.h"
 
-PoultryFarmBuilding::PoultryFarmBuilding(QJsonObject _qjo):
-    BaseAnimalFarm(_qjo)
+PoultryFarmBuilding::PoultryFarmBuilding(QJsonObject _qjo) : BaseAnimalFarm(_qjo)
 {
     qjoAnimalFarm = _qjo["poultryFarm"].toObject();
     maxCapacityAnimalFarm = pow(2, getLevelAnimalFarm());
@@ -56,14 +55,14 @@ QJsonObject PoultryFarmBuilding::getQjoAnimalFarm()
 
 bool PoultryFarmBuilding::canFeed()
 {
-    if(getWheat() < getAnimals())
+    if (getWheat() < getAnimals())
         return false;
     return true;
 }
 
 void PoultryFarmBuilding::feed()
 {
-    if(!canFeed())
+    if (!canFeed())
         return;
     addWheat(-1 * getAnimals());
     setExp(getAnimals());
@@ -73,9 +72,9 @@ void PoultryFarmBuilding::feed()
 
 bool PoultryFarmBuilding::canCollectProduct()
 {
-    if(getAnimals() + getUsedCapacity() > maxCapacityStorage)
+    if (getAnimals() + getUsedCapacity() > maxCapacityStorage)
         return false;
-    if(getFlag() != 3)
+    if (getFlag() != 3)
         return false;
     return true;
 }

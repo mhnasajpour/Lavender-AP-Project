@@ -1,11 +1,10 @@
 #include "storagebuilding.h"
 
-StorageBuilding::StorageBuilding(QJsonObject _qjo):
-    BaseStorage(_qjo)
+StorageBuilding::StorageBuilding(QJsonObject _qjo) : BaseStorage(_qjo)
 {
     nailU = getLevelStorage();
     shovelU = getLevelStorage() - 1;
-    coinU =  pow(getLevelStorage(), 3) * 10;
+    coinU = pow(getLevelStorage(), 3) * 10;
     timeU = 5;
     minLevelRequiredU = 0;
     maxLevelRequiredU = getLevelPlayer();
@@ -36,22 +35,22 @@ int StorageBuilding::getDaysToFinishUpgrading()
 
 bool StorageBuilding::canUpgrade()
 {
-    if(getNail() < nailU)
+    if (getNail() < nailU)
         return false;
-    if(getShovel() < shovelU)
+    if (getShovel() < shovelU)
         return false;
-    if(getCoin() < coinU)
+    if (getCoin() < coinU)
         return false;
-    if(getLevelPlayer() < minLevelRequiredU)
+    if (getLevelPlayer() < minLevelRequiredU)
         return false;
-    if(getLevelStorage() >= maxLevelRequiredU)
+    if (getLevelStorage() >= maxLevelRequiredU)
         return false;
     return true;
 }
 
 void StorageBuilding::startUpgrading()
 {
-    if(!canUpgrade())
+    if (!canUpgrade())
         return;
     addNail(-1 * nailU);
     addShovel(-1 * shovelU);

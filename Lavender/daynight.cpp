@@ -1,10 +1,8 @@
 #include "daynight.h"
 #include "ui_daynight.h"
-#include <QMovie>
 
-DayNight::DayNight(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::DayNight)
+DayNight::DayNight(QWidget *parent) : QDialog(parent),
+                                      ui(new Ui::DayNight)
 {
     ui->setupUi(this);
 

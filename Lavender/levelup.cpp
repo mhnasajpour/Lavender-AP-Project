@@ -1,10 +1,8 @@
 #include "levelup.h"
 #include "ui_levelup.h"
-#include <QMovie>
 
-LevelUp::LevelUp(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::LevelUp)
+LevelUp::LevelUp(QWidget *parent) : QDialog(parent),
+                                    ui(new Ui::LevelUp)
 {
     ui->setupUi(this);
 

@@ -3,7 +3,7 @@
 
 #include "baseanimalfarm.h"
 
-class PoultryFarmBuilding: public BaseAnimalFarm
+class PoultryFarmBuilding : public BaseAnimalFarm
 {
 public:
     PoultryFarmBuilding(QJsonObject);

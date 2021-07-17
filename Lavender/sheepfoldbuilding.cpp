@@ -1,7 +1,6 @@
 #include "sheepfoldbuilding.h"
 
-SheepFoldBuilding::SheepFoldBuilding(QJsonObject _qjo):
-    BaseAnimalFarm(_qjo)
+SheepFoldBuilding::SheepFoldBuilding(QJsonObject _qjo) : BaseAnimalFarm(_qjo)
 {
     qjoAnimalFarm = _qjo["sheepfold"].toObject();
     maxCapacityAnimalFarm = pow(2, getLevelAnimalFarm());
@@ -56,14 +55,14 @@ QJsonObject SheepFoldBuilding::getQjoAnimalFarm()
 
 bool SheepFoldBuilding::canFeed()
 {
-    if(getHay() < getAnimals())
+    if (getHay() < getAnimals())
         return false;
     return true;
 }
 
 void SheepFoldBuilding::feed()
 {
-    if(!canFeed())
+    if (!canFeed())
         return;
     addHay(-1 * getAnimals());
     setExp(7 * getAnimals());
@@ -73,11 +72,11 @@ void SheepFoldBuilding::feed()
 
 bool SheepFoldBuilding::canCollectProduct()
 {
-    if(getAnimals() + getUsedCapacity() > maxCapacityStorage)
+    if (getAnimals() + getUsedCapacity() > maxCapacityStorage)
         return false;
-    if(getCoin() < getAnimals())
+    if (getCoin() < getAnimals())
         return false;
-    if(getFlag() != 3)
+    if (getFlag() != 3)
         return false;
     return true;
 }

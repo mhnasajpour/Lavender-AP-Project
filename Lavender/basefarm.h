@@ -4,11 +4,12 @@
 #include "basesilo.h"
 #include "baseupgrade.h"
 
-class BaseFarm: public BaseSilo, public BaseUpgrade
+class BaseFarm : public BaseSilo, public BaseUpgrade
 {
 protected:
     QJsonObject qjoFarm;
     int maxArea;
+
 public:
     BaseFarm(QJsonObject);
     virtual QJsonObject getQjo() = 0;

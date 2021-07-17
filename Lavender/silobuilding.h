@@ -4,7 +4,7 @@
 #include "basesilo.h"
 #include "baseupgrade.h"
 
-class SiloBuilding: public BaseSilo, public BaseUpgrade
+class SiloBuilding : public BaseSilo, public BaseUpgrade
 {
 public:
     SiloBuilding(QJsonObject);

@@ -1,7 +1,6 @@
 #include "shopbuilding.h"
 
-ShopBuilding::ShopBuilding(QJsonObject _qjo):
-    BaseSilo(_qjo)
+ShopBuilding::ShopBuilding(QJsonObject _qjo) : BaseSilo(_qjo)
 {
     qjo = _qjo;
 }
@@ -29,9 +28,9 @@ QJsonObject ShopBuilding::getQjoSilo()
 
 int ShopBuilding::buyWheat()
 {
-    if(getCoin() < 3)
+    if (getCoin() < 3)
         return 2;
-    if(!addWheat(1))
+    if (!addWheat(1))
         return 3;
     changeCoin(-3);
     setExp(1);
@@ -40,7 +39,7 @@ int ShopBuilding::buyWheat()
 
 int ShopBuilding::sellWheat()
 {
-    if(!addWheat(-1))
+    if (!addWheat(-1))
         return 4;
     changeCoin(2);
     setExp(1);
@@ -49,11 +48,11 @@ int ShopBuilding::sellWheat()
 
 int ShopBuilding::buyHay()
 {
-    if(getLevelPlayer() < 3)
+    if (getLevelPlayer() < 3)
         return 1;
-    if(getCoin() < 6)
+    if (getCoin() < 6)
         return 2;
-    if(!addHay(1))
+    if (!addHay(1))
         return 3;
     changeCoin(-6);
     setExp(2);
@@ -62,9 +61,9 @@ int ShopBuilding::buyHay()
 
 int ShopBuilding::sellHay()
 {
-    if(getLevelPlayer() < 3)
+    if (getLevelPlayer() < 3)
         return 1;
-    if(!addHay(-1))
+    if (!addHay(-1))
         return 4;
     changeCoin(4);
     setExp(2);
@@ -73,9 +72,9 @@ int ShopBuilding::sellHay()
 
 int ShopBuilding::sellEgg()
 {
-    if(getLevelPlayer() < 2)
+    if (getLevelPlayer() < 2)
         return 1;
-    if(!addEgg(-1))
+    if (!addEgg(-1))
         return 4;
     changeCoin(8);
     setExp(3);
@@ -84,9 +83,9 @@ int ShopBuilding::sellEgg()
 
 int ShopBuilding::sellMilk()
 {
-    if(getLevelPlayer() < 4)
+    if (getLevelPlayer() < 4)
         return 1;
-    if(!addMilk(-1))
+    if (!addMilk(-1))
         return 4;
     changeCoin(12);
     setExp(5);
@@ -95,9 +94,9 @@ int ShopBuilding::sellMilk()
 
 int ShopBuilding::sellWool()
 {
-    if(getLevelPlayer() < 6)
+    if (getLevelPlayer() < 6)
         return 1;
-    if(!addWool(-1))
+    if (!addWool(-1))
         return 4;
     changeCoin(23);
     setExp(10);
@@ -106,11 +105,11 @@ int ShopBuilding::sellWool()
 
 int ShopBuilding::buyPoultry()
 {
-    if(getLevelPlayer() < 2)
+    if (getLevelPlayer() < 2)
         return 1;
-    if(getCoin() < 20)
+    if (getCoin() < 20)
         return 2;
-    if(qjo["poultryFarm"].toObject()["animals"].toInt() + 1 > pow(2, qjo["poultryFarm"].toObject()["level"].toInt()))
+    if (qjo["poultryFarm"].toObject()["animals"].toInt() + 1 > pow(2, qjo["poultryFarm"].toObject()["level"].toInt()))
         return 3;
     QJsonObject tmp = qjo["poultryFarm"].toObject();
     tmp["animals"] = qjo["poultryFarm"].toObject()["animals"].toInt() + 1;
@@ -122,9 +121,9 @@ int ShopBuilding::buyPoultry()
 
 int ShopBuilding::sellPoultry()
 {
-    if(getLevelPlayer() < 2)
+    if (getLevelPlayer() < 2)
         return 1;
-    if(qjo["poultryFarm"].toObject()["animals"].toInt() - 1 < 0)
+    if (qjo["poultryFarm"].toObject()["animals"].toInt() - 1 < 0)
         return 4;
     QJsonObject tmp = qjo["poultryFarm"].toObject();
     tmp["animals"] = qjo["poultryFarm"].toObject()["animals"].toInt() - 1;
@@ -136,11 +135,11 @@ int ShopBuilding::sellPoultry()
 
 int ShopBuilding::buyCattle()
 {
-    if(getLevelPlayer() < 4)
+    if (getLevelPlayer() < 4)
         return 1;
-    if(getCoin() < 70)
+    if (getCoin() < 70)
         return 2;
-    if(qjo["dairyFarm"].toObject()["animals"].toInt() + 1 > pow(2, qjo["dairyFarm"].toObject()["level"].toInt()))
+    if (qjo["dairyFarm"].toObject()["animals"].toInt() + 1 > pow(2, qjo["dairyFarm"].toObject()["level"].toInt()))
         return 3;
     QJsonObject tmp = qjo["dairyFarm"].toObject();
     tmp["animals"] = qjo["dairyFarm"].toObject()["animals"].toInt() + 1;
@@ -152,9 +151,9 @@ int ShopBuilding::buyCattle()
 
 int ShopBuilding::sellCattle()
 {
-    if(getLevelPlayer() < 4)
+    if (getLevelPlayer() < 4)
         return 1;
-    if(qjo["dairyFarm"].toObject()["animals"].toInt() - 1 < 0)
+    if (qjo["dairyFarm"].toObject()["animals"].toInt() - 1 < 0)
         return 4;
     QJsonObject tmp = qjo["dairyFarm"].toObject();
     tmp["animals"] = qjo["dairyFarm"].toObject()["animals"].toInt() - 1;
@@ -166,11 +165,11 @@ int ShopBuilding::sellCattle()
 
 int ShopBuilding::buySheep()
 {
-    if(getLevelPlayer() < 6)
+    if (getLevelPlayer() < 6)
         return 1;
-    if(getCoin() < 80)
+    if (getCoin() < 80)
         return 2;
-    if(qjo["sheepfold"].toObject()["animals"].toInt() + 1 > pow(2, qjo["sheepfold"].toObject()["level"].toInt()))
+    if (qjo["sheepfold"].toObject()["animals"].toInt() + 1 > pow(2, qjo["sheepfold"].toObject()["level"].toInt()))
         return 3;
     QJsonObject tmp = qjo["sheepfold"].toObject();
     tmp["animals"] = qjo["sheepfold"].toObject()["animals"].toInt() + 1;
@@ -182,9 +181,9 @@ int ShopBuilding::buySheep()
 
 int ShopBuilding::sellSheep()
 {
-    if(getLevelPlayer() < 6)
+    if (getLevelPlayer() < 6)
         return 1;
-    if(qjo["sheepfold"].toObject()["animals"].toInt() - 1 < 0)
+    if (qjo["sheepfold"].toObject()["animals"].toInt() - 1 < 0)
         return 4;
     QJsonObject tmp = qjo["sheepfold"].toObject();
     tmp["animals"] = qjo["sheepfold"].toObject()["animals"].toInt() - 1;
@@ -196,9 +195,9 @@ int ShopBuilding::sellSheep()
 
 int ShopBuilding::buyNail()
 {
-    if(getCoin() < 30)
+    if (getCoin() < 30)
         return 2;
-    if(!addNail(1))
+    if (!addNail(1))
         return 3;
     changeCoin(-30);
     setExp(4);
@@ -207,7 +206,7 @@ int ShopBuilding::buyNail()
 
 int ShopBuilding::sellNail()
 {
-    if(!addNail(-1))
+    if (!addNail(-1))
         return 4;
     changeCoin(20);
     setExp(4);
@@ -216,9 +215,9 @@ int ShopBuilding::sellNail()
 
 int ShopBuilding::buyShovel()
 {
-    if(getCoin() < 50)
+    if (getCoin() < 50)
         return 2;
-    if(!addShovel(1))
+    if (!addShovel(1))
         return 3;
     changeCoin(-50);
     setExp(8);
@@ -227,7 +226,7 @@ int ShopBuilding::buyShovel()
 
 int ShopBuilding::sellShovel()
 {
-    if(!addShovel(-1))
+    if (!addShovel(-1))
         return 4;
     changeCoin(30);
     setExp(8);

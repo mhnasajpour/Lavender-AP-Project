@@ -2,9 +2,11 @@
 #define DAYNIGHT_H
 
 #include <QDialog>
+#include <QMovie>
 
-namespace Ui {
-class DayNight;
+namespace Ui
+{
+    class DayNight;
 }
 
 class DayNight : public QDialog

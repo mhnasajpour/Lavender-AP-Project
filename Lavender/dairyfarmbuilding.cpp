@@ -1,7 +1,6 @@
 #include "dairyfarmbuilding.h"
 
-DairyFarmBuilding::DairyFarmBuilding(QJsonObject _qjo):
-    BaseAnimalFarm(_qjo)
+DairyFarmBuilding::DairyFarmBuilding(QJsonObject _qjo) : BaseAnimalFarm(_qjo)
 {
     qjoAnimalFarm = _qjo["dairyFarm"].toObject();
     maxCapacityAnimalFarm = pow(2, getLevelAnimalFarm());
@@ -56,14 +55,14 @@ QJsonObject DairyFarmBuilding::getQjoAnimalFarm()
 
 bool DairyFarmBuilding::canFeed()
 {
-    if(getHay() < getAnimals() * 2)
+    if (getHay() < getAnimals() * 2)
         return false;
     return true;
 }
 
 void DairyFarmBuilding::feed()
 {
-    if(!canFeed())
+    if (!canFeed())
         return;
     addHay(-2 * getAnimals());
     setExp(3 * getAnimals());
@@ -73,9 +72,9 @@ void DairyFarmBuilding::feed()
 
 bool DairyFarmBuilding::canCollectProduct()
 {
-    if(getAnimals() + getUsedCapacity() > maxCapacityStorage)
+    if (getAnimals() + getUsedCapacity() > maxCapacityStorage)
         return false;
-    if(getFlag() != 3)
+    if (getFlag() != 3)
         return false;
     return true;
 }

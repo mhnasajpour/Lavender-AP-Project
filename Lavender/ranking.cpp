@@ -1,11 +1,5 @@
 #include "ranking.h"
 #include "ui_ranking.h"
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonArray>
-#include <algorithm>
-using namespace std;
 
 inline void swap(QJsonValueRef v1, QJsonValueRef v2)
 {
@@ -17,7 +11,7 @@ inline void swap(QJsonValueRef v1, QJsonValueRef v2)
 long totalExp(int level, int exp)
 {
     long ans = 0;
-    for(int i = 1; i < level; i++)
+    for (int i = 1; i < level; i++)
         ans += 10 * (pow(2, i) - 1) + i;
     return ans + exp;
 }
@@ -27,15 +21,14 @@ bool compare(QJsonValue a, QJsonValue b)
     long user1 = totalExp(a.toObject()["level"].toInt(), a.toObject()["exp"].toInt());
     long user2 = totalExp(b.toObject()["level"].toInt(), b.toObject()["exp"].toInt());
 
-    if(user1 != user2)
+    if (user1 != user2)
         return user1 > user2;
 
     return a.toObject()["coin"].toInt() > b.toObject()["coin"].toInt();
 }
 
-Ranking::Ranking(QString _username, QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Ranking)
+Ranking::Ranking(QString _username, QWidget *parent) : QDialog(parent),
+                                                       ui(new Ui::Ranking)
 {
     ui->setupUi(this);
 
@@ -45,16 +38,16 @@ Ranking::Ranking(QString _username, QWidget *parent) :
     QJsonArray arr = (doc.object())["users"].toArray();
     file.close();
 
-    sort(arr.begin(), arr.end(), compare);
+    std::sort(arr.begin(), arr.end(), compare);
 
-    for(int i = 0; i < arr.size(); i++)
-        if(arr[i].toObject()["username"].toString() == _username)
+    for (int i = 0; i < arr.size(); i++)
+        if (arr[i].toObject()["username"].toString() == _username)
         {
             index = i;
             break;
         }
 
-    for(int i = 0; i < arr.size() && i < 10; i++)
+    for (int i = 0; i < arr.size() && i < 10; i++)
     {
         ui->tableWidget->insertRow(ui->tableWidget->rowCount());
 
@@ -64,11 +57,11 @@ Ranking::Ranking(QString _username, QWidget *parent) :
         QTableWidgetItem *widgetItem3 = new QTableWidgetItem(QString::number(arr[i].toObject()["level"].toInt()));
         QTableWidgetItem *widgetItem4 = new QTableWidgetItem(QString::number(arr[i].toObject()["coin"].toInt()));
 
-        widgetItem0->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem1->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem2->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem3->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem4->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItem0->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem1->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem2->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem3->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem4->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
         ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, widgetItem0);
         ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 1, widgetItem1);
@@ -77,7 +70,7 @@ Ranking::Ranking(QString _username, QWidget *parent) :
         ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 4, widgetItem4);
     }
 
-    if(index > 9)
+    if (index > 9)
     {
         ui->tableWidget->insertRow(ui->tableWidget->rowCount());
 
@@ -87,11 +80,11 @@ Ranking::Ranking(QString _username, QWidget *parent) :
         QTableWidgetItem *widgetItemRaw3 = new QTableWidgetItem("...");
         QTableWidgetItem *widgetItemRaw4 = new QTableWidgetItem("...");
 
-        widgetItemRaw0->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItemRaw1->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItemRaw2->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItemRaw3->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItemRaw4->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItemRaw0->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItemRaw1->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItemRaw2->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItemRaw3->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItemRaw4->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
         ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, widgetItemRaw0);
         ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 1, widgetItemRaw1);
@@ -107,11 +100,11 @@ Ranking::Ranking(QString _username, QWidget *parent) :
         QTableWidgetItem *widgetItem3 = new QTableWidgetItem(QString::number(arr[index].toObject()["level"].toInt()));
         QTableWidgetItem *widgetItem4 = new QTableWidgetItem(QString::number(arr[index].toObject()["coin"].toInt()));
 
-        widgetItem0->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem1->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem2->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem3->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        widgetItem4->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItem0->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem1->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem2->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem3->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        widgetItem4->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
         ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, widgetItem0);
         ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 1, widgetItem1);

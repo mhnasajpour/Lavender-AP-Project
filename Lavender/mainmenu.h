@@ -2,11 +2,14 @@
 #define MAINMENU_H
 
 #include <QWidget>
-#include <QJsonObject>
-#include "user.h"
+#include "login.h"
+#include "courtgame.h"
+#include "daynight.h"
+#include "ranking.h"
 
-namespace Ui {
-class mainMenu;
+namespace Ui
+{
+    class mainMenu;
 }
 
 class mainMenu : public QWidget
@@ -29,9 +32,8 @@ private slots:
     void on_nextDay_clicked();
     void on_exitKey_clicked();
     void on_continueKey_clicked();
-    void closeEvent(QCloseEvent*);
-
     void on_ranking_clicked();
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::mainMenu *ui;

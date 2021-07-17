@@ -1,12 +1,11 @@
 #include "shop.h"
 #include "ui_shop.h"
 
-Shop::Shop(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Shop),
-    shop(_qjo),
-    index(_index),
-    category(0)
+Shop::Shop(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                            ui(new Ui::Shop),
+                                                            shop(_qjo),
+                                                            index(_index),
+                                                            category(0)
 {
     ui->setupUi(this);
 
@@ -98,11 +97,10 @@ void Shop::setError(int flag)
 
 void Shop::on_door_clicked()
 {
-    CourtGame* cgp = new CourtGame(shop.getQjo(), index);
+    CourtGame *cgp = new CourtGame(shop.getQjo(), index);
     cgp->show();
     close();
 }
-
 
 void Shop::on_product1_clicked()
 {
@@ -123,7 +121,6 @@ void Shop::on_product1_clicked()
     ui->buy2->setGeometry(725, 500, 121, 35);
     ui->sell2->setGeometry(725, 545, 121, 35);
 }
-
 
 void Shop::on_product2_clicked()
 {
@@ -146,7 +143,6 @@ void Shop::on_product2_clicked()
     ui->sell2->setGeometry(555, 500, 121, 35);
     ui->sell3->setGeometry(795, 500, 121, 35);
 }
-
 
 void Shop::on_product3_clicked()
 {
@@ -173,7 +169,6 @@ void Shop::on_product3_clicked()
     ui->sell3->setGeometry(795, 545, 121, 35);
 }
 
-
 void Shop::on_product4_clicked()
 {
     setHiddenPack(false, 1);
@@ -194,7 +189,6 @@ void Shop::on_product4_clicked()
     ui->sell2->setGeometry(725, 545, 121, 35);
 }
 
-
 void Shop::on_buy1_clicked()
 {
     switch (category)
@@ -210,7 +204,6 @@ void Shop::on_buy1_clicked()
         break;
     }
 }
-
 
 void Shop::on_sell1_clicked()
 {
@@ -231,7 +224,6 @@ void Shop::on_sell1_clicked()
     }
 }
 
-
 void Shop::on_buy2_clicked()
 {
     switch (category)
@@ -247,7 +239,6 @@ void Shop::on_buy2_clicked()
         break;
     }
 }
-
 
 void Shop::on_sell2_clicked()
 {
@@ -272,7 +263,6 @@ void Shop::on_buy3_clicked()
 {
     setError(shop.buySheep());
 }
-
 
 void Shop::on_sell3_clicked()
 {

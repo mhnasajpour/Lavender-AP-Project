@@ -1,7 +1,6 @@
 #include "baseanimalfarm.h"
 
-BaseAnimalFarm::BaseAnimalFarm(QJsonObject _qjo):
-    BaseSilo(_qjo)
+BaseAnimalFarm::BaseAnimalFarm(QJsonObject _qjo) : BaseSilo(_qjo)
 {
 }
 
@@ -17,27 +16,27 @@ int BaseAnimalFarm::getDaysToFinishEstablishing()
 
 bool BaseAnimalFarm::isLevelEnough()
 {
-    if(getLevelPlayer() < minLevelRequiredE)
+    if (getLevelPlayer() < minLevelRequiredE)
         return false;
     return true;
 }
 
 bool BaseAnimalFarm::canEstablish()
 {
-    if(getNail() < nailE)
+    if (getNail() < nailE)
         return false;
-    if(getShovel() < shovelE)
+    if (getShovel() < shovelE)
         return false;
-    if(getCoin() < coinE)
+    if (getCoin() < coinE)
         return false;
-    if(getLevelPlayer() < minLevelRequiredE)
+    if (getLevelPlayer() < minLevelRequiredE)
         return false;
     return true;
 }
 
 void BaseAnimalFarm::startEstablishing()
 {
-    if(!canEstablish())
+    if (!canEstablish())
         return;
     addNail(-1 * nailE);
     addShovel(-1 * shovelE);
@@ -63,20 +62,20 @@ int BaseAnimalFarm::getDaysToFinishUpgrading()
 
 bool BaseAnimalFarm::canUpgrade()
 {
-    if(getNail() < nailU)
+    if (getNail() < nailU)
         return false;
-    if(getShovel() < shovelU)
+    if (getShovel() < shovelU)
         return false;
-    if(getCoin() < coinU)
+    if (getCoin() < coinU)
         return false;
-    if(getLevelPlayer() < minLevelRequiredU)
+    if (getLevelPlayer() < minLevelRequiredU)
         return false;
     return true;
 }
 
 void BaseAnimalFarm::startUpgrading()
 {
-    if(!canUpgrade())
+    if (!canUpgrade())
         return;
     addNail(-1 * nailU);
     addShovel(-1 * shovelU);
@@ -98,7 +97,7 @@ int BaseAnimalFarm::getLevelAnimalFarm()
 
 bool BaseAnimalFarm::addAnimals(int change)
 {
-    if(getAnimals() + change > maxCapacityAnimalFarm || getAnimals() + change < 0)
+    if (getAnimals() + change > maxCapacityAnimalFarm || getAnimals() + change < 0)
         return false;
     qjoAnimalFarm["animals"] = getAnimals() + change;
     return true;

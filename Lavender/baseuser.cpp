@@ -13,13 +13,12 @@ int BaseUser::getLevelPlayer()
 
 void BaseUser::setExp(int add)
 {
-    if(getExp() + add >= upperBoundExp)
+    if (getExp() + add >= upperBoundExp)
     {
         qjo["level"] = getLevelPlayer() + 1;
         qjo["exp"] = getExp() + add - upperBoundExp;
-        LevelUp* lu = new LevelUp();
+        LevelUp *lu = new LevelUp();
         lu->exec();
-        //checkLevel();
     }
     else
     {

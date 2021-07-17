@@ -1,11 +1,10 @@
 #include "basestorage.h"
 
-BaseStorage::BaseStorage(QJsonObject _qjo):
-    BaseUser(_qjo)
+BaseStorage::BaseStorage(QJsonObject _qjo) : BaseUser(_qjo)
 {
     qjoStorage = _qjo["storage"].toObject();
     maxCapacityStorage = 5;
-    for(int i = 2; i <= getLevelStorage(); i++)
+    for (int i = 2; i <= getLevelStorage(); i++)
         maxCapacityStorage = ceil(maxCapacityStorage * 1.5);
 }
 
@@ -21,7 +20,7 @@ int BaseStorage::getUsedCapacity()
 
 bool BaseStorage::addShovel(int change)
 {
-    if(getUsedCapacity() + change > maxCapacityStorage || getShovel() + change < 0)
+    if (getUsedCapacity() + change > maxCapacityStorage || getShovel() + change < 0)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["shovel"] = getShovel() + change;
@@ -35,7 +34,7 @@ int BaseStorage::getShovel()
 
 bool BaseStorage::addNail(int change)
 {
-    if(getUsedCapacity() + change > maxCapacityStorage || getNail() + change < 0)
+    if (getUsedCapacity() + change > maxCapacityStorage || getNail() + change < 0)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["nail"] = getNail() + change;
@@ -49,7 +48,7 @@ int BaseStorage::getNail()
 
 bool BaseStorage::addHay(int change)
 {
-    if(getUsedCapacity() + change > maxCapacityStorage || getHay() + change < 0)
+    if (getUsedCapacity() + change > maxCapacityStorage || getHay() + change < 0)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["hay"] = getHay() + change;
@@ -63,7 +62,7 @@ int BaseStorage::getHay()
 
 bool BaseStorage::addEgg(int change)
 {
-    if(getUsedCapacity() + change > maxCapacityStorage || getEgg() + change < 0)
+    if (getUsedCapacity() + change > maxCapacityStorage || getEgg() + change < 0)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["egg"] = getEgg() + change;
@@ -77,7 +76,7 @@ int BaseStorage::getEgg()
 
 bool BaseStorage::addWool(int change)
 {
-    if(getUsedCapacity() + change > maxCapacityStorage || getWool() + change < 0)
+    if (getUsedCapacity() + change > maxCapacityStorage || getWool() + change < 0)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     qjoStorage["wool"] = getWool() + change;
@@ -91,15 +90,15 @@ int BaseStorage::getWool()
 
 bool BaseStorage::addMilk(int change)
 {
-    if(getUsedCapacity() + change > maxCapacityStorage || getMilk().size() + change < 0)
+    if (getUsedCapacity() + change > maxCapacityStorage || getMilk().size() + change < 0)
         return false;
     qjoStorage["usedCapacity"] = getUsedCapacity() + change;
     QJsonArray milk = getMilk();
-    if(change > 0)
-        for(int i = 0; i < change; i++)
+    if (change > 0)
+        for (int i = 0; i < change; i++)
             milk.push_back(getDay());
     else
-        for(int i = 0; i > change; i--)
+        for (int i = 0; i > change; i--)
             milk.pop_front();
     qjoStorage["milk"] = milk;
     return true;

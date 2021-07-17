@@ -1,19 +1,17 @@
 #include "poultryfarm.h"
 #include "ui_poultryfarm.h"
-#include "courtgame.h"
 
-PoultryFarm::PoultryFarm(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::PoultryFarm),
-    poultryFarm(_qjo),
-    index(_index)
+PoultryFarm::PoultryFarm(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                                          ui(new Ui::PoultryFarm),
+                                                                          poultryFarm(_qjo),
+                                                                          index(_index)
 {
     ui->setupUi(this);
 
     ui->level->setText(QString::number(poultryFarm.getLevelAnimalFarm()));
     ui->capacity->setText("ظرفیت : " + QString::number(poultryFarm.getMaxCapacityAnimalFarm()));
 
-    if(poultryFarm.getAnimals() == 0)
+    if (poultryFarm.getAnimals() == 0)
     {
         ui->size->setText("هیچ مرغی موجود نمی باشد !");
         ui->boardKey->setHidden(true);
@@ -23,7 +21,7 @@ PoultryFarm::PoultryFarm(QJsonObject _qjo, int _index, QWidget *parent) :
     else
         ui->size->setText("تعداد مرغ ها : " + QString::number(poultryFarm.getAnimals()));
 
-    if(poultryFarm.getDaysToFinishUpgrading() != 0)
+    if (poultryFarm.getDaysToFinishUpgrading() != 0)
     {
         ui->upgradeKey->setHidden(true);
         ui->description->setHidden(true);
@@ -43,14 +41,14 @@ PoultryFarm::PoultryFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->upPic2->setHidden(true);
     }
 
-    if(poultryFarm.getAnimals() != 0)
+    if (poultryFarm.getAnimals() != 0)
     {
-        if(poultryFarm.getFlag() == 1)
+        if (poultryFarm.getFlag() == 1)
         {
             ui->boardKey->setText("بذر دادن");
             ui->description->setText("...مرغ ها گرسنه اند\nاز سیلو به آن ها " + QString::number(poultryFarm.getAnimals()) + " گندم بدهید");
         }
-        else if(poultryFarm.getFlag() == 2)
+        else if (poultryFarm.getFlag() == 2)
         {
             ui->upgradeKey->setHidden(true);
             ui->boardKey->setHidden(true);
@@ -69,24 +67,23 @@ PoultryFarm::~PoultryFarm()
 
 void PoultryFarm::on_door_clicked()
 {
-    CourtGame* cgp = new CourtGame(poultryFarm.getQjo(), index);
+    CourtGame *cgp = new CourtGame(poultryFarm.getQjo(), index);
     cgp->show();
     close();
 }
 
-
 void PoultryFarm::on_boardKey_clicked()
 {
-    if(poultryFarm.getFlag() == 1)
+    if (poultryFarm.getFlag() == 1)
     {
-        if(poultryFarm.canFeed())
+        if (poultryFarm.canFeed())
         {
             poultryFarm.feed();
             ui->upgradeKey->setHidden(true);
             ui->boardKey->setHidden(true);
             ui->description->setText("...اندکی صبر کنید\n" + QString::number(poultryFarm.getDaysToFinishFeeding()) + " روز دیگر تخم مرغ ها\nآماده است");
             ui->description->setGeometry(600, 510, 241, 91);
-            if(!ui->man->isHidden())
+            if (!ui->man->isHidden())
             {
                 ui->man->setHidden(true);
                 ui->textEdit->setHidden(true);
@@ -104,9 +101,9 @@ void PoultryFarm::on_boardKey_clicked()
             ui->textEdit->setText("\n     گندم بیشتری\n       نیاز است");
         }
     }
-    else if(poultryFarm.getFlag() == 3)
+    else if (poultryFarm.getFlag() == 3)
     {
-        if(poultryFarm.canCollectProduct())
+        if (poultryFarm.canCollectProduct())
         {
             poultryFarm.collectProduct();
             ui->boardKey->setText("بذر دادن");
@@ -125,7 +122,7 @@ void PoultryFarm::on_boardKey_clicked()
 void PoultryFarm::on_upgradeKey_clicked()
 {
     ui->man->setHidden(false);
-    if(poultryFarm.canUpgrade())
+    if (poultryFarm.canUpgrade())
     {
         ui->coinReq->setHidden(false);
         ui->nailReq->setHidden(false);

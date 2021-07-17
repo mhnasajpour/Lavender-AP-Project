@@ -11,7 +11,7 @@
 #include "sheepfoldbuilding.h"
 #include "shopbuilding.h"
 
-class User: public BaseUser
+class User : public BaseUser
 {
 private:
     int index;
@@ -23,12 +23,12 @@ private:
     DairyFarmBuilding dairyFarm;
     SheepFoldBuilding sheepFold;
     ShopBuilding shop;
+
 public:
     User(QJsonObject _qjo, int _index);
     QJsonObject getQjo();
     int getIndex();
     void checkDay();
-    //void checkLevel();
     bool setUsername(QString);
     QString getUsername();
     void setPassword(QString);

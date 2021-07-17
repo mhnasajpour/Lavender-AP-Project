@@ -1,20 +1,21 @@
 #ifndef BASEUSER_H
 #define BASEUSER_H
 
+#include <algorithm>
 #include <QFile>
-#include <QString>
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
-#include "levelup.h"
-#include <QMessageBox>
+#include <QString>
 #include <QCloseEvent>
+#include "levelup.h"
 
 class BaseUser
 {
 protected:
     QJsonObject qjo;
     int upperBoundExp;
+
 public:
     BaseUser(QJsonObject);
     virtual QJsonObject getQjo() = 0;

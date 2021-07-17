@@ -5,8 +5,9 @@
 #include "dairyfarmbuilding.h"
 #include "courtgame.h"
 
-namespace Ui {
-class LockDairyFarm;
+namespace Ui
+{
+    class LockDairyFarm;
 }
 
 class LockDairyFarm : public QWidget
@@ -20,7 +21,7 @@ public:
 private slots:
     void on_unlock_clicked();
     void on_door_clicked();
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::LockDairyFarm *ui;

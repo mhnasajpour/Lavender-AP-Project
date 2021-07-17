@@ -4,7 +4,7 @@
 #include "basestorage.h"
 #include "baseupgrade.h"
 
-class StorageBuilding: public BaseStorage, public BaseUpgrade
+class StorageBuilding : public BaseStorage, public BaseUpgrade
 {
 public:
     StorageBuilding(QJsonObject);

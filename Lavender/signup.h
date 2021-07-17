@@ -2,9 +2,11 @@
 #define SIGNUP_H
 
 #include <QWidget>
+#include "login.h"
 
-namespace Ui {
-class Signup;
+namespace Ui
+{
+    class Signup;
 }
 
 class Signup : public QWidget
@@ -13,7 +15,7 @@ class Signup : public QWidget
 
 private:
     void addUser(QString name, QString email, QString username, unsigned long password);
-    int check (QString _username, QString _email);
+    int check(QString _username, QString _email);
 
 public:
     explicit Signup(QWidget *parent = nullptr);

@@ -3,7 +3,7 @@
 
 #include "baseanimalfarm.h"
 
-class SheepFoldBuilding: public BaseAnimalFarm
+class SheepFoldBuilding : public BaseAnimalFarm
 {
 public:
     SheepFoldBuilding(QJsonObject);

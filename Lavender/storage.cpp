@@ -1,16 +1,14 @@
 #include "storage.h"
 #include "ui_storage.h"
-#include "courtgame.h"
 
-Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Storage),
-    storage(_qjo),
-    index(_index)
+Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                                  ui(new Ui::Storage),
+                                                                  storage(_qjo),
+                                                                  index(_index)
 {
     ui->setupUi(this);
 
-    if(storage.getDaysToFinishUpgrading() != 0)
+    if (storage.getDaysToFinishUpgrading() != 0)
     {
         ui->pushButton->setHidden(true);
         ui->textEdit->setText("انبار در حال ارتقا است\n\n" + QString::number(storage.getDaysToFinishUpgrading()) + " روز باقی مانده است");
@@ -37,7 +35,8 @@ Storage::Storage(QJsonObject _qjo, int _index, QWidget *parent) :
     ui->hayShow->setText(QString::number(storage.getHay()));
     ui->shovelShow->setText(QString::number(storage.getShovel()));
     ui->nailShow->setText(QString::number(storage.getNail()));
-    if(ui->progressBar->value() * 100 / ui->progressBar->maximum() > 50){
+    if (ui->progressBar->value() * 100 / ui->progressBar->maximum() > 50)
+    {
         ui->progressBar->setAlignment(Qt::AlignRight);
         ui->progressBar->setAlignment(Qt::AlignVCenter);
     }
@@ -51,7 +50,7 @@ Storage::~Storage()
 void Storage::on_pushButton_clicked()
 {
     ui->man->setHidden(false);
-    if(storage.canUpgrade())
+    if (storage.canUpgrade())
     {
         ui->coinReq->setText(QString::number(storage.getCoinU()));
         ui->nailReq->setText(QString::number(storage.getNailU()));
@@ -104,10 +103,9 @@ void Storage::on_request_rejected()
     ui->upPic3->setHidden(true);
 }
 
-
 void Storage::on_continueKey_clicked()
 {
-    CourtGame* cgp = new CourtGame(storage.getQjo(), index);
+    CourtGame *cgp = new CourtGame(storage.getQjo(), index);
     cgp->show();
     close();
 }

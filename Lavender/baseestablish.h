@@ -16,6 +16,7 @@ protected:
     int timeE;
     int minLevelRequiredE;
     int addToExpE;
+
 public:
     int getNailE();
     int getShovelE();

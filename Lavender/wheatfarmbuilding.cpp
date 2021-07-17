@@ -1,7 +1,6 @@
 #include "wheatfarmbuilding.h"
 
-WheatFarmBuilding::WheatFarmBuilding(QJsonObject _qjo):
-    BaseFarm(_qjo)
+WheatFarmBuilding::WheatFarmBuilding(QJsonObject _qjo) : BaseFarm(_qjo)
 {
     qjoFarm = _qjo["wheatFarm"].toObject();
     maxArea = pow(2, getLevelFarm() - 1) * 5;
@@ -69,7 +68,7 @@ void WheatFarmBuilding::startPlanting(int plantingArea)
 
 bool WheatFarmBuilding::canHarvest()
 {
-    if(getWheat() + (getPlantingArea() * 2) > maxCapacitySilo)
+    if (getWheat() + (getPlantingArea() * 2) > maxCapacitySilo)
         return false;
     return true;
 }

@@ -1,19 +1,17 @@
 #include "hayfarm.h"
 #include "ui_hayfarm.h"
-#include "courtgame.h"
 
-hayFarm::hayFarm(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::hayFarm),
-    hay_farm(_qjo),
-    index(_index)
+hayFarm::hayFarm(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                                  ui(new Ui::hayFarm),
+                                                                  hay_farm(_qjo),
+                                                                  index(_index)
 {
     ui->setupUi(this);
 
     ui->level->setText(QString::number(hay_farm.getLevelFarm()));
     ui->area->setText("مساحت مزرعه: " + QString::number(hay_farm.getMaxArea()) + " هکتار");
 
-    if(hay_farm.getDaysToFinishUpgrading() != 0)
+    if (hay_farm.getDaysToFinishUpgrading() != 0)
     {
         ui->upgradeKey->setHidden(true);
         ui->description->setHidden(true);
@@ -34,12 +32,12 @@ hayFarm::hayFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->upPic2->setHidden(true);
     }
 
-    if(hay_farm.getFlag() == 1)
+    if (hay_farm.getFlag() == 1)
     {
         ui->spinBox->setMaximum(std::min(hay_farm.getMaxArea(), hay_farm.getHay()));
         ui->spinBox->setValue(-1);
     }
-    else if(hay_farm.getFlag() == 2)
+    else if (hay_farm.getFlag() == 2)
     {
         ui->description->setText("در حال رشد محصولات\n" + QString::number(hay_farm.getDaysToFinishPlanting()) + " روز صبر کنید");
         ui->spinBox->setHidden(true);
@@ -48,7 +46,7 @@ hayFarm::hayFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->boardKey->setCursor(QCursor(Qt::ArrowCursor));
         ui->upgradeKey->setHidden(true);
     }
-    else if(hay_farm.getFlag() == 3)
+    else if (hay_farm.getFlag() == 3)
     {
         ui->description->setText("محصولات شما (" + QString::number(hay_farm.getPlantingArea() * 2) + " یونجه)\nآماده برداشت است\nآن ها را به انبار منتقل کنید");
         ui->spinBox->setHidden(true);
@@ -56,7 +54,7 @@ hayFarm::hayFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->boardKey->setGeometry(770, 490, 80, 25);
         ui->upgradeKey->setHidden(true);
     }
-    else if(hay_farm.getFlag() == 4)
+    else if (hay_farm.getFlag() == 4)
     {
         ui->description->setText("قبل از کشت باید مزرعه را شخم بزنید\nشخم زدن " + QString::number(hay_farm.getMaxArea() * 5) + " سکه هزینه دارد");
         ui->spinBox->setHidden(true);
@@ -81,14 +79,14 @@ hayFarm::~hayFarm()
 
 void hayFarm::on_continueKey_clicked()
 {
-    CourtGame* cgp = new CourtGame(hay_farm.getQjo(), index);
+    CourtGame *cgp = new CourtGame(hay_farm.getQjo(), index);
     cgp->show();
     close();
 }
 
 void hayFarm::on_boardKey_clicked()
 {
-    if(hay_farm.getFlag() == 1 && ui->spinBox->value() != 0)
+    if (hay_farm.getFlag() == 1 && ui->spinBox->value() != 0)
     {
         hay_farm.setPlantingArea(ui->spinBox->value());
         hay_farm.startPlanting(hay_farm.getPlantingArea());
@@ -99,7 +97,7 @@ void hayFarm::on_boardKey_clicked()
         ui->boardKey->setGeometry(770, 490, 80, 25);
         ui->boardKey->setCursor(QCursor(Qt::ArrowCursor));
         ui->upgradeKey->setHidden(true);
-        if(!ui->man->isHidden())
+        if (!ui->man->isHidden())
         {
             ui->man->setHidden(true);
             ui->request->setHidden(true);
@@ -112,7 +110,7 @@ void hayFarm::on_boardKey_clicked()
     }
     else if (hay_farm.getFlag() == 3)
     {
-        if(hay_farm.canHarvest())
+        if (hay_farm.canHarvest())
         {
             hay_farm.harvest();
             ui->boardKey->setText("شخم زدن");
@@ -129,7 +127,7 @@ void hayFarm::on_boardKey_clicked()
     }
     else if (hay_farm.getFlag() == 4)
     {
-        if(hay_farm.canPlow())
+        if (hay_farm.canPlow())
         {
             hay_farm.startPlowing();
             ui->description->setText("مزرعه در حال آماده سازی\nبرای کشت است\nعملیات فردا به اتمام می رسد");
@@ -138,7 +136,7 @@ void hayFarm::on_boardKey_clicked()
             ui->boardKey->setGeometry(770, 490, 80, 25);
             ui->boardKey->setCursor(QCursor(Qt::ArrowCursor));
             ui->upgradeKey->setHidden(true);
-            if(!ui->man->isHidden())
+            if (!ui->man->isHidden())
             {
                 ui->man->setHidden(true);
                 ui->request->setHidden(true);
@@ -161,7 +159,7 @@ void hayFarm::on_boardKey_clicked()
 void hayFarm::on_upgradeKey_clicked()
 {
     ui->man->setHidden(false);
-    if(hay_farm.canUpgrade())
+    if (hay_farm.canUpgrade())
     {
         ui->coinReq->setText(QString::number(hay_farm.getCoinU()));
         ui->shovelReq->setText(QString::number(hay_farm.getShoveU()));

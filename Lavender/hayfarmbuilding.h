@@ -4,7 +4,7 @@
 #include "basefarm.h"
 #include "baseestablish.h"
 
-class HayFarmBuilding: public BaseFarm, public BaseEstablish
+class HayFarmBuilding : public BaseFarm, public BaseEstablish
 {
 public:
     HayFarmBuilding(QJsonObject);

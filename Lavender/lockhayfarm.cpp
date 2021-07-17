@@ -1,15 +1,13 @@
 #include "lockhayfarm.h"
 #include "ui_lockhayfarm.h"
-#include "courtgame.h"
 
-lockHayFarm::lockHayFarm(QJsonObject _qjo, int _index, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::lockHayFarm),
-    hay_farm(_qjo),
-    index(_index)
+lockHayFarm::lockHayFarm(QJsonObject _qjo, int _index, QWidget *parent) : QWidget(parent),
+                                                                          ui(new Ui::lockHayFarm),
+                                                                          hay_farm(_qjo),
+                                                                          index(_index)
 {
     ui->setupUi(this);
-    if(!hay_farm.isLevelEnough())
+    if (!hay_farm.isLevelEnough())
     {
         ui->unlock->setHidden(true);
         ui->coinPic->setHidden(true);
@@ -21,10 +19,11 @@ lockHayFarm::lockHayFarm(QJsonObject _qjo, int _index, QWidget *parent) :
         ui->label->setGeometry(350, 270, 321, 181);
         ui->label->setText("مزرعه یونجه\nدر سطح " + QString::number(hay_farm.getMinLevelRequiredE()) + "\nقابل دسترسی می باشد");
     }
-    else if(hay_farm.getDaysToFinishEstablishing() == -1 && !hay_farm.canEstablish())
+    else if (hay_farm.getDaysToFinishEstablishing() == -1 && !hay_farm.canEstablish())
         ui->unlock->setHidden(true);
 
-    else if(hay_farm.getDaysToFinishEstablishing() > 0){
+    else if (hay_farm.getDaysToFinishEstablishing() > 0)
+    {
         ui->pic->setPixmap(QPixmap(":/product/otherPic/product/unlockHay2.jpg"));
         ui->unlock->setHidden(true);
         ui->coinPic->setHidden(true);

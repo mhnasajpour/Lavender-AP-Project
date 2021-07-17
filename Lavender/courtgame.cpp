@@ -1,28 +1,9 @@
 #include "courtgame.h"
 #include "ui_courtgame.h"
-#include "login.h"
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include "mainmenu.h"
-#include "storage.h"
-#include "silo.h"
-#include "wheatfarm.h"
-#include "hayfarm.h"
-#include "poultryfarm.h"
-#include "dairyfarm.h"
-#include "sheepfold.h"
-#include "lockhayfarm.h"
-#include "lockpoultryfarm.h"
-#include "lockdairyfarm.h"
-#include "locksheepfold.h"
-#include "shop.h"
-#include <QCloseEvent>
 
-CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::CourtGame),
-    user(qjo, index)
+CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) : QMainWindow(parent),
+                                                                    ui(new Ui::CourtGame),
+                                                                    user(qjo, index)
 {
     ui->setupUi(this);
     ui->villageName->setText(user.getName());
@@ -31,43 +12,43 @@ CourtGame::CourtGame(QJsonObject qjo, int index, QWidget *parent) :
     ui->exp->setMaximum((powl(2, user.getLevelPlayer()) - 1) * 10);
     ui->exp->setValue(user.getExp());
 
-    if(user.getWheatFarm().getFlag() == 1)
+    if (user.getWheatFarm().getFlag() == 1)
         ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/1.png"));
-    else if(user.getWheatFarm().getFlag() == 2 && user.getWheatFarm().getDaysToFinishPlanting() == 2)
+    else if (user.getWheatFarm().getFlag() == 2 && user.getWheatFarm().getDaysToFinishPlanting() == 2)
         ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/2.png"));
-    else if(user.getWheatFarm().getFlag() == 2 && user.getWheatFarm().getDaysToFinishPlanting() == 1)
+    else if (user.getWheatFarm().getFlag() == 2 && user.getWheatFarm().getDaysToFinishPlanting() == 1)
         ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/3.png"));
-    else if(user.getWheatFarm().getFlag() == 3)
+    else if (user.getWheatFarm().getFlag() == 3)
         ui->wheatFarm->setIcon(QIcon(":/wheatLand/lands/4.png"));
 
-    if(user.getHayFarm().getFlag() == 4)
+    if (user.getHayFarm().getFlag() == 4)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay1.png"));
-    else if(user.getHayFarm().getFlag() == 5)
+    else if (user.getHayFarm().getFlag() == 5)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay1.png"));
-    else if(user.getHayFarm().getFlag() == 1)
+    else if (user.getHayFarm().getFlag() == 1)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay2.png"));
-    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 5)
+    else if (user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 5)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay3.png"));
-    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 4)
+    else if (user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 4)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay4.png"));
-    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 3)
+    else if (user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 3)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay5.png"));
-    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 2)
+    else if (user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 2)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay6.png"));
-    else if(user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 1)
+    else if (user.getHayFarm().getFlag() == 2 && user.getHayFarm().getDaysToFinishPlanting() == 1)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay7.png"));
-    else if(user.getHayFarm().getFlag() == 3)
+    else if (user.getHayFarm().getFlag() == 3)
         ui->hayFarm->setIcon(QIcon(":/hayLand/lands/hay8.png"));
 
-    if(user.getHayFarm().getLevelFarm() > 0)
+    if (user.getHayFarm().getLevelFarm() > 0)
         ui->lockHayFarm->setHidden(true);
-    if(user.getPoultryFarm().getLevelAnimalFarm() > 0)
+    if (user.getPoultryFarm().getLevelAnimalFarm() > 0)
         ui->lockPoultryFarm->setHidden(true);
-    if(user.getDairyFarm().getLevelAnimalFarm() > 0)
+    if (user.getDairyFarm().getLevelAnimalFarm() > 0)
         ui->lockDairyFarm->setHidden(true);
-    if(user.getSheepfold().getLevelAnimalFarm() > 0)
+    if (user.getSheepfold().getLevelAnimalFarm() > 0)
         ui->lockSheepfold->setHidden(true);
-    if(user.getLevelPlayer() > 1)
+    if (user.getLevelPlayer() > 1)
         ui->lockShop->setHidden(true);
 }
 
@@ -106,7 +87,7 @@ void CourtGame::on_wheatFarm_clicked()
 
 void CourtGame::on_hayFarm_clicked()
 {
-    if(user.getHayFarm().getLevelFarm() == 0)
+    if (user.getHayFarm().getLevelFarm() == 0)
         on_lockHayFarm_clicked();
     else
     {
@@ -125,7 +106,7 @@ void CourtGame::on_lockHayFarm_clicked()
 
 void CourtGame::on_poultryFarm_clicked()
 {
-    if(user.getPoultryFarm().getLevelAnimalFarm() == 0)
+    if (user.getPoultryFarm().getLevelAnimalFarm() == 0)
         on_lockPoultryFarm_clicked();
     else
     {
@@ -144,7 +125,7 @@ void CourtGame::on_lockPoultryFarm_clicked()
 
 void CourtGame::on_dairyFarm_clicked()
 {
-    if(user.getDairyFarm().getLevelAnimalFarm() == 0)
+    if (user.getDairyFarm().getLevelAnimalFarm() == 0)
         on_lockDairyFarm_clicked();
     else
     {
@@ -163,7 +144,7 @@ void CourtGame::on_lockDairyFarm_clicked()
 
 void CourtGame::on_sheepfold_clicked()
 {
-    if(user.getSheepfold().getLevelAnimalFarm() == 0)
+    if (user.getSheepfold().getLevelAnimalFarm() == 0)
         on_lockSheepfold_clicked();
     else
     {
@@ -180,10 +161,9 @@ void CourtGame::on_lockSheepfold_clicked()
     close();
 }
 
-
 void CourtGame::on_shop_clicked()
 {
-    if(user.getLevelPlayer() > 1)
+    if (user.getLevelPlayer() > 1)
     {
         Shop *sh = new Shop(user.getQjo(), user.getIndex());
         sh->show();

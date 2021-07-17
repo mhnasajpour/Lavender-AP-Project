@@ -3,9 +3,10 @@
 
 #include "basesilo.h"
 
-class ShopBuilding: public BaseSilo
+class ShopBuilding : public BaseSilo
 {
     QJsonObject qjoShop;
+
 public:
     ShopBuilding(QJsonObject);
     QJsonObject getQjo();

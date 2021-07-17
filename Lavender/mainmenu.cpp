@@ -1,14 +1,9 @@
 #include "mainmenu.h"
 #include "ui_mainmenu.h"
-#include "login.h"
-#include "courtgame.h"
-#include "daynight.h"
-#include "ranking.h"
 
-mainMenu::mainMenu(User _user, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::mainMenu),
-    user(_user)
+mainMenu::mainMenu(User _user, QWidget *parent) : QWidget(parent),
+                                                  ui(new Ui::mainMenu),
+                                                  user(_user)
 {
     ui->setupUi(this);
 
@@ -53,7 +48,7 @@ void mainMenu::on_usernameEdit_clicked()
 void mainMenu::on_inputName_editingFinished()
 {
     ui->inputName->setReadOnly(true);
-    if(ui->inputName->text() == "")
+    if (ui->inputName->text() == "")
         ui->inputName->setText(user.getName());
     ui->nameEdit->setHidden(false);
 }
@@ -61,7 +56,7 @@ void mainMenu::on_inputName_editingFinished()
 void mainMenu::on_inputEmail_editingFinished()
 {
     ui->inputEmail->setReadOnly(true);
-    if(!isValidEmail)
+    if (!isValidEmail)
         ui->inputEmail->setText(user.getEmail());
     ui->emailEdit->setIcon(QIcon(":/tools/otherPic/edit.png"));
 }
@@ -69,14 +64,14 @@ void mainMenu::on_inputEmail_editingFinished()
 void mainMenu::on_inputUsername_editingFinished()
 {
     ui->inputUsername->setReadOnly(true);
-    if(!isValidUsername)
+    if (!isValidUsername)
         ui->inputUsername->setText(user.getUsername());
     ui->usernameEdit->setIcon(QIcon(":/tools/otherPic/edit.png"));
 }
 
 void mainMenu::on_inputEmail_textEdited(const QString &arg1)
 {
-    if(arg1 == "")
+    if (arg1 == "")
     {
         isValidEmail = false;
         ui->emailEdit->setIcon(QIcon(":/tools/otherPic/invalid.png"));
@@ -88,9 +83,9 @@ void mainMenu::on_inputEmail_textEdited(const QString &arg1)
     QJsonArray users = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
     file.close();
 
-    for(int i = 0; i < users.size(); i++)
+    for (int i = 0; i < users.size(); i++)
     {
-        if((users[i].toObject())["email"].toString() == arg1 && user.getEmail() != arg1)
+        if ((users[i].toObject())["email"].toString() == arg1 && user.getEmail() != arg1)
         {
             isValidEmail = false;
             ui->emailEdit->setIcon(QIcon(":/tools/otherPic/invalid.png"));
@@ -103,7 +98,7 @@ void mainMenu::on_inputEmail_textEdited(const QString &arg1)
 
 void mainMenu::on_inputUsername_textEdited(const QString &arg1)
 {
-    if(arg1 == "")
+    if (arg1 == "")
     {
         isValidUsername = false;
         ui->usernameEdit->setIcon(QIcon(":/tools/otherPic/invalid.png"));
@@ -115,9 +110,9 @@ void mainMenu::on_inputUsername_textEdited(const QString &arg1)
     QJsonArray users = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
     file.close();
 
-    for(int i = 0; i < users.size(); i++)
+    for (int i = 0; i < users.size(); i++)
     {
-        if((users[i].toObject())["username"].toString() == arg1 && user.getUsername() != arg1)
+        if ((users[i].toObject())["username"].toString() == arg1 && user.getUsername() != arg1)
         {
             isValidUsername = false;
             ui->usernameEdit->setIcon(QIcon(":/tools/otherPic/invalid.png"));
@@ -144,7 +139,7 @@ void mainMenu::on_exitKey_clicked()
     user.setEmail(ui->inputEmail->text());
     user.setUsername(ui->inputUsername->text());
     user.saveToFile();
-    Login* lp = new Login;
+    Login *lp = new Login;
     lp->show();
     close();
 }
@@ -155,7 +150,7 @@ void mainMenu::on_continueKey_clicked()
     user.setEmail(ui->inputEmail->text());
     user.setUsername(ui->inputUsername->text());
     user.saveToFile();
-    CourtGame* cgp = new CourtGame(user.getQjo(), user.getIndex());
+    CourtGame *cgp = new CourtGame(user.getQjo(), user.getIndex());
     cgp->show();
     close();
 }
@@ -172,4 +167,3 @@ void mainMenu::on_ranking_clicked()
     Ranking *rank = new Ranking(user.getUsername());
     rank->exec();
 }
-

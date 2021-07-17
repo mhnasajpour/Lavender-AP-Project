@@ -2,9 +2,14 @@
 #define RANKING_H
 
 #include <QDialog>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
 
-namespace Ui {
-class Ranking;
+namespace Ui
+{
+    class Ranking;
 }
 
 class Ranking : public QDialog

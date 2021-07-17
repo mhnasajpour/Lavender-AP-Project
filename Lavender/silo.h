@@ -3,11 +3,11 @@
 
 #include <QWidget>
 #include "silobuilding.h"
-#include "user.h"
-#include <QJsonObject>
+#include "courtgame.h"
 
-namespace Ui {
-class Silo;
+namespace Ui
+{
+    class Silo;
 }
 
 class Silo : public QWidget
@@ -23,7 +23,7 @@ private slots:
     void on_request_accepted();
     void on_request_rejected();
     void on_continueKey_clicked();
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::Silo *ui;

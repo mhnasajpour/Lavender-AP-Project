@@ -5,11 +5,12 @@
 #include "baseupgrade.h"
 #include "baseestablish.h"
 
-class BaseAnimalFarm: public BaseSilo, public BaseUpgrade, public BaseEstablish
+class BaseAnimalFarm : public BaseSilo, public BaseUpgrade, public BaseEstablish
 {
 protected:
     QJsonObject qjoAnimalFarm;
     int maxCapacityAnimalFarm;
+
 public:
     BaseAnimalFarm(QJsonObject);
     virtual QJsonObject getQjo() = 0;

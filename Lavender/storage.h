@@ -3,10 +3,11 @@
 
 #include <QWidget>
 #include "storagebuilding.h"
-#include "user.h"
+#include "courtgame.h"
 
-namespace Ui {
-class Storage;
+namespace Ui
+{
+    class Storage;
 }
 
 class Storage : public QWidget
@@ -22,7 +23,7 @@ private slots:
     void on_request_accepted();
     void on_request_rejected();
     void on_continueKey_clicked();
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::Storage *ui;

@@ -17,6 +17,7 @@ protected:
     int minLevelRequiredU;
     int maxLevelRequiredU;
     int addToExpU;
+
 public:
     int getNailU();
     int getShoveU();

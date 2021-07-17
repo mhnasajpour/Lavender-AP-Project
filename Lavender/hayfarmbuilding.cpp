@@ -1,7 +1,6 @@
 #include "hayfarmbuilding.h"
 
-HayFarmBuilding::HayFarmBuilding(QJsonObject _qjo):
-    BaseFarm(_qjo)
+HayFarmBuilding::HayFarmBuilding(QJsonObject _qjo) : BaseFarm(_qjo)
 {
     qjoFarm = _qjo["hayFarm"].toObject();
     maxArea = pow(2, getLevelFarm() + 1);
@@ -66,27 +65,27 @@ int HayFarmBuilding::getDaysToFinishEstablishing()
 
 bool HayFarmBuilding::isLevelEnough()
 {
-    if(getLevelPlayer() < minLevelRequiredE)
+    if (getLevelPlayer() < minLevelRequiredE)
         return false;
     return true;
 }
 
 bool HayFarmBuilding::canEstablish()
 {
-    if(getNail() < nailE)
+    if (getNail() < nailE)
         return false;
-    if(getShovel() < shovelE)
+    if (getShovel() < shovelE)
         return false;
-    if(getCoin() < coinE)
+    if (getCoin() < coinE)
         return false;
-    if(getLevelPlayer() < minLevelRequiredE)
+    if (getLevelPlayer() < minLevelRequiredE)
         return false;
     return true;
 }
 
 void HayFarmBuilding::startEstablishing()
 {
-    if(!canEstablish())
+    if (!canEstablish())
         return;
     addNail(-1 * nailE);
     addShovel(-1 * shovelE);
@@ -122,7 +121,7 @@ void HayFarmBuilding::startPlanting(int plantingArea)
 
 bool HayFarmBuilding::canHarvest()
 {
-    if(getUsedCapacity() + (getPlantingArea() * 2) > maxCapacityStorage)
+    if (getUsedCapacity() + (getPlantingArea() * 2) > maxCapacityStorage)
         return false;
     return true;
 }
@@ -147,7 +146,7 @@ int HayFarmBuilding::getDaysToFinishPlowing()
 
 bool HayFarmBuilding::canPlow()
 {
-    if(getCoin() < maxArea * 5)
+    if (getCoin() < maxArea * 5)
         return false;
     return true;
 }
