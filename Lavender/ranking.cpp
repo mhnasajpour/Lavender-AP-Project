@@ -47,26 +47,77 @@ Ranking::Ranking(QString _username, QWidget *parent) :
 
     sort(arr.begin(), arr.end(), compare);
 
-    //for(int i )
+    for(int i = 0; i < arr.size(); i++)
+        if(arr[i].toObject()["username"].toString() == _username)
+        {
+            index = i;
+            break;
+        }
 
-    for(int i = 0; i < arr.size() && i < 30; i++)
+    for(int i = 0; i < arr.size() && i < 10; i++)
     {
         ui->tableWidget->insertRow(ui->tableWidget->rowCount());
 
+        QTableWidgetItem *widgetItem0 = new QTableWidgetItem(QString::number(i + 1));
         QTableWidgetItem *widgetItem1 = new QTableWidgetItem(arr[i].toObject()["name"].toString());
         QTableWidgetItem *widgetItem2 = new QTableWidgetItem(QString::number(totalExp(arr[i].toObject()["level"].toInt(), arr[i].toObject()["exp"].toInt())));
         QTableWidgetItem *widgetItem3 = new QTableWidgetItem(QString::number(arr[i].toObject()["level"].toInt()));
         QTableWidgetItem *widgetItem4 = new QTableWidgetItem(QString::number(arr[i].toObject()["coin"].toInt()));
 
+        widgetItem0->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
         widgetItem1->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
         widgetItem2->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
         widgetItem3->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
         widgetItem4->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
 
-        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, widgetItem1);
-        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 1, widgetItem2);
-        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 2, widgetItem3);
-        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 3, widgetItem4);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, widgetItem0);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 1, widgetItem1);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 2, widgetItem2);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 3, widgetItem3);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 4, widgetItem4);
+    }
+
+    if(index > 9)
+    {
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+
+        QTableWidgetItem *widgetItemRaw0 = new QTableWidgetItem("...");
+        QTableWidgetItem *widgetItemRaw1 = new QTableWidgetItem("...");
+        QTableWidgetItem *widgetItemRaw2 = new QTableWidgetItem("...");
+        QTableWidgetItem *widgetItemRaw3 = new QTableWidgetItem("...");
+        QTableWidgetItem *widgetItemRaw4 = new QTableWidgetItem("...");
+
+        widgetItemRaw0->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItemRaw1->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItemRaw2->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItemRaw3->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItemRaw4->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, widgetItemRaw0);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 1, widgetItemRaw1);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 2, widgetItemRaw2);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 3, widgetItemRaw3);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 4, widgetItemRaw4);
+
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+
+        QTableWidgetItem *widgetItem0 = new QTableWidgetItem(QString::number(index + 1));
+        QTableWidgetItem *widgetItem1 = new QTableWidgetItem(arr[index].toObject()["name"].toString());
+        QTableWidgetItem *widgetItem2 = new QTableWidgetItem(QString::number(totalExp(arr[index].toObject()["level"].toInt(), arr[index].toObject()["exp"].toInt())));
+        QTableWidgetItem *widgetItem3 = new QTableWidgetItem(QString::number(arr[index].toObject()["level"].toInt()));
+        QTableWidgetItem *widgetItem4 = new QTableWidgetItem(QString::number(arr[index].toObject()["coin"].toInt()));
+
+        widgetItem0->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItem1->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItem2->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItem3->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+        widgetItem4->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, widgetItem0);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 1, widgetItem1);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 2, widgetItem2);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 3, widgetItem3);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 4, widgetItem4);
     }
 }
 
