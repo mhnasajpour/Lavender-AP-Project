@@ -31,6 +31,8 @@ private slots:
     void on_continueKey_clicked();
     void closeEvent(QCloseEvent*);
 
+    void on_ranking_clicked();
+
 private:
     Ui::mainMenu *ui;
     User user;

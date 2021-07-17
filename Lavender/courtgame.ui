@@ -352,7 +352,7 @@ background-color:transparent;
    <widget class="QProgressBar" name="exp">
     <property name="geometry">
      <rect>
-      <x>85</x>
+      <x>82</x>
       <y>45</y>
       <width>200</width>
       <height>32</height>

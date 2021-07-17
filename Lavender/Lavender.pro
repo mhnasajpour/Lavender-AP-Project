@@ -32,6 +32,7 @@ SOURCES += \
     mainmenu.cpp \
     poultryfarm.cpp \
     poultryfarmbuilding.cpp \
+    ranking.cpp \
     sheepfold.cpp \
     sheepfoldbuilding.cpp \
     shopbuilding.cpp \
@@ -68,6 +69,7 @@ HEADERS += \
     mainmenu.h \
     poultryfarm.h \
     poultryfarmbuilding.h \
+    ranking.h \
     sheepfold.h \
     sheepfoldbuilding.h \
     shopbuilding.h \
@@ -94,6 +96,7 @@ FORMS += \
     login.ui \
     mainmenu.ui \
     poultryfarm.ui \
+    ranking.ui \
     sheepfold.ui \
     shop.ui \
     signup.ui \

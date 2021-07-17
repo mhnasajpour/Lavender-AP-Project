@@ -3,6 +3,7 @@
 #include "login.h"
 #include "courtgame.h"
 #include "daynight.h"
+#include "ranking.h"
 
 mainMenu::mainMenu(User _user, QWidget *parent) :
     QWidget(parent),
@@ -164,3 +165,11 @@ void mainMenu::closeEvent(QCloseEvent *event)
     user.saveToFile();
     event->accept();
 }
+
+void mainMenu::on_ranking_clicked()
+{
+    user.saveToFile();
+    Ranking *rank = new Ranking(user.getUsername());
+    rank->exec();
+}
+
