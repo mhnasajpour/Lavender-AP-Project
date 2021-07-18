@@ -5,6 +5,14 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QFile>
+#include <QFileDialog>
+#include <QInputDialog>
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include "user.h"
 
 namespace Ui {
 class Server;
@@ -22,11 +30,14 @@ private:
     Ui::Server *ui;
     QTcpServer *server;
     QTcpSocket *socket;
+    QTime time;
 
 public slots:
-    void connected();
     void readyRead();
     void newConnectionSlot();
+private slots:
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 };
 
 #endif // SERVER_H

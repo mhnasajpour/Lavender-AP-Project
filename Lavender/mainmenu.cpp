@@ -145,7 +145,6 @@ void mainMenu::on_continueKey_clicked()
     user.setName(ui->inputName->text());
     user.setEmail(ui->inputEmail->text());
     user.setUsername(ui->inputUsername->text());
-    user.saveToFile();
     CourtGame *cgp = new CourtGame(user.getQjo(), user.getIndex());
     cgp->show();
     close();
