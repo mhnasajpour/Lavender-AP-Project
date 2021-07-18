@@ -1,16 +1,25 @@
 #include "server.h"
+#include "ui_server.h"
 
-Server::Server(QWidget *parent)
-    : QMainWindow(parent)
+Server::Server(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::Server)
 {
+    ui->setupUi(this);
+
     server = new QTcpServer(this);
     server->listen(QHostAddress::Any, 2020);
 
     if (!server->isListening())
-        qDebug() << "not listening. There is a problem";
+        ui->textEdit->setText("not listening. There is a problem");
 
     connect(server, SIGNAL(newConnection()), this, SLOT(newConnectionSlot()));
-    qDebug() << "Listening...";
+    ui->textEdit->setText("Listening...");
+}
+
+Server::~Server()
+{
+    delete ui;
 }
 
 void Server::newConnectionSlot()
@@ -20,13 +29,11 @@ void Server::newConnectionSlot()
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
-Server::~Server()
-{}
-
 void Server::connected()
 {
-    qDebug()<<"Connected";
+    ui->textEdit->append("Connected");
 }
+
 void Server::readyRead()
 {
     QByteArray data = socket->readAll();
@@ -39,7 +46,7 @@ void Server::readyRead()
 
         socket->write(file.readAll());
         socket->waitForBytesWritten();
-        qDebug() << "Send data succesfully";
+        ui->textEdit->append("Send data succesfully");
         file.close();
     }
     else
@@ -47,8 +54,7 @@ void Server::readyRead()
         QFile file("Lavender-Database.json");
         file.open(QIODevice::ReadWrite | QIODevice::Truncate);
         file.write(data);
-        socket->waitForBytesWritten();
-        qDebug() << "Write in file succesfully";
+        ui->textEdit->append("Write in file succesfully");
         file.close();
     }
 }

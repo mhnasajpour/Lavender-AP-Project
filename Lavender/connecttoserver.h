@@ -7,7 +7,6 @@ class ConnectToServer
 {
 public:
     ConnectToServer();
-
     QByteArray get();
     void set(QByteArray);
 

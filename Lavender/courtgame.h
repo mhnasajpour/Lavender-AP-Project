@@ -46,7 +46,7 @@ private slots:
     void on_sheepfold_clicked();
     void on_lockSheepfold_clicked();
     void on_shop_clicked();
-    //void closeEvent(QCloseEvent *);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::CourtGame *ui;

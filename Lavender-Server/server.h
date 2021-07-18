@@ -4,18 +4,22 @@
 #include <QMainWindow>
 #include <QTcpServer>
 #include <QTcpSocket>
-#include <QDebug>
 #include <QFile>
+
+namespace Ui {
+class Server;
+}
 
 class Server : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Server(QWidget *parent = nullptr);
+    explicit Server(QWidget *parent = nullptr);
     ~Server();
 
 private:
+    Ui::Server *ui;
     QTcpServer *server;
     QTcpSocket *socket;
 
@@ -24,4 +28,5 @@ public slots:
     void readyRead();
     void newConnectionSlot();
 };
+
 #endif // SERVER_H

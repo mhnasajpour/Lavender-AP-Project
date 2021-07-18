@@ -107,6 +107,8 @@ int ShopBuilding::buyPoultry()
 {
     if (getLevelPlayer() < 2)
         return 1;
+    if(!qjo["poultryFarm"].toObject()["level"].toInt())
+        return 1;
     if (getCoin() < 20)
         return 2;
     if (qjo["poultryFarm"].toObject()["animals"].toInt() + 1 > pow(2, qjo["poultryFarm"].toObject()["level"].toInt()))
@@ -137,6 +139,8 @@ int ShopBuilding::buyCattle()
 {
     if (getLevelPlayer() < 4)
         return 1;
+    if(!qjo["dairyFarm"].toObject()["level"].toInt())
+        return 1;
     if (getCoin() < 70)
         return 2;
     if (qjo["dairyFarm"].toObject()["animals"].toInt() + 1 > pow(2, qjo["dairyFarm"].toObject()["level"].toInt()))
@@ -166,6 +170,8 @@ int ShopBuilding::sellCattle()
 int ShopBuilding::buySheep()
 {
     if (getLevelPlayer() < 6)
+        return 1;
+    if(!qjo["sheepfold"].toObject()["level"].toInt())
         return 1;
     if (getCoin() < 80)
         return 2;

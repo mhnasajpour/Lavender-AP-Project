@@ -171,8 +171,8 @@ void CourtGame::on_shop_clicked()
     }
 }
 
-/*void CourtGame::closeEvent(QCloseEvent *event)
+void CourtGame::closeEvent(QCloseEvent *event)
 {
     user.saveToFile();
     event->accept();
-}*/
+}

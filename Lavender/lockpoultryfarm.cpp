@@ -57,9 +57,9 @@ void LockPoultryFarm::on_door_clicked()
     close();
 }
 
-/*void LockPoultryFarm::closeEvent(QCloseEvent *event)
+void LockPoultryFarm::closeEvent(QCloseEvent *event)
 {
     User tmp(poultryFarm.getQjo(), index);
     tmp.saveToFile();
     event->accept();
-}*/
+}

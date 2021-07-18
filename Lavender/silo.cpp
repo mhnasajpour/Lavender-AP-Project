@@ -106,9 +106,9 @@ void Silo::on_continueKey_clicked()
     close();
 }
 
-/*void Silo::closeEvent(QCloseEvent *event)
+void Silo::closeEvent(QCloseEvent *event)
 {
     User tmp(silo.getQjo(), index);
     tmp.saveToFile();
     event->accept();
-}*/
+}

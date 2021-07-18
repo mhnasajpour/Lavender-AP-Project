@@ -30,7 +30,7 @@ private slots:
     void on_sell2_clicked();
     void on_buy3_clicked();
     void on_sell3_clicked();
-    //void closeEvent(QCloseEvent *);
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::Shop *ui;

@@ -85,16 +85,14 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
 
 int Signup::check(QString _username, QString _email)
 {
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonArray user = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
-    file.close();
+    ConnectToServer socket;
+    QJsonArray users = ((QJsonDocument::fromJson(socket.get())).object())["users"].toArray();
 
-    for (int i = 0; i < user.size(); i++)
+    for (int i = 0; i < users.size(); i++)
     {
-        if ((user[i].toObject())["email"].toString() == _email)
+        if ((users[i].toObject())["email"].toString() == _email)
             return 2;
-        if ((user[i].toObject())["username"].toString() == _username)
+        if ((users[i].toObject())["username"].toString() == _username)
             return 1;
     }
     return 3;

@@ -78,10 +78,8 @@ void mainMenu::on_inputEmail_textEdited(const QString &arg1)
         return;
     }
 
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonArray users = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
-    file.close();
+    ConnectToServer socket;
+    QJsonArray users = ((QJsonDocument::fromJson(socket.get())).object())["users"].toArray();
 
     for (int i = 0; i < users.size(); i++)
     {
@@ -105,10 +103,8 @@ void mainMenu::on_inputUsername_textEdited(const QString &arg1)
         return;
     }
 
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonArray users = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
-    file.close();
+    ConnectToServer socket;
+    QJsonArray users = ((QJsonDocument::fromJson(socket.get())).object())["users"].toArray();
 
     for (int i = 0; i < users.size(); i++)
     {
@@ -155,11 +151,14 @@ void mainMenu::on_continueKey_clicked()
     close();
 }
 
-/*void mainMenu::closeEvent(QCloseEvent *event)
+void mainMenu::closeEvent(QCloseEvent *event)
 {
+    user.setName(ui->inputName->text());
+    user.setEmail(ui->inputEmail->text());
+    user.setUsername(ui->inputUsername->text());
     user.saveToFile();
     event->accept();
-}*/
+}
 
 void mainMenu::on_ranking_clicked()
 {

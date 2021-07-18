@@ -182,10 +182,9 @@ void User::checkDay()
 
 bool User::setUsername(QString username)
 {
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonArray arrUser = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
-    file.close();
+    ConnectToServer socket;
+    QJsonArray arrUser = ((QJsonDocument::fromJson(socket.get())).object())["users"].toArray();
+
     for (int i = 0; i < arrUser.size(); i++)
         if ((arrUser[i].toObject())["username"].toString() == username)
             return false;
@@ -216,10 +215,9 @@ QString User::getName()
 
 bool User::setEmail(QString email)
 {
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonArray arrUser = ((QJsonDocument::fromJson(file.readAll())).object())["users"].toArray();
-    file.close();
+    ConnectToServer socket;
+    QJsonArray arrUser = ((QJsonDocument::fromJson(socket.get())).object())["users"].toArray();
+
     for (int i = 0; i < arrUser.size(); i++)
         if ((arrUser[i].toObject())["email"].toString() == email)
             return false;
