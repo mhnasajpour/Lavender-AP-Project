@@ -165,9 +165,9 @@ void PoultryFarm::on_request_rejected()
     ui->upPic2->setHidden(true);
 }
 
-void PoultryFarm::closeEvent(QCloseEvent *event)
+/*void PoultryFarm::closeEvent(QCloseEvent *event)
 {
     User tmp(poultryFarm.getQjo(), index);
     tmp.saveToFile();
     event->accept();
-}
+}*/

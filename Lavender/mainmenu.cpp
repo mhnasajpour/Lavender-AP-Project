@@ -155,11 +155,11 @@ void mainMenu::on_continueKey_clicked()
     close();
 }
 
-void mainMenu::closeEvent(QCloseEvent *event)
+/*void mainMenu::closeEvent(QCloseEvent *event)
 {
     user.saveToFile();
     event->accept();
-}
+}*/
 
 void mainMenu::on_ranking_clicked()
 {

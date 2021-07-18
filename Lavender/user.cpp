@@ -281,10 +281,8 @@ ShopBuilding User::getShop()
 
 void User::saveToFile()
 {
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-    file.close();
+    ConnectToServer socket;
+    QJsonDocument doc = QJsonDocument::fromJson(socket.get());
 
     QJsonArray arr = (doc.object())["users"].toArray();
     arr[index] = getQjo();
@@ -292,8 +290,5 @@ void User::saveToFile()
     main.insert("users", arr);
     doc.setObject(main);
 
-    QFile file1("Users.json");
-    file1.open(QIODevice::ReadWrite | QIODevice::Truncate);
-    file1.write(doc.toJson());
-    file1.close();
+    socket.set(doc.toJson());
 }

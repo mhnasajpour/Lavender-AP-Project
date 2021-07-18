@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "courtgame.h"
 #include "signup.h"
+#include "connecttoserver.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui

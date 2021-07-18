@@ -1,4 +1,5 @@
-QT       += core gui
+QT += core gui
+QT += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,6 +17,7 @@ SOURCES += \
     basestorage.cpp \
     baseupgrade.cpp \
     baseuser.cpp \
+    connecttoserver.cpp \
     courtgame.cpp \
     dairyfarm.cpp \
     dairyfarmbuilding.cpp \
@@ -54,6 +56,7 @@ HEADERS += \
     basestorage.h \
     baseupgrade.h \
     baseuser.h \
+    connecttoserver.h \
     courtgame.h \
     dairyfarm.h \
     dairyfarmbuilding.h \

@@ -64,9 +64,9 @@ void lockHayFarm::on_door_clicked()
     close();
 }
 
-void lockHayFarm::closeEvent(QCloseEvent *event)
+/*void lockHayFarm::closeEvent(QCloseEvent *event)
 {
     User tmp(hay_farm.getQjo(), index);
     tmp.saveToFile();
     event->accept();
-}
+}*/

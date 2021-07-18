@@ -1,6 +1,7 @@
 #ifndef USER_H
 #define USER_H
 
+#include <connecttoserver.h>
 #include "baseuser.h"
 #include "storagebuilding.h"
 #include "silobuilding.h"

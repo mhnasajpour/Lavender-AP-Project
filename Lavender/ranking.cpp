@@ -32,11 +32,9 @@ Ranking::Ranking(QString _username, QWidget *parent) : QDialog(parent),
 {
     ui->setupUi(this);
 
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+    ConnectToServer socket;
+    QJsonDocument doc = QJsonDocument::fromJson(socket.get());
     QJsonArray arr = (doc.object())["users"].toArray();
-    file.close();
 
     std::sort(arr.begin(), arr.end(), compare);
 

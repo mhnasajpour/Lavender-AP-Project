@@ -71,21 +71,16 @@ void Signup::addUser(QString _name, QString _email, QString _username, unsigned 
     root.insert("wheatFarm", wheatFarm);
     root.insert("hayFarm", hayFarm);
 
-    QFile file("Users.json");
-    file.open(QIODevice::ReadOnly);
-    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-    file.close();
+    ConnectToServer socket;
 
+    QJsonDocument doc = QJsonDocument::fromJson(socket.get());
     QJsonArray arr = (doc.object())["users"].toArray();
     arr.append(root);
     QJsonObject main;
     main.insert("users", arr);
     doc.setObject(main);
 
-    QFile file1("Users.json");
-    file1.open(QIODevice::ReadWrite | QIODevice::Truncate);
-    file1.write(doc.toJson());
-    file1.close();
+    socket.set(doc.toJson());
 }
 
 int Signup::check(QString _username, QString _email)

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "login.h"
+#include "connecttoserver.h"
 
 namespace Ui
 {

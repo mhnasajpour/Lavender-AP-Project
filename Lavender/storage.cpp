@@ -110,9 +110,9 @@ void Storage::on_continueKey_clicked()
     close();
 }
 
-void Storage::closeEvent(QCloseEvent *event)
+/*void Storage::closeEvent(QCloseEvent *event)
 {
     User tmp(storage.getQjo(), index);
     tmp.saveToFile();
     event->accept();
-}
+}*/

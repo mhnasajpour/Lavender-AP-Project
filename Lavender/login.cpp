@@ -40,30 +40,21 @@ void Login::on_enterKey_clicked()
     }
     if (isGood)
     {
-        QFile file("Users.json");
-        if (file.open(QIODevice::ReadOnly))
+        ConnectToServer socket;
+        QJsonDocument doc = QJsonDocument::fromJson(socket.get());
+        QJsonArray arr = (doc.object())["users"].toArray();
+
+        std::hash<QString> hashedPassword;
+        unsigned long i = hashedPassword(ui->inputPassword->text());
+        QString hashPass = QString::number(i);
+
+        for (int i = 0; i < arr.size(); i++) // search array for authentication
+        if ((arr[i].toObject())["username"].toString() == ui->inputUsername->text() && (arr[i].toObject())["password"].toString() == hashPass)
         {
-            QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-            QJsonArray arr = (doc.object())["users"].toArray();
-            file.close();
-
-            std::hash<QString> hashedPassword;
-            unsigned long i = hashedPassword(ui->inputPassword->text());
-            QString hashPass = QString::number(i);
-
-            for (int i = 0; i < arr.size(); i++) // search array for authentication
-                if ((arr[i].toObject())["username"].toString() == ui->inputUsername->text() && (arr[i].toObject())["password"].toString() == hashPass)
-                {
-                    CourtGame *cg = new CourtGame(arr[i].toObject(), i);
-                    cg->show();
-                    close();
-                    break;
-                }
-        }
-        else
-        { // if file doesn't exist
-            file.open(QIODevice::WriteOnly);
-            file.close();
+            CourtGame *cg = new CourtGame(arr[i].toObject(), i);
+            cg->show();
+            close();
+            break;
         }
 
         ui->inputUsername->setText("");

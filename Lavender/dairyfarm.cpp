@@ -165,9 +165,9 @@ void DairyFarm::on_request_rejected()
     ui->upPic2->setHidden(true);
 }
 
-void DairyFarm::closeEvent(QCloseEvent *event)
+/*void DairyFarm::closeEvent(QCloseEvent *event)
 {
     User tmp(dairyFarm.getQjo(), index);
     tmp.saveToFile();
     event->accept();
-}
+}*/

@@ -206,9 +206,9 @@ void hayFarm::on_request_rejected()
     ui->upPic2->setHidden(true);
 }
 
-void hayFarm::closeEvent(QCloseEvent *event)
+/*void hayFarm::closeEvent(QCloseEvent *event)
 {
     User tmp(hay_farm.getQjo(), index);
     tmp.saveToFile();
     event->accept();
-}
+}*/
