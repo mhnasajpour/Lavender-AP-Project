@@ -7,6 +7,16 @@ Server::Server(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QFile file("Lavender-Database.json");
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        file.open(QIODevice::WriteOnly);
+        QJsonObject main;
+        main.insert("users", QJsonArray());
+        file.write(QJsonDocument(main).toJson());
+        file.close();
+    }
+
     server = new QTcpServer(this);
     server->listen(QHostAddress::Any, 2020);
 
@@ -14,7 +24,7 @@ Server::Server(QWidget *parent) :
         ui->textEdit->setText("not listening. There is a problem");
 
     connect(server, SIGNAL(newConnection()), this, SLOT(newConnectionSlot()));
-    ui->textEdit->setText((time.currentTime()).toString() + "       Listening...");
+    ui->textEdit->setText((time.currentTime()).toString() + "       Listening...\t\n");
 }
 
 Server::~Server()
@@ -25,7 +35,6 @@ Server::~Server()
 void Server::newConnectionSlot()
 {
     socket = server->nextPendingConnection();
-    ui->textEdit->append((time.currentTime()).toString() + "       Connected");
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
@@ -36,12 +45,11 @@ void Server::readyRead()
     if(data == "I WANT DATA") //get
     {
         QFile file("Lavender-Database.json");
-        if(!file.open(QIODevice::ReadOnly))
-            file.open(QIODevice::WriteOnly);
+        file.open(QIODevice::ReadOnly);
 
         socket->write(file.readAll());
         socket->waitForBytesWritten();
-        ui->textEdit->append((time.currentTime()).toString() + "       Send data       " + QString::number(socket->socketDescriptor()));
+        ui->textEdit->append((time.currentTime()).toString() + "       Transferring data       " + QString::number(socket->socketDescriptor()) + "\t");
         file.close();
     }
     else //set
@@ -49,7 +57,6 @@ void Server::readyRead()
         QFile file("Lavender-Database.json");
         file.open(QIODevice::ReadWrite | QIODevice::Truncate);
         file.write(data);
-        ui->textEdit->append((time.currentTime()).toString() + "       Writing file       " + QString::number(socket->socketDescriptor()));
         file.close();
     }
 }
@@ -68,9 +75,8 @@ void Server::on_pushButton_clicked()
 
 void Server::on_pushButton_2_clicked()
 {
-    bool ok;
-    QString text = QInputDialog::getText(this, tr("Lavender"), tr("Username:"), QLineEdit::Normal, QDir::home().dirName(), &ok);
-    if (ok && !text.isEmpty())
+    QString text = QInputDialog::getText(this, tr("Lavender"), tr("Username:"), QLineEdit::Normal);
+    if (!text.isEmpty())
     {
         QFile file("Lavender-Database.json");
         file.open(QIODevice::ReadOnly);
