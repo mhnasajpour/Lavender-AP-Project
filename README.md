@@ -17,6 +17,7 @@ Lavender game, Create the perfect farming experience with your friends, raise an
 <img src="./ReadmePic/3.png" width="400">
 <img src="./ReadmePic/4.png" width="400">
 <img src="./ReadmePic/5.png" width="400">
+<img src="./ReadmePic/27.png" width="400">
 <img src="./ReadmePic/11.png" width="400">
 <img src="./ReadmePic/12.png" width="400">
 <img src="./ReadmePic/13.png" width="400">
@@ -27,5 +28,4 @@ Lavender game, Create the perfect farming experience with your friends, raise an
 <img src="./ReadmePic/19.png" width="400">
 <img src="./ReadmePic/24.png" width="400">
 <img src="./ReadmePic/23.png" width="400">
-
 </span>
